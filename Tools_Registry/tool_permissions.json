@@ -1,0 +1,16 @@
+﻿{
+  "default_policy": "deny_destructive_actions",
+  "rules": [
+    {
+      "tool_id": "self_assessment",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "patch_exporter",
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    }
+  ]
+}

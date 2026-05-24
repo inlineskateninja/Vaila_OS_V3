@@ -1,0 +1,9 @@
+﻿{
+  "app_name": "Vaila OS V3",
+  "version": "0.1.0",
+  "phase": "1",
+  "default_persona": "proto_jane",
+  "cli_enabled": true,
+  "local_api_enabled": true,
+  "desktop_client_enabled": true
+}

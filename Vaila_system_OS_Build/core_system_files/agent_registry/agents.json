@@ -1,0 +1,33 @@
+{
+  "schema_version": "vaila.agent_registry.v1",
+  "agents": [
+    {
+      "name": "file_analyst_agent",
+      "status": "planned",
+      "phase": 3,
+      "description": "Bounded agent for multi-file analysis reports.",
+      "approval_required": false
+    },
+    {
+      "name": "memory_extractor_agent",
+      "status": "planned",
+      "phase": 3,
+      "description": "Bounded agent for proposing memory candidates from approved sources.",
+      "approval_required": true
+    },
+    {
+      "name": "project_auditor_agent",
+      "status": "planned",
+      "phase": 3,
+      "description": "Bounded agent for project status, risks, and next-step reports.",
+      "approval_required": false
+    },
+    {
+      "name": "self_evaluation_protocol",
+      "status": "planned",
+      "phase": 5,
+      "description": "Produces proposed code/system changes into the sandbox for user review.",
+      "approval_required": true
+    }
+  ]
+}

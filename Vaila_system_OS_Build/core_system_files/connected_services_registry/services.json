@@ -1,0 +1,44 @@
+{
+  "schema_version": "vaila.connected_services.v1",
+  "services": [
+    {
+      "name": "n8n",
+      "kind": "workflow_automation",
+      "status": "planned",
+      "base_url_env": "VAILA_N8N_BASE_URL",
+      "auth_header": "X-N8N-API-KEY",
+      "auth_token_env": "VAILA_N8N_API_KEY",
+      "webhook_path_env": "VAILA_N8N_WEBHOOK_PATH",
+      "purpose": "Workflow automation and external action orchestration after Vaila approval checks.",
+      "notes": [
+        "Use webhooks for workflow execution from Vaila.",
+        "Use the public REST API for workflow/execution management when configured.",
+        "Do not store credentials in this repository."
+      ]
+    },
+    {
+      "name": "openbrain",
+      "kind": "memory_management",
+      "status": "planned",
+      "base_url_env": "VAILA_OPENBRAIN_MCP_URL",
+      "auth_header": "x-brain-key",
+      "auth_token_env": "VAILA_OPENBRAIN_MCP_KEY",
+      "purpose": "External self-hostable memory layer evaluation for semantic recall, graph links, and MCP-compatible memory access.",
+      "notes": [
+        "Treat as an external memory provider, not the only source of truth.",
+        "Home Jane remains the memory authority until conflict/sync rules are implemented.",
+        "Do not auto-write durable memory without Vaila approval policy."
+      ]
+    },
+    {
+      "name": "github",
+      "kind": "version_control",
+      "status": "active_manual",
+      "purpose": "Version history, review checkpoints, and later automated backup/update workflows.",
+      "notes": [
+        "Keep private memory and credentials out of git.",
+        "Use GitHub as history, not as the runtime owner of Vaila."
+      ]
+    }
+  ]
+}

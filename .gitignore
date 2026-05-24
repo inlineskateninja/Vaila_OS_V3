@@ -1,0 +1,41 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# IDE
+.idea/
+.vscode/
+
+# Secrets
+.env
+Secrets/*
+!Secrets/README_DO_NOT_COMMIT.md
+
+# Runtime logs
+System_Logging/**/*.jsonl
+System_Logging/**/*.log
+System_Logging/**/*.txt
+!System_Logging/**/.gitkeep
+
+# Runtime memory
+System_Wide_Memory/**
+!System_Wide_Memory/README_REDIRECT_ONLY.md
+!System_Wide_Memory/memory_locations.json
+!System_Wide_Memory/sync_policy.md
+
+# Sandbox exports
+Sandbox/Proposed_Patches/*
+Sandbox/Self_Assessment_Exports/*
+Sandbox/Memory_Conflict_Reports/*
+!Sandbox/**/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db

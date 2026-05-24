@@ -1,0 +1,9 @@
+﻿{
+  "routing_mode": "regex_first",
+  "prompt_interpreter": {
+    "enabled": true,
+    "mode": "conditional",
+    "run_when_confidence_below": 2
+  },
+  "default_task": "general_chat"
+}

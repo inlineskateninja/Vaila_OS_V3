@@ -1,0 +1,645 @@
+﻿Software architecture principle
+Software architecture principle
+The software stack should be built around interfaces, not loyalty to specific apps.
+That means Vaila should not be hardwired to:
+LM Studio forever
+PyCharm forever
+local JSONL forever
+one machine forever
+one UI forever
+Instead, the architecture should say:
+Vaila needs an LLM provider.
+Vaila needs a memory store.
+Vaila needs a model registry.
+Vaila needs a tool registry.
+Vaila needs a UI.
+Vaila needs sync.
+Vaila needs logs.
+Then each phase chooses the simplest software that can satisfy those needs.
+The clean architecture target
+Long term, the software should look like this:
+Clients
+ CLI
+ Desktop GUI
+ Mobile app
+ Voice interface
+ Future device clients
+
+
+API Layer
+ FastAPI Home Jane service
+
+
+Core Vaila Layer
+ Router
+ Context builder
+ Persona loader
+ Memory manager
+ Model registry
+ Tool registry
+ Agent orchestrator
+ Permission manager
+ Logger
+
+
+Model Providers
+ LM Studio
+ Ollama
+ Cloud provider, optional later
+
+
+Storage
+ SQLite or Postgres
+ Markdown foundation context
+ YAML persona files
+ Vector database if needed
+ File archive
+ Logs
+
+
+Device Layer
+ Laptop field node
+ Mobile client
+ Level 1 relays
+ Level 2 Jane cores
+ Level 3 platforms
+
+
+The important move is making sure no tool owns the soul of the system.
+LM Studio is a provider.
+PyCharm is an editor.
+GitHub is version history.
+SQLite is storage.
+FastAPI is the service layer.
+Flutter is a future client.
+LangGraph is a possible workflow engine.
+LlamaIndex is a possible document/RAG layer.
+Vaila should sit above them.
+That is how you keep the project portable, expandable, and sane.
+
+
+Phase 0
+Phase 0: Planning and architecture definition
+Purpose
+Define the project before building too much of it.
+Current best software
+Markdown files
+GitHub repository
+PyCharm or VS Code
+Obsidian, optional
+Mermaid diagrams, optional
+Role of each tool
+GitHub
+GitHub remains the project’s source-control and history layer.
+Use it for:
+version control
+branches
+commits
+issues
+project notes
+release checkpoints
+decision history
+Later, GitHub Actions can automate tests, builds, and deployment checks. GitHub Actions is designed for CI/CD workflows that can build, test, and deploy from a repository, so it fits later once tests matter more.
+PyCharm
+Keep using PyCharm for now.
+It is already familiar. The project is Python-heavy. Switching editors now would create friction without solving a real problem.
+Possible future transition:
+PyCharm remains primary Python IDE.
+VS Code may become useful later for multi-language work, Docker, Flutter, remote editing, or quick file-level editing.
+No switch needed yet.
+Phase 0 output
+planning document
+phase map
+architecture glossary
+build philosophy
+tool transition policy
+
+
+Phase 1
+Phase 1: Core spine
+Purpose
+Build the minimum stable intelligence layer:
+foundation context
+persona files
+question-based memory
+router
+model profiles
+context packet
+LLM client
+diagnostics
+tests
+Recommended software stack
+Python
+PyCharm
+GitHub
+LM Studio
+Markdown
+JSON
+YAML
+JSONL
+Pydantic
+pytest
+requests or OpenAI-compatible client
+Keep LM Studio for Phase 1
+LM Studio is a good fit right now because it provides local model hosting through REST APIs, Python/JS SDKs, and OpenAI-compatible endpoints. It can serve models locally or over the network, which fits the current laptop and desktop testing pattern.
+Use LM Studio for:
+local model testing
+model comparison
+OpenAI-compatible endpoint
+laptop and desktop model serving
+manual experimentation
+Add a provider abstraction now
+Even while using LM Studio, the code should call an internal interface like:
+LLMProvider
+Not:
+LMStudioForeverClient
+Reason:
+Ollama also supports OpenAI-compatible APIs, including OpenAI-style chat and tool usage through its compatibility layer, so later you may want to support both LM Studio and Ollama behind the same interface.
+Phase 1 provider concept:
+llm_client.py
+ LMStudioProvider
+ future OllamaProvider
+ future OpenAIProvider
+Do not build all providers now. Just design so the current provider can be swapped later.
+Data format
+Use:
+Markdown for foundation context
+YAML for persona configuration
+JSON for model profiles and machine profiles
+JSONL for early memory
+This is correct for Phase 1 because everything remains readable and editable.
+Add Pydantic once schemas stabilize
+Pydantic uses Python type hints for validation and serialization, which makes it useful once the memory records, route plans, model profiles, and tool definitions need stricter structure.
+Good Phase 1 use:
+MemoryRecord
+RoutePlan
+ModelProfile
+PersonaManifest
+MachineProfile
+Do not add Pydantic too early if it slows you down. Add it when mistakes in JSON/YAML begin costing time.
+Add pytest soon
+Your router and memory system need regression tests. pytest is a good fit because it supports small readable tests and can scale to more complex functional tests later.
+Phase 1 tests should cover:
+router chooses correct task type
+router chooses correct persona
+weak matches default correctly
+memory scope prevents persona bleed
+model profile resolves correctly
+fallback logic works
+context packet includes foundation context
+Phase 1 software output
+vaila_core/
+ app/
+   router.py
+   memory_store.py
+   context_loader.py
+   model_registry.py
+   llm_client.py
+   schemas.py
+ data/
+   context/
+   memory/
+   model_profiles.json
+   machine_profiles.json
+ personas/
+ tests/
+Phase 1 transition rule
+Do not switch away from LM Studio, PyCharm, or JSONL yet.
+Only transition when:
+LM Studio cannot handle serving needs.
+JSONL becomes hard to query.
+PyCharm blocks multi-service development.
+manual tests become unreliable.
+
+
+Phase 2
+Phase 2: Practical assistant usefulness
+Purpose
+Move from prototype to useful assistant.
+Add:
+file analysis
+internet research
+memory candidate extraction
+memory approval workflow
+daily planning
+project review
+content capture
+basic tool use
+Recommended software stack
+Python
+FastAPI
+SQLite
+Pydantic
+pytest
+LM Studio
+optional Ollama
+basic local file tools
+controlled web research
+Add FastAPI
+Phase 2 is the right time to start turning the core into a local service.
+FastAPI is a Python web framework for building APIs using standard Python type hints, which fits a local Vaila service that other clients can call.
+Use FastAPI for:
+local Vaila API
+chat endpoint
+memory search endpoint
+file analysis endpoint
+tool execution endpoint
+model profile endpoint
+health check endpoint
+This changes the architecture from:
+Run main.py in terminal.
+to:
+Run Vaila as a local service.
+Other interfaces talk to it.
+That is a big step toward Home Jane.
+Add SQLite
+Phase 2 is also where JSONL may start feeling limited.
+SQLite is built into Python through the sqlite3 module, which provides a DB-API interface for SQLite databases.
+Use SQLite for:
+memory records
+decision logs
+test results
+session summaries
+tool runs
+agent run history later
+approval queue
+Do not immediately delete JSONL. Transition gently:
+Phase 1:
+JSONL source files
+
+
+Phase 2:
+SQLite working database
+
+
+Migration:
+import JSONL into SQLite
+export SQLite memories back to JSONL or Markdown for backup
+That gives you database power without losing human-readable backups.
+Add basic file analyzer
+Start with:
+Markdown
+TXT
+JSON
+YAML
+Python
+logs
+Do not start with complex PDFs, images, or spreadsheets unless needed.
+The file analyzer should produce:
+summary
+decisions found
+possible memory candidates
+architecture conflicts
+outdated notes
+Add controlled internet research
+This should use a tool layer, not random browsing inside every answer.
+Define:
+research_tool
+source_summary
+citation_report
+memory_candidate_report
+Rules:
+current facts require sources
+technical docs prefer official sources
+internet findings do not become memory without approval
+Vector storage decision
+Do not rush this.
+For Phase 2, the progression should be:
+SQLite keyword and tag search first
+then embeddings
+then vector database if needed
+If you need local vector search, Chroma is simple and provides embedding storage, metadata filtering, dense and sparse search, and retrieval features. Qdrant is stronger for a more service-like vector search layer and provides vector and semantic search with HTTP and gRPC interfaces.
+Recommendation:
+Early Phase 2:
+SQLite only
+
+
+Late Phase 2:
+Chroma if you want the simplest local embedding store
+
+
+Phase 3 or 4:
+Qdrant if retrieval becomes a serious always-on service
+Phase 2 software output
+vaila_service/
+ FastAPI app
+ SQLite database
+ file analyzer
+ memory approval queue
+ research tool interface
+ local API endpoints
+Phase 2 transition rule
+Transition from CLI to API only when:
+you want more than one UI
+you want mobile or desktop client access
+you want tools to call the core system
+you want logs and approvals to persist cleanly
+
+
+Phase 3
+Phase 3: Bounded agents and workflow coordination
+Purpose
+Allow Vaila to delegate narrow workflows safely.
+Add:
+bounded agents
+agent logs
+permission model
+tool orchestration
+project auditor
+memory extractor agent
+research scout
+file analyst
+hardware profiler
+persona reviewer
+Recommended software stack
+FastAPI
+SQLite
+Pydantic
+pytest
+GitHub Actions
+optional LangGraph
+optional LlamaIndex
+Docker, maybe
+Start with your own simple workflow engine
+Do not jump straight to a large agent framework.
+Start with:
+AgentSpec
+AgentRun
+ToolCall
+PermissionLevel
+ApprovalRequest
+AgentLog
+This keeps the architecture yours.
+When to consider LangGraph
+LangGraph is designed for long-running, stateful workflows and agents, and its docs emphasize controllable workflow infrastructure rather than hiding your architecture. That makes it a good candidate when your handmade workflow engine becomes too limited.
+Use LangGraph when you need:
+multi-step agent workflows
+branching
+loops
+persistent agent state
+interrupts and approvals
+workflow recovery
+Do not use it just because “agents.”
+When to consider LlamaIndex
+LlamaIndex is designed around data and context augmentation for LLM applications, including RAG pipelines and document-oriented workflows. It becomes useful if file analysis, document indexing, and retrieval become central.
+Use LlamaIndex when you need:
+document indexing
+retrieval pipelines
+query engines
+file connectors
+structured document workflows
+But do not use both LangGraph and LlamaIndex at full depth immediately.
+Suggested order:
+First:
+custom simple workflows
+
+
+Then:
+LlamaIndex for document retrieval if needed
+
+
+Then:
+LangGraph for agent orchestration if needed
+Add GitHub Actions
+Once tests exist, GitHub Actions should run them automatically on pushes or pull requests. GitHub Actions is built for automating build, test, and deployment workflows from a repository.
+Use it for:
+run pytest
+check formatting
+validate JSON/YAML
+prevent broken commits
+export release bundle
+Docker decision
+Docker helps package and run applications in containers, which becomes useful when Vaila has multiple services like API, database, vector store, and tool workers.
+Do not force Docker in Phase 1.
+Consider Docker in Phase 3 when you have:
+FastAPI service
+SQLite or Postgres
+vector database
+agent worker
+web UI
+mobile client connection
+Phase 3 software output
+agent framework
+tool registry
+permission system
+approval queue
+agent logs
+GitHub Actions tests
+optional workflow framework evaluation
+Phase 3 transition rule
+Adopt LangGraph, LlamaIndex, or Docker only when the homemade structure becomes painful in a specific way.
+
+
+Phase 4
+Phase 4: Multi-device continuity and field use
+Purpose
+Extend Vaila across laptop, desktop, phone, and future devices while keeping Home Jane as source of truth.
+Add:
+secure connection
+mobile client
+device registration
+sync
+field context capture
+local fallback
+hardware-aware routing
+Recommended software stack
+FastAPI Home Jane server
+SQLite or Postgres
+Qdrant or Chroma if retrieval has grown
+Flutter or simple web app
+Tailscale or WireGuard
+background sync worker
+device profile registry
+Mobile app decision
+For a serious cross-platform app, Flutter is a strong candidate because it supports building mobile, web, desktop, and embedded apps from a single codebase.
+Recommendation:
+Phase 4 mobile client:
+Flutter
+
+
+Not:
+Kivy, unless you want to stay Python-only for quick prototypes.
+Kivy can build Python apps across desktop and mobile platforms, but Flutter is likely the better long-term mobile app path because Android, iOS, desktop, and web are first-class targets in its ecosystem.
+Secure connection
+Use a private network/VPN approach for Home Jane access instead of exposing the server raw to the internet.
+Candidates:
+Tailscale
+WireGuard
+Tailscale positions itself as identity-based secure connectivity and provides stable device-to-device networking across locations, while WireGuard is a simple, modern VPN protocol focused on secure tunnels.
+Recommendation:
+Beginner-friendly:
+Tailscale
+
+
+More manual/control-oriented:
+WireGuard
+For you, likely start with Tailscale later unless you specifically want the WireGuard learning path.
+Sync architecture
+Phase 4 needs:
+device_id
+machine_profile
+last_sync_time
+pending_memory_candidates
+local_session_cache
+conflict detection
+approved merge
+Do not allow mobile devices to silently overwrite Home Jane.
+Phase 4 software output
+Home Jane local API
+secure remote access
+mobile text client
+device registry
+sync queue
+conflict reports
+field capture workflow
+
+
+Phase 5
+Phase 5: Persona self-review and controlled evolution
+Purpose
+Allow personas and system behavior to improve through reviewable, approved changes.
+Add:
+persona self-review
+drift detection
+development profiles
+council review mode
+memory defrag
+system improvement proposals
+approved updates
+versioning
+rollback
+Recommended software stack
+FastAPI
+SQLite or Postgres
+Git
+GitHub
+agent workflow engine
+test suite
+approval UI
+persona version store
+evaluation harness
+Key software requirement
+Phase 5 needs an evaluation harness.
+This is where you test:
+persona distinctness
+routing accuracy
+memory relevance
+continuity
+drift
+explainability
+safe evolution
+Git becomes more important here
+Persona updates should be versioned like code.
+Every persona change should have:
+old version
+proposed version
+reason for change
+test result
+approval
+rollback path
+GitHub remains useful as the record of changes, but private local Git may hold sensitive persona/user memory files if you do not want them pushed.
+Memory defrag software
+Memory defrag should be a workflow, not a magic button.
+It should:
+detect duplicate memories
+detect stale memories
+suggest category changes
+flag contradictions
+create proposed patches
+wait for approval
+log outcome
+Phase 5 software output
+persona review system
+memory defrag workflow
+council review workflow
+versioned persona changes
+evaluation reports
+rollback process
+
+
+Phase 6
+Phase 6: Advanced autonomy and embodiment
+Purpose
+Explore more autonomy and physical embodiment only after the core system has earned trust.
+Add:
+scheduled agents
+sensor ingestion
+Level 1 relays
+Level 2 mobile Jane cores
+Level 3 mobility platforms
+robot control interfaces
+vision
+voice identity
+more autonomous maintenance
+Recommended software stack
+Home Jane API
+message bus
+device clients
+hardware control services
+telemetry database
+vector database
+agent scheduler
+secure device auth
+Flutter client
+possibly ROS2 later for robotics
+I am deliberately not recommending ROS2 yet. It becomes relevant only when actual robotics and mobility control become real, not while the assistant core is still maturing.
+Phase 6 output
+device ecosystem
+sensor-aware assistant
+bounded autonomy
+physical interaction layer
+advanced Home Jane orchestration
+
+
+Recommended stack by phase
+Recommended stack by phase
+Phase 1 stack
+PyCharm
+Python
+GitHub
+LM Studio
+Markdown
+JSON/YAML/JSONL
+requests or OpenAI-compatible client
+pytest
+Pydantic when schemas stabilize
+Phase 2 stack
+FastAPI
+SQLite
+Pydantic
+pytest
+LM Studio
+optional Ollama provider
+file analyzer
+memory approval queue
+basic research tool
+Phase 3 stack
+FastAPI
+SQLite
+GitHub Actions
+custom agent workflow engine
+optional LlamaIndex
+optional LangGraph
+optional Docker
+Phase 4 stack
+FastAPI Home Jane server
+Flutter mobile client
+Tailscale or WireGuard
+device registry
+sync queue
+Chroma or Qdrant if retrieval needs it
+Phase 5 stack
+evaluation harness
+persona versioning
+Git/GitHub
+memory defrag workflow
+approval UI
+agent workflow engine
+test suite
+Phase 6 stack
+secure device orchestration
+telemetry storage
+mobile Jane core clients
+sensor services
+message bus
+robotics framework only if physically needed

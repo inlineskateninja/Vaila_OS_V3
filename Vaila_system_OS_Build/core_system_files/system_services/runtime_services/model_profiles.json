@@ -1,0 +1,159 @@
+{
+  "default_profile": "chat_general",
+  "profiles": {
+    "router_small": {
+      "model_candidates": [
+        "qwen3-1.7b",
+        "qwen3-4b",
+        "phi-4-mini"
+      ],
+      "machine": "any",
+      "endpoint_type": "chat",
+      "temperature": 0.1,
+      "max_tokens": 300,
+      "timeout_seconds": 75,
+      "purpose": "Fast task classification, persona selection, and routing decisions.",
+      "allow_reasoning_models": false,
+      "max_input_chars": 4000
+    },
+    "memory_extractor": {
+      "model_candidates": [
+        "phi-4-mini",
+        "qwen3-4b",
+        "qwen3-8b"
+      ],
+      "machine": "any",
+      "endpoint_type": "chat",
+      "temperature": 0.1,
+      "max_tokens": 600,
+      "timeout_seconds": 75,
+      "purpose": "Structured memory extraction and question-answer memory generation.",
+      "allow_reasoning_models": false,
+      "max_input_chars": 6000
+    },
+    "instruct_clean": {
+      "model_candidates": [
+        "qwen3-4b",
+        "phi-4-mini",
+        "qwen3-8b"
+      ],
+      "machine": "any",
+      "endpoint_type": "chat",
+      "temperature": 0.2,
+      "max_tokens": 900,
+      "timeout_seconds": 75,
+      "purpose": "Clean instruction following, summarization, formatting, and memory cleanup.",
+      "allow_reasoning_models": false,
+      "max_input_chars": 8000
+    },
+    "chat_general": {
+      "model_candidates": [
+        "qwen3-4b",
+        "qwen3-8b",
+        "gemma-3-4b"
+      ],
+      "machine": "any",
+      "endpoint_type": "chat",
+      "temperature": 0.6,
+      "max_tokens": 1000,
+      "purpose": "Default persona conversation.",
+      "max_input_chars": 8500
+    },
+    "chat_general_desktop": {
+      "model_candidates": [
+        "qwen3-8b",
+        "qwen3-14b",
+        "gemma-3-12b"
+      ],
+      "machine": "desktop",
+      "endpoint_type": "chat",
+      "temperature": 0.6,
+      "max_tokens": 1200,
+      "timeout_seconds": 180,
+      "purpose": "Stronger persona conversation.",
+      "max_input_chars": 8500
+    },
+    "reasoning_strong": {
+      "model_candidates": [
+        "qwen3-14b",
+        "qwen3-8b",
+        "mistral-small",
+        "ministral"
+      ],
+      "machine": "desktop",
+      "endpoint_type": "chat",
+      "temperature": 0.35,
+      "max_tokens": 1800,
+      "timeout_seconds": 180,
+      "purpose": "Architecture, planning, debugging, council mode, and complex synthesis.",
+      "allow_reasoning_models": true,
+      "max_input_chars": 8500
+    },
+    "coding_light": {
+      "model_candidates": [
+        "qwen2.5-coder-3b",
+        "qwen2.5-coder-7b",
+        "qwen3-4b"
+      ],
+      "machine": "any",
+      "endpoint_type": "chat",
+      "temperature": 0.2,
+      "max_tokens": 1000,
+      "timeout_seconds": 75,
+      "purpose": "Small coding help and syntax repair.",
+      "max_input_chars": 8500
+    },
+    "coding_strong": {
+      "model_candidates": [
+        "qwen2.5-coder-14b",
+        "qwen2.5-coder-7b",
+        "qwen3-14b",
+        "qwen3-8b"
+      ],
+      "machine": "desktop",
+      "endpoint_type": "chat",
+      "temperature": 0.2,
+      "max_tokens": 1800,
+      "timeout_seconds": 180,
+      "purpose": "Project coding, debugging, refactoring, and architecture implementation.",
+      "max_input_chars": 8500
+    },
+    "persona_chat": {
+      "model_candidates": [
+        "gemma-3-4b",
+        "phi-4-mini",
+        "qwen3-8b",
+        "qwen3-4b"
+      ],
+      "machine": "any",
+      "endpoint_type": "chat",
+      "temperature": 0.45,
+      "max_tokens": 1400,
+      "timeout_seconds": 90,
+      "allow_reasoning_models": false,
+      "purpose": "Visible persona identity and persona relationship answers. Avoids thinking-only models.",
+      "max_input_chars": 8500
+    },
+    "prompt_interpreter": {
+      "model_candidates": [
+        "qwen3-4b",
+        "phi-4-mini",
+        "qwen3-8b",
+        "gemma-3-4b"
+      ],
+      "machine": "any",
+      "endpoint_type": "chat",
+      "temperature": 0.0,
+      "max_tokens": 550,
+      "timeout_seconds": 75,
+      "purpose": "Strict JSON request interpretation and advisory routing comparison. Does not answer the user or replace the original prompt.",
+      "allow_reasoning_models": false,
+      "extra": {
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "max_input_chars": 4500
+    }
+  }
+}

@@ -1,0 +1,8 @@
+﻿{
+  "routes": {
+    "file_analysis": "file_analyzer",
+    "self_assessment": "self_assessment",
+    "log_summary": "log_summarizer",
+    "document_import": "document_importer"
+  }
+}

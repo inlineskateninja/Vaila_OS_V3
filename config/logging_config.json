@@ -1,0 +1,7 @@
+﻿{
+  "async_logging": true,
+  "log_session_events": true,
+  "log_router_events": true,
+  "log_errors": true,
+  "log_memory_candidates": true
+}

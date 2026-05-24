@@ -1,0 +1,4 @@
+﻿{
+  "default_agent_policy": "inactive_until_explicitly_enabled",
+  "can_modify_files_without_user_approval": false
+}

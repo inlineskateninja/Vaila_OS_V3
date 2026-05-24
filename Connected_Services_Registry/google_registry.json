@@ -1,0 +1,7 @@
+﻿{
+  "service_id": "google",
+  "enabled": false,
+  "auth_required": true,
+  "adapter_status": "planned",
+  "notes": "Google services should remain behind explicit permission and adapter boundaries."
+}

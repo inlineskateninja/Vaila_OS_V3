@@ -1,0 +1,12 @@
+﻿{
+  "scoring_categories": [
+    "general_chat",
+    "technical_project",
+    "file_analysis",
+    "persona_continuity",
+    "latency",
+    "reliability",
+    "empty_response_risk"
+  ],
+  "scores": {}
+}

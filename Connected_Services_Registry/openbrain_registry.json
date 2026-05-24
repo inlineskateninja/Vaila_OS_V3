@@ -1,0 +1,7 @@
+﻿{
+  "service_id": "openbrain",
+  "enabled": false,
+  "auth_required": true,
+  "adapter_status": "planned",
+  "notes": "OpenBrain should be integrated as an optional memory backend after Phase 1 memory candidate logging is stable."
+}

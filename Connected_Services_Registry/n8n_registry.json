@@ -1,0 +1,7 @@
+﻿{
+  "service_id": "n8n",
+  "enabled": false,
+  "auth_required": true,
+  "adapter_status": "planned",
+  "notes": "n8n should be integrated as an optional workflow adapter, not a Phase 1 boot dependency."
+}

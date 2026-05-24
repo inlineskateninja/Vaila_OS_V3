@@ -1,0 +1,50 @@
+{
+  "schema_version": "vaila.tools_registry.v1",
+  "tools": [
+    {
+      "name": "file_analyze",
+      "status": "active",
+      "owner": "system",
+      "path": "app/file_analyzer.py",
+      "read_only": true,
+      "approval_required": false,
+      "description": "Read-only analysis of supported local files without creating memory candidates."
+    },
+    {
+      "name": "document_import",
+      "status": "active",
+      "owner": "system",
+      "path": "app/document_importer.py",
+      "read_only": false,
+      "approval_required": true,
+      "description": "Import supported files into the memory candidate approval queue."
+    },
+    {
+      "name": "memory_search",
+      "status": "active",
+      "owner": "system",
+      "path": "app/memory_store.py",
+      "read_only": true,
+      "approval_required": false,
+      "description": "Search approved local memory records with recency-aware scoring."
+    },
+    {
+      "name": "n8n",
+      "status": "planned",
+      "owner": "external_service",
+      "path": "vaila_system_os/core_system_files/system_tools/n8n",
+      "read_only": false,
+      "approval_required": true,
+      "description": "Workflow automation service. External actions should remain gated by approval policy."
+    },
+    {
+      "name": "openbrain",
+      "status": "planned",
+      "owner": "external_service",
+      "path": "vaila_system_os/core_system_files/system_tools/openbrain",
+      "read_only": false,
+      "approval_required": true,
+      "description": "External memory management candidate for semantic recall and graph-structured memory experiments."
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+﻿from __future__ import annotations
+
+import re
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any
+
+from System_Services.envelope_service import PromptEnvelope
+from System_Services.llm_gateway import LLMGateway
+from System_Services.logging_service import LoggingService
+from System_Services.memory_service import MemoryService
+from System_Services.prompt_interpreter import PromptInterpreter
+from System_Tools.file_analyzer import FileAnalyzer
+from System_Tools.log_summarizer import LogSummarizer
+from System_Tools.self_assessment import SelfAssessmentTool
+
+
+@dataclass
+class OrchestrationResponse:
+    visible_text: str
+    meta: dict[str, Any] = field(default_factory=dict)
+
+
+class OrchestrationService:
+    PERSONA_CONTEXT_MAX_CHARS = 2200
+    TOOL_CONTEXT_MAX_CHARS = 3000
+
+    def __init__(self, project_root: Path, logger: LoggingService) -> None:
+        self.project_root = project_root
+        self.logger = logger
+        self.llm = LLMGateway(project_root=project_root)
+        self.memory = MemoryService(project_root=project_root, logger=logger)
+        self.prompt_interpreter = PromptInterpreter(project_root=project_root)
+        self.file_analyzer = FileAnalyzer(project_root=project_root)
+        self.log_summarizer = LogSummarizer(project_root=project_root)
+        self.self_assessment = SelfAssessmentTool(project_root=project_root)
+
+    def handle(self, envelope: PromptEnvelope, route: dict[str, Any]) -> OrchestrationResponse:
+        tool_context = ""
+        llm_error = ""
+
+        if route.get("needs_prompt_interpreter"):
+            interpreted = self.prompt_interpreter.interpret(envelope=envelope, route=route)
+            route["prompt_interpreter"] = interpreted
+
+        task_type = route.get("task_type")
+
+        if task_type == "file_analysis":
+            file_path = self._extract_windows_path(envelope.user_text)
+            if file_path:
+                analysis = self.file_analyzer.analyze_file(file_path)
+                tool_context = f"File analysis result:\n{analysis}"
+            else:
+                tool_context = "No file path detected. Ask the user for a file path only if needed."
+
+        elif task_type == "log_summary":
+            tool_context = self.log_summarizer.summarize_recent_logs()
+
+        elif task_type == "self_assessment":
+            tool_context = self.self_assessment.run_self_assessment()
+
+        persona_context = self._load_persona_context(route.get("persona", "proto_jane"))
+
+        messages = [
+            {
+                "role": "system",
+                "content": self._build_system_prompt(persona_context=persona_context, route=route),
+            },
+            {
+                "role": "user",
+                "content": self._build_user_content(envelope=envelope, tool_context=tool_context),
+            },
+        ]
+
+        try:
+            llm_text = self.llm.chat(messages=messages)
+            visible_text = llm_text.strip() if llm_text.strip() else self._fallback_response(route, tool_context)
+        except Exception as exc:
+            llm_error = str(exc)
+            self.logger.log_error(
+                {
+                    "event_type": "llm_gateway_error",
+                    "request_id": envelope.request_id,
+                    "error": llm_error,
+                    "gateway": self.llm.diagnostics(),
+                }
+            )
+            visible_text = self._fallback_response(route, tool_context, llm_error)
+
+        self.memory.capture_memory_candidate(envelope=envelope, route=route)
+
+        return OrchestrationResponse(
+            visible_text=visible_text,
+            meta={
+                "request_id": envelope.request_id,
+                "route": route,
+                "used_tool_context": bool(tool_context),
+                "llm": {
+                    "base_url": self.llm.base_url,
+                    "model": self.llm._resolved_model or self.llm.model or "(auto)",
+                    "error": llm_error,
+                },
+            },
+        )
+
+    def _build_system_prompt(self, persona_context: str, route: dict[str, Any]) -> str:
+        return f"""
+You are Vaila OS V3, a local assistant system for Malik.
+
+Current route:
+{route}
+
+Persona context:
+{persona_context}
+
+Response rules:
+- Be clear, direct, and useful.
+- Preserve the selected persona's lens when a persona is selected.
+- Do not pretend to have modified files unless a tool actually did so.
+- Proposed self-modifications must be exported to Sandbox, not applied directly.
+- Keep Phase 1 focused on stable routing, services, tools, logging, and memory candidates.
+""".strip()
+
+    def _build_user_content(self, envelope: PromptEnvelope, tool_context: str) -> str:
+        if not tool_context:
+            return envelope.user_text
+
+        tool_context = self._clip_text(tool_context, self.TOOL_CONTEXT_MAX_CHARS)
+        return f"""
+User prompt:
+{envelope.user_text}
+
+Tool context:
+{tool_context}
+""".strip()
+
+    def _load_persona_context(self, persona: str) -> str:
+        folder_map = {
+            "proto_jane": "Proto_Jane",
+            "serren": "Serren",
+            "maelith": "Maelith",
+            "vecht": "Vecht",
+            "riven": "Riven",
+        }
+
+        folder_name = folder_map.get(persona, "Proto_Jane")
+        persona_dir = self.project_root / "Persona_Files" / folder_name
+
+        if not persona_dir.exists():
+            return f"No persona folder found for {persona}. Use default Vaila voice."
+
+        priority_files = [
+            "persona_primer.md",
+            "identity.md",
+            "function.md",
+            "behavior_rules.md",
+            "response_patterns.md",
+        ]
+        paths = [persona_dir / name for name in priority_files if (persona_dir / name).exists()]
+        paths.extend(path for path in sorted(persona_dir.glob("*.md")) if path not in paths)
+
+        chunks: list[str] = []
+        remaining = self.PERSONA_CONTEXT_MAX_CHARS
+        for path in paths:
+            if remaining <= 0:
+                break
+
+            try:
+                text = path.read_text(encoding="utf-8", errors="replace")
+                chunk = f"# {path.name}\n{self._clip_text(text, remaining)}"
+                chunks.append(chunk)
+                remaining -= len(chunk)
+            except Exception:
+                continue
+
+        if not chunks:
+            return f"Persona folder exists for {persona}, but no markdown context files were loaded."
+
+        return "\n\n".join(chunks)
+
+    def _clip_text(self, text: str, max_chars: int) -> str:
+        if len(text) <= max_chars:
+            return text
+        return text[:max_chars].rstrip() + "\n[Context clipped for local model window.]"
+
+    def _extract_windows_path(self, text: str) -> str | None:
+        match = re.search(r"[A-Za-z]:\\[^\n\r\"']+", text)
+        if match:
+            return match.group(0).strip()
+        return None
+
+    def _fallback_response(self, route: dict[str, Any], tool_context: str, llm_error: str = "") -> str:
+        task_type = route.get("task_type", "general_chat")
+        persona = route.get("persona", "proto_jane")
+        error_text = f"\n\nGateway detail:\n{llm_error}" if llm_error else ""
+
+        if tool_context:
+            return (
+                f"[Fallback response]\n"
+                f"Persona: {persona}\n"
+                f"Task: {task_type}\n\n"
+                f"The tool layer returned context, but the LLM response failed."
+                f"{error_text}\n\n"
+                f"{tool_context[:4000]}"
+            )
+
+        return (
+            f"[Fallback response]\n"
+            f"Persona: {persona}\n"
+            f"Task: {task_type}\n\n"
+            f"The core routing path is alive, but the LLM gateway did not return a usable response."
+            f"{error_text}"
+        )

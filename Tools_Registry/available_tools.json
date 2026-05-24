@@ -1,0 +1,29 @@
+﻿{
+  "tools": [
+    {
+      "tool_id": "file_analyzer",
+      "module": "System_Tools.file_analyzer",
+      "enabled": true
+    },
+    {
+      "tool_id": "document_importer",
+      "module": "System_Tools.document_importer",
+      "enabled": true
+    },
+    {
+      "tool_id": "log_summarizer",
+      "module": "System_Tools.log_summarizer",
+      "enabled": true
+    },
+    {
+      "tool_id": "self_assessment",
+      "module": "System_Tools.self_assessment",
+      "enabled": true
+    },
+    {
+      "tool_id": "patch_exporter",
+      "module": "System_Tools.patch_exporter",
+      "enabled": true
+    }
+  ]
+}

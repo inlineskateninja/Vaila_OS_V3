@@ -1,0 +1,7 @@
+﻿{
+  "source_of_truth": {
+    "enabled": false,
+    "path": "",
+    "notes": "Set this to the Home Jane memory location later. Do not commit real memory files to GitHub."
+  }
+}
