@@ -1,6 +1,7 @@
 ﻿from __future__ import annotations
 
 import re
+from copy import deepcopy
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -38,10 +39,7 @@ class OrchestrationService:
     def handle(self, envelope: PromptEnvelope, route: dict[str, Any]) -> OrchestrationResponse:
         tool_context = ""
         llm_error = ""
-
-        if route.get("needs_prompt_interpreter"):
-            interpreted = self.prompt_interpreter.interpret(envelope=envelope, route=route)
-            route["prompt_interpreter"] = interpreted
+        audit_queued = False
 
         task_type = route.get("task_type")
 
@@ -73,7 +71,7 @@ class OrchestrationService:
         ]
 
         try:
-            llm_text = self.llm.chat(messages=messages)
+            llm_text = self.llm.execute_with_fallback(messages=messages)
             visible_text = llm_text.strip() if llm_text.strip() else self._fallback_response(route, tool_context)
         except Exception as exc:
             llm_error = str(exc)
@@ -87,7 +85,11 @@ class OrchestrationService:
             )
             visible_text = self._fallback_response(route, tool_context, llm_error)
 
-        self.memory.capture_memory_candidate(envelope=envelope, route=route)
+        if route.get("needs_prompt_interpreter"):
+            audit_queued = True
+            self.logger.run_background(self._audit_prompt_interpretation, envelope, deepcopy(route))
+
+        self.logger.run_background(self.memory.capture_memory_candidate, envelope, deepcopy(route))
 
         return OrchestrationResponse(
             visible_text=visible_text,
@@ -95,12 +97,25 @@ class OrchestrationService:
                 "request_id": envelope.request_id,
                 "route": route,
                 "used_tool_context": bool(tool_context),
+                "prompt_interpreter": "background_audit_queued" if audit_queued else "not_needed",
+                "memory_candidate_capture": "background_queued",
                 "llm": {
                     "base_url": self.llm.base_url,
                     "model": self.llm._resolved_model or self.llm.model or "(auto)",
                     "error": llm_error,
                 },
             },
+        )
+
+    def _audit_prompt_interpretation(self, envelope: PromptEnvelope, route: dict[str, Any]) -> None:
+        interpreted = self.prompt_interpreter.interpret(envelope=envelope, route=route)
+        self.logger.log_router_event(
+            {
+                "event_type": "prompt_interpreter_audit",
+                "request_id": envelope.request_id,
+                "route": route,
+                "prompt_interpreter": interpreted,
+            }
         )
 
     def _build_system_prompt(self, persona_context: str, route: dict[str, Any]) -> str:
@@ -123,14 +138,17 @@ Response rules:
 
     def _build_user_content(self, envelope: PromptEnvelope, tool_context: str) -> str:
         if not tool_context:
-            return envelope.user_text
+            return f"""
+[User Request]
+{envelope.user_text}
+""".strip()
 
         tool_context = self._clip_text(tool_context, self.TOOL_CONTEXT_MAX_CHARS)
         return f"""
-User prompt:
+[User Request]
 {envelope.user_text}
 
-Tool context:
+[Evidence Block]
 {tool_context}
 """.strip()
 

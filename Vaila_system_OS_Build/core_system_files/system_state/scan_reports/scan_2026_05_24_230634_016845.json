@@ -1,0 +1,2276 @@
+{
+  "ok": true,
+  "scanned_at": "2026-05-24T23:06:34Z",
+  "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
+  "config": {
+    "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
+    "allowed_roots": [
+      "vaila_system_os",
+      "personas",
+      "memory",
+      "config",
+      "tests",
+      "core_system_files",
+      "persona_files",
+      "system_wide_memory"
+    ],
+    "ignored_folders": [
+      ".git",
+      ".venv",
+      "__pycache__",
+      "audio_cache",
+      "model_files",
+      "models",
+      "node_modules",
+      "old",
+      "temp",
+      "tts_cache",
+      "venv"
+    ],
+    "ignored_extensions": [
+      ".bin",
+      ".gguf",
+      ".mp3",
+      ".onnx",
+      ".pt",
+      ".pyc",
+      ".pyo",
+      ".safetensors",
+      ".wav",
+      ".zip"
+    ],
+    "max_file_size_bytes": 512000,
+    "max_scan_depth": 8,
+    "read_small_python_files": true
+  },
+  "files": [
+    {
+      "path": "core_system_files/__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified_time": "2026-05-23T20:39:30Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 0
+      }
+    },
+    {
+      "path": "core_system_files/agent_registry/agents.json",
+      "name": "agents.json",
+      "extension": ".json",
+      "size_bytes": 935,
+      "modified_time": "2026-05-22T23:57:13Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/app.py",
+      "name": "app.py",
+      "extension": ".py",
+      "size_bytes": 424,
+      "modified_time": "2026-05-24T22:44:37Z",
+      "category": "core_entrypoint",
+      "metadata": {
+        "category_reason": "core_entrypoint",
+        "has_deprecated_import": false,
+        "line_count": 21
+      }
+    },
+    {
+      "path": "core_system_files/connected_services_registry/services.json",
+      "name": "services.json",
+      "extension": ".json",
+      "size_bytes": 1680,
+      "modified_time": "2026-05-22T23:56:54Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_dogma/agents.txt",
+      "name": "agents.txt",
+      "extension": ".txt",
+      "size_bytes": 1889,
+      "modified_time": "2026-05-24T23:02:40Z",
+      "category": "documentation",
+      "metadata": {
+        "category_reason": "documentation"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified_time": "2026-05-23T20:39:30Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 0
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified_time": "2026-05-23T20:39:30Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 0
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified_time": "2026-05-23T20:39:30Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 0
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/activity_log.py",
+      "name": "activity_log.py",
+      "extension": ".py",
+      "size_bytes": 3563,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 103
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/api_client.py",
+      "name": "api_client.py",
+      "extension": ".py",
+      "size_bytes": 6311,
+      "modified_time": "2026-05-23T23:04:30Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 185
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/candidate_store.py",
+      "name": "candidate_store.py",
+      "extension": ".py",
+      "size_bytes": 4422,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 107
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/chat_memory_extractor.py",
+      "name": "chat_memory_extractor.py",
+      "extension": ".py",
+      "size_bytes": 6160,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 173
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/context_loader.py",
+      "name": "context_loader.py",
+      "extension": ".py",
+      "size_bytes": 6889,
+      "modified_time": "2026-05-23T20:16:21Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 129
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/context_packet_builder.py",
+      "name": "context_packet_builder.py",
+      "extension": ".py",
+      "size_bytes": 12312,
+      "modified_time": "2026-05-23T23:17:10Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 267
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/context_tools.py",
+      "name": "context_tools.py",
+      "extension": ".py",
+      "size_bytes": 7604,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 222
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/core.py",
+      "name": "core.py",
+      "extension": ".py",
+      "size_bytes": 43173,
+      "modified_time": "2026-05-24T22:54:14Z",
+      "category": "service",
+      "metadata": {
+        "category_reason": "service",
+        "has_deprecated_import": false,
+        "line_count": 863
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/desktop_client.py",
+      "name": "desktop_client.py",
+      "extension": ".py",
+      "size_bytes": 40406,
+      "modified_time": "2026-05-23T23:04:52Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 904
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/document_importer.py",
+      "name": "document_importer.py",
+      "extension": ".py",
+      "size_bytes": 12194,
+      "modified_time": "2026-05-23T20:16:06Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 333
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/file_analyzer.py",
+      "name": "file_analyzer.py",
+      "extension": ".py",
+      "size_bytes": 8150,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 209
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/llm_client.py",
+      "name": "llm_client.py",
+      "extension": ".py",
+      "size_bytes": 3170,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "service",
+      "metadata": {
+        "category_reason": "service",
+        "has_deprecated_import": false,
+        "line_count": 97
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/local_responses.py",
+      "name": "local_responses.py",
+      "extension": ".py",
+      "size_bytes": 9055,
+      "modified_time": "2026-05-22T23:58:15Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 182
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/main.py",
+      "name": "main.py",
+      "extension": ".py",
+      "size_bytes": 18950,
+      "modified_time": "2026-05-22T01:15:30Z",
+      "category": "core_entrypoint",
+      "metadata": {
+        "category_reason": "core_entrypoint",
+        "has_deprecated_import": false,
+        "line_count": 492
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory_commands.py",
+      "name": "memory_commands.py",
+      "extension": ".py",
+      "size_bytes": 6841,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 176
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory_store.py",
+      "name": "memory_store.py",
+      "extension": ".py",
+      "size_bytes": 5613,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 179
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory_taxonomy.py",
+      "name": "memory_taxonomy.py",
+      "extension": ".py",
+      "size_bytes": 2222,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 60
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/model_evaluator.py",
+      "name": "model_evaluator.py",
+      "extension": ".py",
+      "size_bytes": 3351,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 90
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/model_registry.py",
+      "name": "model_registry.py",
+      "extension": ".py",
+      "size_bytes": 6892,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 202
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/orchestration.py",
+      "name": "orchestration.py",
+      "extension": ".py",
+      "size_bytes": 4582,
+      "modified_time": "2026-05-23T22:07:08Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 107
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/paths.py",
+      "name": "paths.py",
+      "extension": ".py",
+      "size_bytes": 2586,
+      "modified_time": "2026-05-23T20:39:59Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 65
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/persona_continuity.py",
+      "name": "persona_continuity.py",
+      "extension": ".py",
+      "size_bytes": 2232,
+      "modified_time": "2026-05-23T08:38:40Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 58
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/persona_library.py",
+      "name": "persona_library.py",
+      "extension": ".py",
+      "size_bytes": 6936,
+      "modified_time": "2026-05-23T20:16:37Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 166
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/persona_selection.py",
+      "name": "persona_selection.py",
+      "extension": ".py",
+      "size_bytes": 1787,
+      "modified_time": "2026-05-23T23:16:15Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 45
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/project_reviewer.py",
+      "name": "project_reviewer.py",
+      "extension": ".py",
+      "size_bytes": 5755,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 116
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/prompt_budget.py",
+      "name": "prompt_budget.py",
+      "extension": ".py",
+      "size_bytes": 2430,
+      "modified_time": "2026-05-23T08:46:55Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 74
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/prompt_interpreter.py",
+      "name": "prompt_interpreter.py",
+      "extension": ".py",
+      "size_bytes": 19900,
+      "modified_time": "2026-05-23T23:04:15Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 448
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/request_envelope.py",
+      "name": "request_envelope.py",
+      "extension": ".py",
+      "size_bytes": 1286,
+      "modified_time": "2026-05-23T20:11:45Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 41
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/response_routing.py",
+      "name": "response_routing.py",
+      "extension": ".py",
+      "size_bytes": 7722,
+      "modified_time": "2026-05-23T20:10:37Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 216
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/router.py",
+      "name": "router.py",
+      "extension": ".py",
+      "size_bytes": 25141,
+      "modified_time": "2026-05-24T23:05:14Z",
+      "category": "router",
+      "metadata": {
+        "category_reason": "router",
+        "has_deprecated_import": false,
+        "line_count": 622
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/routers/__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified_time": "2026-05-24T22:24:51Z",
+      "category": "router",
+      "metadata": {
+        "category_reason": "router",
+        "has_deprecated_import": false,
+        "line_count": 0
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/routers/system_perception_router.py",
+      "name": "system_perception_router.py",
+      "extension": ".py",
+      "size_bytes": 2004,
+      "modified_time": "2026-05-24T23:04:44Z",
+      "category": "router",
+      "metadata": {
+        "category_reason": "router",
+        "has_deprecated_import": false,
+        "line_count": 76
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/run_desktop_client.py",
+      "name": "run_desktop_client.py",
+      "extension": ".py",
+      "size_bytes": 76,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 5
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/run_service.py",
+      "name": "run_service.py",
+      "extension": ".py",
+      "size_bytes": 121,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "core_entrypoint",
+      "metadata": {
+        "category_reason": "core_entrypoint",
+        "has_deprecated_import": false,
+        "line_count": 5
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/schemas.py",
+      "name": "schemas.py",
+      "extension": ".py",
+      "size_bytes": 9263,
+      "modified_time": "2026-05-23T21:34:15Z",
+      "category": "model_schema",
+      "metadata": {
+        "category_reason": "model_schema",
+        "has_deprecated_import": false,
+        "line_count": 282
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/service.py",
+      "name": "service.py",
+      "extension": ".py",
+      "size_bytes": 7622,
+      "modified_time": "2026-05-24T22:27:23Z",
+      "category": "core_entrypoint",
+      "metadata": {
+        "category_reason": "core_entrypoint",
+        "has_deprecated_import": false,
+        "line_count": 240
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/service_integrations.py",
+      "name": "service_integrations.py",
+      "extension": ".py",
+      "size_bytes": 5738,
+      "modified_time": "2026-05-23T20:40:12Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 161
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified_time": "2026-05-24T22:24:51Z",
+      "category": "service",
+      "metadata": {
+        "category_reason": "service",
+        "has_deprecated_import": false,
+        "line_count": 0
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/system_change_service.py",
+      "name": "system_change_service.py",
+      "extension": ".py",
+      "size_bytes": 9413,
+      "modified_time": "2026-05-24T23:04:22Z",
+      "category": "service",
+      "metadata": {
+        "category_reason": "service",
+        "has_deprecated_import": false,
+        "line_count": 208
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/system_health_service.py",
+      "name": "system_health_service.py",
+      "extension": ".py",
+      "size_bytes": 8582,
+      "modified_time": "2026-05-24T23:04:36Z",
+      "category": "service",
+      "metadata": {
+        "category_reason": "service",
+        "has_deprecated_import": false,
+        "line_count": 200
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/system_introspection_service.py",
+      "name": "system_introspection_service.py",
+      "extension": ".py",
+      "size_bytes": 9581,
+      "modified_time": "2026-05-24T22:29:36Z",
+      "category": "service",
+      "metadata": {
+        "category_reason": "service",
+        "has_deprecated_import": false,
+        "line_count": 265
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/system_manifest_service.py",
+      "name": "system_manifest_service.py",
+      "extension": ".py",
+      "size_bytes": 6525,
+      "modified_time": "2026-05-24T22:26:29Z",
+      "category": "service",
+      "metadata": {
+        "category_reason": "service",
+        "has_deprecated_import": false,
+        "line_count": 171
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/system_self_query_service.py",
+      "name": "system_self_query_service.py",
+      "extension": ".py",
+      "size_bytes": 7134,
+      "modified_time": "2026-05-24T23:05:07Z",
+      "category": "service",
+      "metadata": {
+        "category_reason": "service",
+        "has_deprecated_import": false,
+        "line_count": 151
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/task_planner.py",
+      "name": "task_planner.py",
+      "extension": ".py",
+      "size_bytes": 11906,
+      "modified_time": "2026-05-23T21:35:50Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 292
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/time_context.py",
+      "name": "time_context.py",
+      "extension": ".py",
+      "size_bytes": 6250,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 160
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/tool_synthesis.py",
+      "name": "tool_synthesis.py",
+      "extension": ".py",
+      "size_bytes": 14429,
+      "modified_time": "2026-05-23T23:18:10Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 334
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/tooling.py",
+      "name": "tooling.py",
+      "extension": ".py",
+      "size_bytes": 7468,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "script",
+      "metadata": {
+        "category_reason": "script",
+        "has_deprecated_import": false,
+        "line_count": 225
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/test_system_change_service.py",
+      "name": "test_system_change_service.py",
+      "extension": ".py",
+      "size_bytes": 4559,
+      "modified_time": "2026-05-24T23:05:42Z",
+      "category": "service",
+      "metadata": {
+        "category_reason": "service",
+        "has_deprecated_import": false,
+        "line_count": 117
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/test_system_perception.py",
+      "name": "test_system_perception.py",
+      "extension": ".py",
+      "size_bytes": 6183,
+      "modified_time": "2026-05-24T23:05:50Z",
+      "category": "test_file",
+      "metadata": {
+        "category_reason": "test_file",
+        "has_deprecated_import": false,
+        "line_count": 147
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/test_system_self_query_integration.py",
+      "name": "test_system_self_query_integration.py",
+      "extension": ".py",
+      "size_bytes": 5315,
+      "modified_time": "2026-05-24T23:05:58Z",
+      "category": "test_file",
+      "metadata": {
+        "category_reason": "test_file",
+        "has_deprecated_import": false,
+        "line_count": 135
+      }
+    },
+    {
+      "path": "core_system_files/system_services/runtime_services/model_profiles.json",
+      "name": "model_profiles.json",
+      "extension": ".json",
+      "size_bytes": 4319,
+      "modified_time": "2026-05-22T01:26:25Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_230618_015436.json",
+      "name": "change_2026_05_24_230618_015436.json",
+      "extension": ".json",
+      "size_bytes": 3234,
+      "modified_time": "2026-05-24T23:06:18Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_230618_313126.json",
+      "name": "change_2026_05_24_230618_313126.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-24T23:06:18Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_230618_500782.json",
+      "name": "change_2026_05_24_230618_500782.json",
+      "extension": ".json",
+      "size_bytes": 2192,
+      "modified_time": "2026-05-24T23:06:18Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_230632_472799.json",
+      "name": "change_2026_05_24_230632_472799.json",
+      "extension": ".json",
+      "size_bytes": 2119,
+      "modified_time": "2026-05-24T23:06:32Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_230632_663864.json",
+      "name": "change_2026_05_24_230632_663864.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-24T23:06:32Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_230633_532898.json",
+      "name": "change_2026_05_24_230633_532898.json",
+      "extension": ".json",
+      "size_bytes": 2119,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_230633_838200.json",
+      "name": "change_2026_05_24_230633_838200.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_222808.json",
+      "name": "scan_2026_05_24_222808.json",
+      "extension": ".json",
+      "size_bytes": 57381,
+      "modified_time": "2026-05-24T22:28:08Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_222832.json",
+      "name": "scan_2026_05_24_222832.json",
+      "extension": ".json",
+      "size_bytes": 59441,
+      "modified_time": "2026-05-24T22:28:32Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_222847.json",
+      "name": "scan_2026_05_24_222847.json",
+      "extension": ".json",
+      "size_bytes": 59796,
+      "modified_time": "2026-05-24T22:28:47Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_222930.json",
+      "name": "scan_2026_05_24_222930.json",
+      "extension": ".json",
+      "size_bytes": 60151,
+      "modified_time": "2026-05-24T22:29:30Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_223030_304989.json",
+      "name": "scan_2026_05_24_223030_304989.json",
+      "extension": ".json",
+      "size_bytes": 61197,
+      "modified_time": "2026-05-24T22:30:30Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_223042_244871.json",
+      "name": "scan_2026_05_24_223042_244871.json",
+      "extension": ".json",
+      "size_bytes": 61565,
+      "modified_time": "2026-05-24T22:30:42Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_224448_227322.json",
+      "name": "scan_2026_05_24_224448_227322.json",
+      "extension": ".json",
+      "size_bytes": 61723,
+      "modified_time": "2026-05-24T22:44:48Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_224449_338501.json",
+      "name": "scan_2026_05_24_224449_338501.json",
+      "extension": ".json",
+      "size_bytes": 62090,
+      "modified_time": "2026-05-24T22:44:49Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_224501_751568.json",
+      "name": "scan_2026_05_24_224501_751568.json",
+      "extension": ".json",
+      "size_bytes": 62458,
+      "modified_time": "2026-05-24T22:45:01Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_225528_293305.json",
+      "name": "scan_2026_05_24_225528_293305.json",
+      "extension": ".json",
+      "size_bytes": 64419,
+      "modified_time": "2026-05-24T22:55:28Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_225536_404070.json",
+      "name": "scan_2026_05_24_225536_404070.json",
+      "extension": ".json",
+      "size_bytes": 64787,
+      "modified_time": "2026-05-24T22:55:36Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_225547_803079.json",
+      "name": "scan_2026_05_24_225547_803079.json",
+      "extension": ".json",
+      "size_bytes": 65155,
+      "modified_time": "2026-05-24T22:55:47Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_225608_564841.json",
+      "name": "scan_2026_05_24_225608_564841.json",
+      "extension": ".json",
+      "size_bytes": 65523,
+      "modified_time": "2026-05-24T22:56:08Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_225622_569668.json",
+      "name": "scan_2026_05_24_225622_569668.json",
+      "extension": ".json",
+      "size_bytes": 65891,
+      "modified_time": "2026-05-24T22:56:22Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_230618_002919.json",
+      "name": "scan_2026_05_24_230618_002919.json",
+      "extension": ".json",
+      "size_bytes": 67495,
+      "modified_time": "2026-05-24T23:06:18Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_230618_302969.json",
+      "name": "scan_2026_05_24_230618_302969.json",
+      "extension": ".json",
+      "size_bytes": 68917,
+      "modified_time": "2026-05-24T23:06:18Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_230618_490394.json",
+      "name": "scan_2026_05_24_230618_490394.json",
+      "extension": ".json",
+      "size_bytes": 69656,
+      "modified_time": "2026-05-24T23:06:18Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_230632_462309.json",
+      "name": "scan_2026_05_24_230632_462309.json",
+      "extension": ".json",
+      "size_bytes": 70395,
+      "modified_time": "2026-05-24T23:06:32Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_230632_653227.json",
+      "name": "scan_2026_05_24_230632_653227.json",
+      "extension": ".json",
+      "size_bytes": 71134,
+      "modified_time": "2026-05-24T23:06:32Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_230633_521834.json",
+      "name": "scan_2026_05_24_230633_521834.json",
+      "extension": ".json",
+      "size_bytes": 71873,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_230633_827266.json",
+      "name": "scan_2026_05_24_230633_827266.json",
+      "extension": ".json",
+      "size_bytes": 72612,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/self_model/architecture_snapshot.json",
+      "name": "architecture_snapshot.json",
+      "extension": ".json",
+      "size_bytes": 1681,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/self_model/capability_map.json",
+      "name": "capability_map.json",
+      "extension": ".json",
+      "size_bytes": 346,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/self_model/change_report.json",
+      "name": "change_report.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/self_model/file_inventory.json",
+      "name": "file_inventory.json",
+      "extension": ".json",
+      "size_bytes": 72731,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/self_model/last_change_summary.md",
+      "name": "last_change_summary.md",
+      "extension": ".md",
+      "size_bytes": 139,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "documentation",
+      "metadata": {
+        "category_reason": "documentation"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/self_model/last_scan_summary.md",
+      "name": "last_scan_summary.md",
+      "extension": ".md",
+      "size_bytes": 785,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "documentation",
+      "metadata": {
+        "category_reason": "documentation"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/self_model/unresolved_issues.json",
+      "name": "unresolved_issues.json",
+      "extension": ".json",
+      "size_bytes": 20,
+      "modified_time": "2026-05-24T23:06:33Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_tools/n8n/README.md",
+      "name": "README.md",
+      "extension": ".md",
+      "size_bytes": 700,
+      "modified_time": "2026-05-22T23:57:19Z",
+      "category": "documentation",
+      "metadata": {
+        "category_reason": "documentation"
+      }
+    },
+    {
+      "path": "core_system_files/system_tools/openbrain/README.md",
+      "name": "README.md",
+      "extension": ".md",
+      "size_bytes": 693,
+      "modified_time": "2026-05-22T23:57:24Z",
+      "category": "documentation",
+      "metadata": {
+        "category_reason": "documentation"
+      }
+    },
+    {
+      "path": "core_system_files/tools_registry/tools.json",
+      "name": "tools.json",
+      "extension": ".json",
+      "size_bytes": 1614,
+      "modified_time": "2026-05-22T23:57:06Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "persona_files/maelith/boundaries.md",
+      "name": "boundaries.md",
+      "extension": ".md",
+      "size_bytes": 3607,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/maelith/manifest.yaml",
+      "name": "manifest.yaml",
+      "extension": ".yaml",
+      "size_bytes": 2747,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "config_file",
+      "metadata": {
+        "category_reason": "config_file"
+      }
+    },
+    {
+      "path": "persona_files/maelith/memory_policy.yaml",
+      "name": "memory_policy.yaml",
+      "extension": ".yaml",
+      "size_bytes": 5915,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file"
+      }
+    },
+    {
+      "path": "persona_files/maelith/routing_policy.yaml",
+      "name": "routing_policy.yaml",
+      "extension": ".yaml",
+      "size_bytes": 5160,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "config_file",
+      "metadata": {
+        "category_reason": "config_file"
+      }
+    },
+    {
+      "path": "persona_files/maelith/tests.md",
+      "name": "tests.md",
+      "extension": ".md",
+      "size_bytes": 8050,
+      "modified_time": "2026-05-23T20:18:34Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/maelith/voice_style.md",
+      "name": "voice_style.md",
+      "extension": ".md",
+      "size_bytes": 3301,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/behavior_rules.md",
+      "name": "behavior_rules.md",
+      "extension": ".md",
+      "size_bytes": 6088,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/boundaries.md",
+      "name": "boundaries.md",
+      "extension": ".md",
+      "size_bytes": 3750,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/context_notes.md",
+      "name": "context_notes.md",
+      "extension": ".md",
+      "size_bytes": 3129,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/examples.md",
+      "name": "examples.md",
+      "extension": ".md",
+      "size_bytes": 4536,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/failure_modes.md",
+      "name": "failure_modes.md",
+      "extension": ".md",
+      "size_bytes": 5183,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/function.md",
+      "name": "function.md",
+      "extension": ".md",
+      "size_bytes": 3876,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/identity.md",
+      "name": "identity.md",
+      "extension": ".md",
+      "size_bytes": 7318,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/manifest.json",
+      "name": "manifest.json",
+      "extension": ".json",
+      "size_bytes": 1735,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_manifest",
+      "metadata": {
+        "category_reason": "persona_manifest"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/memory_rules.md",
+      "name": "memory_rules.md",
+      "extension": ".md",
+      "size_bytes": 4056,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/persona_card.md",
+      "name": "persona_card.md",
+      "extension": ".md",
+      "size_bytes": 961,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/persona_primer.md",
+      "name": "persona_primer.md",
+      "extension": ".md",
+      "size_bytes": 2008,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/priorities.md",
+      "name": "priorities.md",
+      "extension": ".md",
+      "size_bytes": 3133,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/project_role.md",
+      "name": "project_role.md",
+      "extension": ".md",
+      "size_bytes": 3261,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/relationships.md",
+      "name": "relationships.md",
+      "extension": ".md",
+      "size_bytes": 3660,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/response_patterns.md",
+      "name": "response_patterns.md",
+      "extension": ".md",
+      "size_bytes": 3189,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/tests.md",
+      "name": "tests.md",
+      "extension": ".md",
+      "size_bytes": 6423,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/proto_jane/voice_style.md",
+      "name": "voice_style.md",
+      "extension": ".md",
+      "size_bytes": 3723,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/behavior_rules.md",
+      "name": "behavior_rules.md",
+      "extension": ".md",
+      "size_bytes": 5593,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/boundaries.md",
+      "name": "boundaries.md",
+      "extension": ".md",
+      "size_bytes": 3465,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/examples.md",
+      "name": "examples.md",
+      "extension": ".md",
+      "size_bytes": 5113,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/failure_modes.md",
+      "name": "failure_modes.md",
+      "extension": ".md",
+      "size_bytes": 4674,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/function.md",
+      "name": "function.md",
+      "extension": ".md",
+      "size_bytes": 2720,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/identity.md",
+      "name": "identity.md",
+      "extension": ".md",
+      "size_bytes": 4022,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/memory_rules.md",
+      "name": "memory_rules.md",
+      "extension": ".md",
+      "size_bytes": 3134,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/priorities.md",
+      "name": "priorities.md",
+      "extension": ".md",
+      "size_bytes": 2297,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/relationships.md",
+      "name": "relationships.md",
+      "extension": ".md",
+      "size_bytes": 3472,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/response_patterns.md",
+      "name": "response_patterns.md",
+      "extension": ".md",
+      "size_bytes": 3522,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/tests.md",
+      "name": "tests.md",
+      "extension": ".md",
+      "size_bytes": 5696,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/riven/voice_style.md",
+      "name": "voice_style.md",
+      "extension": ".md",
+      "size_bytes": 4383,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/serren/boundaries.md",
+      "name": "boundaries.md",
+      "extension": ".md",
+      "size_bytes": 3630,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/serren/manifest.yaml",
+      "name": "manifest.yaml",
+      "extension": ".yaml",
+      "size_bytes": 2670,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "config_file",
+      "metadata": {
+        "category_reason": "config_file"
+      }
+    },
+    {
+      "path": "persona_files/serren/memory_policy.yaml",
+      "name": "memory_policy.yaml",
+      "extension": ".yaml",
+      "size_bytes": 5702,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file"
+      }
+    },
+    {
+      "path": "persona_files/serren/routing_policy.yaml",
+      "name": "routing_policy.yaml",
+      "extension": ".yaml",
+      "size_bytes": 4562,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "config_file",
+      "metadata": {
+        "category_reason": "config_file"
+      }
+    },
+    {
+      "path": "persona_files/serren/tests.md",
+      "name": "tests.md",
+      "extension": ".md",
+      "size_bytes": 5552,
+      "modified_time": "2026-05-23T20:18:31Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/serren/voice_style.md",
+      "name": "voice_style.md",
+      "extension": ".md",
+      "size_bytes": 2847,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/serren_persona_core_combined_v0_2.md",
+      "name": "serren_persona_core_combined_v0_2.md",
+      "extension": ".md",
+      "size_bytes": 1293,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/behavior_rules.md",
+      "name": "behavior_rules.md",
+      "extension": ".md",
+      "size_bytes": 6671,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/boundaries.md",
+      "name": "boundaries.md",
+      "extension": ".md",
+      "size_bytes": 3864,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/examples.md",
+      "name": "examples.md",
+      "extension": ".md",
+      "size_bytes": 4800,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/failure_modes.md",
+      "name": "failure_modes.md",
+      "extension": ".md",
+      "size_bytes": 4102,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/function.md",
+      "name": "function.md",
+      "extension": ".md",
+      "size_bytes": 2907,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/identity.md",
+      "name": "identity.md",
+      "extension": ".md",
+      "size_bytes": 4337,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/memory_rules.md",
+      "name": "memory_rules.md",
+      "extension": ".md",
+      "size_bytes": 3790,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/priorities.md",
+      "name": "priorities.md",
+      "extension": ".md",
+      "size_bytes": 2885,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/relationships.md",
+      "name": "relationships.md",
+      "extension": ".md",
+      "size_bytes": 3727,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/response_patterns.md",
+      "name": "response_patterns.md",
+      "extension": ".md",
+      "size_bytes": 3671,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/tests.md",
+      "name": "tests.md",
+      "extension": ".md",
+      "size_bytes": 6086,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "persona_files/vecht/voice_style.md",
+      "name": "voice_style.md",
+      "extension": ".md",
+      "size_bytes": 4084,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "persona_policy",
+      "metadata": {
+        "category_reason": "persona_policy"
+      }
+    },
+    {
+      "path": "system_wide_memory/user_saved_memories/core/user_preferences.jsonl",
+      "name": "user_preferences.jsonl",
+      "extension": ".jsonl",
+      "size_bytes": 803,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file"
+      }
+    },
+    {
+      "path": "system_wide_memory/user_saved_memories/imported/approved_imports.jsonl",
+      "name": "approved_imports.jsonl",
+      "extension": ".jsonl",
+      "size_bytes": 10271,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file"
+      }
+    },
+    {
+      "path": "system_wide_memory/user_saved_memories/q_library/persona_questions.jsonl",
+      "name": "persona_questions.jsonl",
+      "extension": ".jsonl",
+      "size_bytes": 2186,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file"
+      }
+    },
+    {
+      "path": "system_wide_memory/user_saved_memories/q_library/project_questions.jsonl",
+      "name": "project_questions.jsonl",
+      "extension": ".jsonl",
+      "size_bytes": 929,
+      "modified_time": "2026-05-21T23:26:46Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file"
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "path": "core_system_files/__pycache__/app.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/__pycache__/__init__.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/__pycache__/__init__.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/__pycache__/__init__.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_change_service.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_perception.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_self_query_integration.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/models/system_perception_models.py",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/models/__init__.py",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/activity_log.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/activity_log.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/api_client.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/api_client.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/candidate_store.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/candidate_store.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/chat_memory_extractor.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/context_loader.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/context_loader.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/context_packet_builder.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/context_packet_builder.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/context_tools.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/context_tools.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/core.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/core.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/desktop_client.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/desktop_client.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/document_importer.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/document_importer.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/file_analyzer.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/file_analyzer.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/llm_client.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/llm_client.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/local_responses.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/local_responses.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/main.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/memory_commands.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/memory_commands.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/memory_store.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/memory_store.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/memory_taxonomy.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/memory_taxonomy.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/model_evaluator.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/model_evaluator.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/model_registry.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/model_registry.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/orchestration.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/orchestration.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/paths.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/paths.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/persona_continuity.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/persona_continuity.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/persona_library.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/persona_library.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/persona_selection.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/persona_selection.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/project_reviewer.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/project_reviewer.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/prompt_budget.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/prompt_budget.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/prompt_interpreter.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/prompt_interpreter.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/request_envelope.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/request_envelope.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/response_routing.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/response_routing.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/router.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/router.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/run_desktop_client.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/run_desktop_client.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/run_service.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/schemas.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/schemas.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/service.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/service.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/service_integrations.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/service_integrations.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/task_planner.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/task_planner.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/time_context.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/time_context.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/tooling.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/tooling.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/tool_synthesis.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/tool_synthesis.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/__init__.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_change_service.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_health_service.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_introspection_service.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_manifest_service.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_self_query_service.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/system_perception_router.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/system_perception_models.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
+    }
+  ],
+  "counts_by_category": {
+    "core_entrypoint": 4,
+    "script": 32,
+    "unknown": 37,
+    "documentation": 5,
+    "memory_file": 10,
+    "service": 9,
+    "router": 3,
+    "model_schema": 1,
+    "test_file": 2,
+    "persona_policy": 47,
+    "config_file": 4,
+    "persona_manifest": 1
+  },
+  "report_path": null
+}

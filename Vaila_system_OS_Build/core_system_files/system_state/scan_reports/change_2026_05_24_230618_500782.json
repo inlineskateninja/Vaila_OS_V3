@@ -1,0 +1,91 @@
+{
+  "status": "changes_detected",
+  "previous_scan_time": "2026-05-24T23:06:18Z",
+  "current_scan_time": "2026-05-24T23:06:18Z",
+  "summary_counts": {
+    "added_files": 2,
+    "removed_files": 0,
+    "modified_files": 3,
+    "new_issues": 0,
+    "resolved_issues": 0,
+    "capability_changes": 11
+  },
+  "added_files": [
+    "core_system_files/system_state/scan_reports/change_2026_05_24_230618_313126.json",
+    "core_system_files/system_state/scan_reports/scan_2026_05_24_230618_302969.json"
+  ],
+  "removed_files": [],
+  "modified_files": [
+    "core_system_files/system_state/self_model/change_report.json",
+    "core_system_files/system_state/self_model/file_inventory.json",
+    "core_system_files/system_state/self_model/last_change_summary.md"
+  ],
+  "unchanged_files_count": 140,
+  "added_services": [],
+  "removed_services": [],
+  "added_routers": [],
+  "removed_routers": [],
+  "added_personas": [],
+  "removed_personas": [],
+  "capability_changes": [
+    {
+      "name": "can_load_latest_snapshot",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "can_save_snapshots",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "can_scan_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "detected_import_issues",
+      "previous": null,
+      "current": false
+    },
+    {
+      "name": "detected_missing_architecture",
+      "previous": null,
+      "current": false
+    },
+    {
+      "name": "has_config_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_memory_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_persona_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_router_layer",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_service_layer",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_tests",
+      "previous": null,
+      "current": true
+    }
+  ],
+  "new_issues": [],
+  "resolved_issues": [],
+  "persistent_issues": [],
+  "notes": []
+}

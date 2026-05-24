@@ -1,0 +1,19 @@
+{
+  "connected_services": {
+    "required_for_boot": false,
+    "disabled_by_default": true,
+    "registry_path": "Connected_Services_Registry",
+    "services": {
+      "n8n": {
+        "optional": true,
+        "phase": "1",
+        "integration_mode": "webhook"
+      },
+      "openbrain": {
+        "optional": true,
+        "phase": "1",
+        "integration_mode": "memory_candidate_forwarding"
+      }
+    }
+  }
+}

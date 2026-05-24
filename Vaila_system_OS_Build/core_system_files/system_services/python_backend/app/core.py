@@ -28,6 +28,7 @@ from app.response_routing import build_response_route, format_response_for_route
 from app.router import route_user_input
 from app.request_envelope import build_request_envelope
 from app.service_integrations import ServiceIntegrationRegistry
+from app.services.system_self_query_service import SystemSelfQueryService
 from app.prompt_interpreter import PromptInterpreter, compare_interpretation_to_route
 from app.prompt_budget import (
     DEFAULT_CONTEXT_PACKET_MAX_CHARS,
@@ -70,6 +71,7 @@ class VailaCore:
         self.model_evaluator = ModelEvaluator(self.model_eval_path)
         self.tool_results = ToolResultStore(self.tool_result_path)
         self.service_integrations = ServiceIntegrationRegistry()
+        self.system_self_query = SystemSelfQueryService()
         self.model_registry = ModelRegistry(self.model_profiles_path)
         self.llm_client = LMStudioClient()
         self.prompt_interpreter = PromptInterpreter(self.llm_client, self.model_registry)
@@ -259,6 +261,13 @@ class VailaCore:
             },
         )
         route_plan = self.route(request_envelope.original_text, persona_override=persona_id)
+        if route_plan.task_type == "system_self_query":
+            return self._chat_with_system_self_query(
+                user_text=user_text,
+                route_plan=route_plan,
+                request_envelope=request_envelope,
+                include_context=include_context,
+            )
         prompt_interpretation = self.prompt_interpreter.interpret(request_envelope)
         routing_comparison = compare_interpretation_to_route(prompt_interpretation, route_plan)
         persona_continuity = build_persona_continuity(route_plan.persona)
@@ -428,6 +437,47 @@ class VailaCore:
 
         base_result["error"] = " | ".join(errors) or f"No usable model profile available. Tried primary '{route_plan.model_profile}' and fallback '{route_plan.fallback_profile}'."
         return self._finalize_chat_result(base_result, user_text, route_plan)
+
+    def _chat_with_system_self_query(
+        self,
+        user_text: str,
+        route_plan: RoutePlan,
+        request_envelope: RequestEnvelope,
+        include_context: bool = False,
+    ) -> dict[str, Any]:
+        query_result = self.system_self_query.handle_self_query(user_text)
+        result: dict[str, Any] = {
+            "ok": bool(query_result.get("ok")),
+            "request_envelope": request_envelope.to_dict(),
+            "route_plan": asdict(route_plan),
+            "prompt_interpretation": {"source": "not_run", "reason": "system_self_query is handled deterministically."},
+            "routing_comparison": {"status": "not_run"},
+            "persona_continuity": {},
+            "task_plan": {},
+            "orchestration_packet": {},
+            "memories": [],
+            "selected_profile": "local_system_perception",
+            "model": "local_system_perception",
+            "elapsed_seconds": 0,
+            "response": query_result.get("response", ""),
+            "error": query_result.get("error", ""),
+            "attempts": [],
+            "response_route": {},
+            "request_timestamp": request_envelope.received_at,
+            "request_local_timestamp": "",
+            "time_context": {},
+            "session_context": {},
+            "context_tools": [],
+            "memory_candidates_created": [],
+            "memory_candidate_count": 0,
+            "system_self_query": {
+                "action": query_result.get("action"),
+                "focus": query_result.get("focus"),
+            },
+        }
+        if include_context:
+            result["system_self_query_data"] = query_result.get("data", {})
+        return self._finalize_chat_result(result, user_text, route_plan)
 
     def _chat_with_tool(
         self,

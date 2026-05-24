@@ -1,0 +1,44 @@
+{
+  "ok": true,
+  "generated_at": "2026-05-24T23:07:18Z",
+  "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
+  "present_expected": [
+    "core_system_files/app.py",
+    "core_system_files/system_services/python_backend/app/models",
+    "core_system_files/system_services/python_backend/app/routers",
+    "core_system_files/system_services/python_backend/app/services",
+    "core_system_files/system_state/scan_reports",
+    "core_system_files/system_state/self_model",
+    "persona_files",
+    "system_wide_memory"
+  ],
+  "missing_expected": [],
+  "useful_unexpected": [
+    "core_system_files/system_services/python_backend/app/core.py",
+    "core_system_files/system_services/python_backend/app/llm_client.py",
+    "core_system_files/system_services/python_backend/app/router.py",
+    "core_system_files/system_services/python_backend/app/schemas.py",
+    "core_system_files/system_services/python_backend/tests/test_system_change_service.py",
+    "core_system_files/system_services/python_backend/tests/test_system_perception.py",
+    "core_system_files/system_services/python_backend/tests/test_system_self_query_integration.py",
+    "persona_files/maelith/manifest.yaml",
+    "persona_files/maelith/routing_policy.yaml",
+    "persona_files/serren/manifest.yaml",
+    "persona_files/serren/routing_policy.yaml"
+  ],
+  "issues": [],
+  "counts_by_category": {
+    "core_entrypoint": 4,
+    "script": 32,
+    "unknown": 43,
+    "documentation": 5,
+    "memory_file": 10,
+    "service": 9,
+    "router": 3,
+    "model_schema": 1,
+    "test_file": 2,
+    "persona_policy": 47,
+    "config_file": 4,
+    "persona_manifest": 1
+  }
+}

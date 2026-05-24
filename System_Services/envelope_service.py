@@ -24,12 +24,17 @@ class EnvelopeService:
     def __init__(self, project_root: Path) -> None:
         self.project_root = project_root
 
-    def create(self, user_text: str, source: str = "unknown") -> PromptEnvelope:
+    def create(
+        self,
+        user_text: str,
+        source: str = "unknown",
+        metadata: dict[str, Any] | None = None,
+    ) -> PromptEnvelope:
         return PromptEnvelope(
             request_id=f"req_{uuid4().hex[:16]}",
             user_text=user_text,
             source=source,
             created_utc=datetime.now(timezone.utc).isoformat(),
             project_root=str(self.project_root),
-            metadata={},
+            metadata=metadata or {},
         )

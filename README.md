@@ -55,3 +55,20 @@ Default base URL:
 Default model:
 
 Set in `.env` using `LMSTUDIO_MODEL`.
+
+## Optional Connected Services
+
+Vaila OS V3 can connect to optional external services, but none are required for Phase 1 boot.
+
+- n8n is optional and disabled by default.
+- OpenBrain is optional and disabled by default.
+- Secrets go in `.env` or `Secrets/`, never in registry JSON files.
+- Phase 1 uses n8n webhooks instead of custom n8n nodes.
+- Phase 1 forwards memory candidates to OpenBrain only when OpenBrain is explicitly enabled.
+
+Safe defaults are listed in `.env.example`. Keep blank secret fields blank until a local service is ready.
+
+Future expansion notes:
+
+- n8n REST workflow listing, activation, import/export, and admin functions can be added after webhook behavior is stable.
+- OpenBrain HTTP or MCP memory retrieval can replace the local placeholder adapter when the final backend contract is chosen.

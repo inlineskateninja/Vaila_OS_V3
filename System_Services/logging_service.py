@@ -11,6 +11,7 @@ class LoggingService:
     def __init__(self, project_root: Path) -> None:
         self.project_root = project_root
         self.executor = ThreadPoolExecutor(max_workers=1)
+        self.background_executor = ThreadPoolExecutor(max_workers=1)
         self.session_log_dir = project_root / "System_Logging" / "Session_Logs"
         self.error_log_dir = project_root / "System_Logging" / "Error_Logs"
         self.router_log_dir = project_root / "System_Logging" / "Router_Orchestration_Logs"
@@ -26,6 +27,9 @@ class LoggingService:
 
     def log_router_event(self, event: dict[str, Any]) -> None:
         self._submit_jsonl(self.router_log_dir / self._daily_filename("router"), event)
+
+    def run_background(self, func: Any, *args: Any, **kwargs: Any) -> None:
+        self.background_executor.submit(func, *args, **kwargs)
 
     def _submit_jsonl(self, path: Path, event: dict[str, Any]) -> None:
         payload = dict(event)
@@ -44,4 +48,5 @@ class LoggingService:
         return f"{prefix}_{date}.jsonl"
 
     def close(self) -> None:
+        self.background_executor.shutdown(wait=True)
         self.executor.shutdown(wait=True)

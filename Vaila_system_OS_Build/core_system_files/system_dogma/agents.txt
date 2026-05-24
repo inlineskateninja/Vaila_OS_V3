@@ -1,0 +1,47 @@
+# Vaila OS Development Rules
+
+## Project Philosophy
+
+Vaila OS is being built as a local-first assistant system with routing, persona interpretation, memory, tool use, voice, and system self-modeling.
+
+Do not treat persona files as proof of sentience. The system should stay grounded in observable behavior, logs, scans, memory records, and user-approved changes.
+
+## Architecture Rules
+
+- Keep source code separate from runtime state.
+- Runtime state belongs under `system_state/`.
+- Services belong under `app/services/`.
+- API routers belong under `app/routers/`.
+- Pydantic schemas belong under `app/models/`.
+- Do not depend on old top-level `app/` bridge files.
+- Prefer explicit imports over fragile path hacks.
+- Avoid hardcoded absolute paths unless isolated in config.
+
+## System Perception Rules
+
+The system perception layer may:
+- Scan project directories.
+- Classify files.
+- Save architecture snapshots.
+- Compare actual files against expected architecture.
+- Report missing or suspicious pieces.
+- Generate capability maps.
+
+The system perception layer may not:
+- Scan the whole computer.
+- Read secrets.
+- Read model files.
+- Rewrite code automatically.
+- Claim consciousness.
+- Invent capabilities that are not detected.
+
+## Testing Rules
+
+Every new service should have tests.
+Every new route should have at least one route test.
+Use temporary directories for filesystem scanner tests.
+Do not write tests that require the developer’s personal absolute path.
+
+## Vaila System Perception Rule
+
+For system perception work, keep behavior deterministic. The system may scan configured project directories, classify files, save snapshots, report capabilities, and summarize issues. It may not scan the whole computer, read secrets, claim sentience, modify code automatically, or invent capabilities not detected from files/configs.

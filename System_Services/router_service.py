@@ -34,12 +34,17 @@ class RouterService:
 
         persona = "proto_jane"
         persona_reason = "default persona"
+        selected_persona = envelope.metadata.get("selected_persona")
 
-        for candidate, pattern in self.persona_patterns.items():
-            if re.search(pattern, text_lower, re.IGNORECASE):
-                persona = candidate
-                persona_reason = f"addressed persona detected: {candidate}"
-                break
+        if selected_persona in self.persona_patterns:
+            persona = selected_persona
+            persona_reason = f"persona selected by interface: {selected_persona}"
+        else:
+            for candidate, pattern in self.persona_patterns.items():
+                if re.search(pattern, text_lower, re.IGNORECASE):
+                    persona = candidate
+                    persona_reason = f"addressed persona detected: {candidate}"
+                    break
 
         task_type = "general_chat"
         task_reason = "default route"
@@ -58,11 +63,16 @@ class RouterService:
         if task_type == "general_chat":
             confidence = 1
 
+        prompt_interpreter_enabled = bool(envelope.metadata.get("prompt_interpreter_enabled"))
+        if envelope.source in {"stt", "stt_voice", "voice_stt"}:
+            prompt_interpreter_enabled = True
+
         return {
             "request_id": envelope.request_id,
             "persona": persona,
             "task_type": task_type,
             "confidence": confidence,
             "reasons": [persona_reason, task_reason],
-            "needs_prompt_interpreter": confidence < 2,
+            "needs_prompt_interpreter": prompt_interpreter_enabled and confidence < 2,
+            "prompt_interpreter_allowed": prompt_interpreter_enabled,
         }

@@ -1,0 +1,13 @@
+{
+  "can_scan_files": true,
+  "can_save_snapshots": true,
+  "can_load_latest_snapshot": true,
+  "has_router_layer": true,
+  "has_service_layer": true,
+  "has_persona_files": true,
+  "has_memory_files": true,
+  "has_config_files": true,
+  "has_tests": true,
+  "detected_import_issues": false,
+  "detected_missing_architecture": false
+}

@@ -1,7 +1,9 @@
-﻿{
+{
   "service_id": "openbrain",
-  "enabled": false,
-  "auth_required": true,
-  "adapter_status": "planned",
-  "notes": "OpenBrain should be integrated as an optional memory backend after Phase 1 memory candidate logging is stable."
+  "enabled_env": "OPENBRAIN_ENABLED",
+  "adapter": "System_Services.openbrain_service.OpenBrainService",
+  "phase": "1",
+  "required_for_boot": false,
+  "status": "optional",
+  "notes": "OpenBrain is used as an optional external memory adapter. Phase 1 forwards memory candidates only."
 }

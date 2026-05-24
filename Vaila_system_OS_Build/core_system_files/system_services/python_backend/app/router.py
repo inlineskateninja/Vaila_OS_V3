@@ -182,6 +182,13 @@ TASK_CONFIGS = {
         "fallback_profile": "chat_general_desktop",
         "tags": ["project_vaila", "architecture", "technical_guidance", "memory"],
     },
+    "system_self_query": {
+        "persona": "proto_jane",
+        "model_tier": "local",
+        "model_profile": "local_system_perception",
+        "fallback_profile": "local_system_perception",
+        "tags": ["system", "self_model", "architecture", "system_perception"],
+    },
 }
 
 
@@ -344,6 +351,8 @@ def detect_task_type(text: str, context_domains: list[str] | None = None) -> tup
         return "persona_tooling", 4
     if looks_like_document_import(text):
         return "document_import", 4
+    if looks_like_system_self_query(text):
+        return "system_self_query", 4
     if looks_like_file_analysis(text):
         return "file_analysis", 4
     if looks_like_coding(text):
@@ -407,6 +416,48 @@ def looks_like_file_analysis(text: str) -> bool:
     return any(word in text for word in analysis_words) and any(word in text for word in file_words)
 
 
+def looks_like_system_self_query(text: str) -> bool:
+    phrases = [
+        "scan your system",
+        "rescan your system",
+        "inspect your system",
+        "inspect your files",
+        "self model",
+        "self-model",
+        "system perception",
+        "architecture summary",
+        "current architecture",
+        "installed services",
+        "available routers",
+        "present personas",
+        "capability map",
+        "unresolved issues",
+        "what is broken",
+        "what looks broken",
+        "what changed",
+        "did anything change",
+        "added files",
+        "files get added",
+        "removed files",
+        "files get removed",
+        "modified files",
+        "files were modified",
+        "capabilities change",
+        "capability changes",
+        "new issues",
+        "old issues resolved",
+        "resolved issues",
+        "latest scan",
+        "what services do you",
+        "what services are installed",
+        "what routers are installed",
+        "what personas are present",
+        "what files make up your architecture",
+        "summary of your current architecture",
+    ]
+    return any(phrase in text for phrase in phrases)
+
+
 def looks_like_coding(text: str) -> bool:
     coding_terms = {
         "code", "python", "traceback", "error", "bug", "function", "class", "import",
@@ -458,7 +509,7 @@ def looks_like_critique_analysis(text: str) -> bool:
 def default_context_domain(task_type: str) -> str:
     if task_type in {"file_analysis", "document_import"}:
         return "files"
-    if task_type in {"persona_relationship", "persona_tooling"}:
+    if task_type in {"persona_relationship", "persona_tooling", "system_self_query"}:
         return "system"
     if task_type == "session_summary":
         return "events"
@@ -545,6 +596,8 @@ def build_memory_queries(
         queries.append("What tools and connected services are currently registered in Vaila?")
     elif task_type == "technical_project":
         queries.append("What is the current architecture direction for Vaila, Home Jane, memory, routing, and personas?")
+    elif task_type == "system_self_query":
+        queries.append("What does the current system self-model report about architecture, services, routers, personas, memory, tests, capabilities, and unresolved issues?")
     elif task_type == "coding":
         queries.append("What technical project state is relevant to this coding task?")
     elif task_type == "emotional_analysis":

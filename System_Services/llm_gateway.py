@@ -66,6 +66,9 @@ class LLMGateway:
             "available_models": models,
         }
 
+    def execute_with_fallback(self, messages: list[dict[str, str]], temperature: float = 0.4) -> str:
+        return self.chat(messages=messages, temperature=temperature)
+
     def chat(self, messages: list[dict[str, str]], temperature: float = 0.4) -> str:
         url = f"{self.base_url}/chat/completions"
         model = self.resolve_model()

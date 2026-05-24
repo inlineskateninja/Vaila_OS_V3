@@ -5,6 +5,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 from app.core import VailaCore
+from app.routers.system_perception_router import router as system_perception_router
 
 
 class ChatRequest(BaseModel):
@@ -61,6 +62,7 @@ app = FastAPI(
     version="0.2.4",
     lifespan=lifespan,
 )
+app.include_router(system_perception_router)
 
 
 def _raise_as_http(error: Exception) -> None:
