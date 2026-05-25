@@ -1,4 +1,4 @@
-﻿{
+{
   "default_policy": "deny_destructive_actions",
   "rules": [
     {
@@ -9,6 +9,102 @@
     },
     {
       "tool_id": "patch_exporter",
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "user_profile_tool",
+      "can_read_project_tree": true,
+      "can_write_core_files": true,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "tool_registry_inspector",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "system_dependency_doctor",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "memory_review_console",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "memory_backend_adapter",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "self_model_diff_tool",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "capability_map_generator",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "behavior_regression_tester",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "patch_proposal_reviewer",
+      "can_read_project_tree": true,
+      "can_write_core_files": true,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "goal_task_tracker",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "n8n_workflow_librarian",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "artifact_indexer",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "safety_boundary_auditor",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "persona_drift_monitor",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "user_context_router",
+      "can_read_project_tree": true,
+      "can_write_core_files": false,
+      "can_export_to_sandbox": true
+    },
+    {
+      "tool_id": "self_evolution_planner",
+      "can_read_project_tree": true,
       "can_write_core_files": false,
       "can_export_to_sandbox": true
     }

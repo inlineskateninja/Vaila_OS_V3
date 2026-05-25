@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+import os
 import time
 import socket
 import threading
@@ -27,7 +28,9 @@ def find_free_port(start_port: int) -> int:
 def launch_web_gui() -> None:
     import uvicorn
 
-    start_port = 8765
+    server_host = os.getenv("VAILA_SERVER_HOST", "127.0.0.1").strip() or "127.0.0.1"
+    display_host = "127.0.0.1" if server_host == "0.0.0.0" else server_host
+    start_port = int(os.getenv("VAILA_SERVER_PORT", "8765"))
     port = find_free_port(start_port)
 
     if port != start_port:
@@ -37,20 +40,20 @@ def launch_web_gui() -> None:
         print(f"\n[Vaila OS] Port {port} is free and ready.")
 
     print("\n[Vaila OS] Launching Web GUI...")
-    print(f"Local Server Address: http://127.0.0.1:{port}")
+    print(f"Local Server Address: http://{display_host}:{port}")
     
     # Background thread to open default web browser after uvicorn initializes
     def browser_trigger() -> None:
         time.sleep(1.5)
-        print(f"[Vaila OS] Auto-opening web browser to http://127.0.0.1:{port}...")
-        webbrowser.open(f"http://127.0.0.1:{port}")
+        print(f"[Vaila OS] Auto-opening web browser to http://{display_host}:{port}...")
+        webbrowser.open(f"http://{display_host}:{port}")
         
     threading.Thread(target=browser_trigger, daemon=True).start()
 
     # Start FastAPI server on the resolved free port
     uvicorn.run(
         "Core_System_Files.local_api:app",
-        host="127.0.0.1",
+        host=server_host,
         port=port,
         log_level="info",
         reload=False

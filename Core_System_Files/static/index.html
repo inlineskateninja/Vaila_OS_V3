@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAILA OS // CORE ACTIVE V3</title>
+    <title>VAILA OS // COGNITIVE COMMAND SURFACE</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -12,14 +12,14 @@
         <header class="app-header">
             <div class="brand-group">
                 <span class="pulse-indicator online"></span>
-                <h1>VAILA OS <span class="version-tag">V3.2.0</span></h1>
+                <h1>VAILA OS <span class="version-tag">V3.5.0</span></h1>
             </div>
             <div class="header-status">
                 <span class="status-label">LLM GATEWAY:</span>
                 <span id="gateway-status" class="status-val text-cyan">checking...</span>
                 <span class="divider">//</span>
-                <span class="status-label">ROUTER:</span>
-                <span class="status-val text-green">regex_first_v3</span>
+                <span class="status-label">SYSTEM STATE:</span>
+                <span class="status-val text-green">active_command_surface</span>
             </div>
             <button id="toggle-inspector-btn" class="icon-btn" title="Toggle Inspector">
                 <span class="icon">&#9656;</span> INSPECTOR
@@ -36,6 +36,20 @@
                     <div id="persona-list" class="persona-deck">
                         <!-- Loaded dynamically via app.js -->
                         <div class="loading-spinner">Initializing lenses...</div>
+                    </div>
+                </section>
+
+                <section class="panel-section">
+                    <h2 class="section-title">WORKSPACE PANELS</h2>
+                    <div class="navigation-deck">
+                        <button class="nav-tab-btn active" id="nav-btn-chat">📄 Task Chat</button>
+                        <button class="nav-tab-btn" id="nav-btn-council">⚖️ Council Mode</button>
+                        <button class="nav-tab-btn" id="nav-btn-memory">🧠 Memory Review</button>
+                        <button class="nav-tab-btn" id="nav-btn-files">📂 Workspace Vault</button>
+                        <button class="nav-tab-btn" id="nav-btn-artifacts">🏺 Artifact Vault</button>
+                        <button class="nav-tab-btn" id="nav-btn-system">🌐 System Map</button>
+                        <button class="nav-tab-btn" id="nav-btn-n8n">⛓️ n8n Workflows</button>
+                        <button class="nav-tab-btn" id="nav-btn-profile">👤 User Profile</button>
                     </div>
                 </section>
 
@@ -63,47 +77,412 @@
                 </footer>
             </aside>
 
-            <!-- CENTER PANEL: CHAT HUB -->
-            <main class="chat-hub">
-                <!-- Chat Header -->
-                <div class="chat-header">
-                    <div class="active-lens-details">
-                        <div id="active-lens-indicator" class="lens-glow-dot cyan"></div>
-                        <div>
-                            <h3 id="active-lens-name">Proto Jane</h3>
-                            <p id="active-lens-tagline">Default Operating System lens</p>
+            <!-- CENTER WORKSPACE VIEWPORTS -->
+            <div class="viewport-container">
+
+                <!-- 1. CHAT VIEWPORT -->
+                <main class="chat-hub workspace-view" id="view-chat">
+                    <div class="chat-header">
+                        <div class="active-lens-details">
+                            <div id="active-lens-indicator" class="lens-glow-dot cyan"></div>
+                            <div>
+                                <h3 id="active-lens-name">Proto Jane</h3>
+                                <p id="active-lens-tagline">Default Operating System lens</p>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <span id="latency-tag" class="meta-tag hidden">0.0s</span>
                         </div>
                     </div>
-                    <div class="chat-actions">
-                        <span id="latency-tag" class="meta-tag hidden">0.0s</span>
-                    </div>
-                </div>
-
-                <!-- Chat Messages Feed -->
-                <div id="chat-feed" class="chat-feed">
-                    <div class="message system-msg">
-                        <div class="msg-sender">SYSTEM BOOT</div>
-                        <div class="msg-content">
-                            <p><strong>Vaila OS V3 Online.</strong> System identity is stable, memories mapped, fallback gateway routes active.</p>
-                            <p class="text-muted">Select an intelligence core on the left to align the cognitive lens, or type directly to trigger auto-regex routing.</p>
+                    <div id="chat-feed" class="chat-feed">
+                        <div class="message system-msg">
+                            <div class="msg-sender">SYSTEM BOOT</div>
+                            <div class="msg-content">
+                                <p><strong>Vaila OS V3 Online.</strong> System identity is stable, memories mapped, fallback gateway routes active.</p>
+                                <p class="text-muted">Select an intelligence core on the left to align the cognitive lens, or type directly to trigger auto-regex routing.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="input-dock">
+                        <div class="input-wrapper">
+                            <textarea id="prompt-input" placeholder="Communicate with Vaila (Press Ctrl+Enter to send)..." rows="2"></textarea>
+                            <button id="send-prompt-btn" class="send-btn" title="Send Request">
+                                <span class="send-arrow">&#10148;</span>
+                            </button>
+                        </div>
+                        <div class="input-meta">
+                            <span>Press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to dispatch</span>
+                            <span id="character-count">0 chars</span>
+                        </div>
+                    </div>
+                </main>
 
-                <!-- Chat Input Dock -->
-                <div class="input-dock">
-                    <div class="input-wrapper">
-                        <textarea id="prompt-input" placeholder="Communicate with Vaila (Press Ctrl+Enter to send)..." rows="2"></textarea>
-                        <button id="send-prompt-btn" class="send-btn" title="Send Request">
-                            <span class="send-arrow">&#10148;</span>
-                        </button>
+                <!-- 2. COUNCIL MODE VIEWPORT -->
+                <main class="chat-hub workspace-view hidden" id="view-council">
+                    <div class="chat-header">
+                        <div class="active-lens-details">
+                            <div class="lens-glow-dot purple"></div>
+                            <div>
+                                <h3>Multi-Persona Council Mode</h3>
+                                <p>Execute parallel cognitive assessments across distinct cores</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-meta">
-                        <span>Press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to dispatch</span>
-                        <span id="character-count">0 chars</span>
+                    <div class="panel-inner-container">
+                        <!-- Controls Deck -->
+                        <div class="form-panel-card">
+                            <h4>COUNCIL MEMBER SELECTION</h4>
+                            <div class="council-selection-grid">
+                                <label><input type="checkbox" id="council-cb-proto_jane" checked> PROTO JANE</label>
+                                <label><input type="checkbox" id="council-cb-serren" checked> SERREN</label>
+                                <label><input type="checkbox" id="council-cb-maelith" checked> MAELITH</label>
+                                <label><input type="checkbox" id="council-cb-vecht"> VECHT</label>
+                                <label><input type="checkbox" id="council-cb-riven"> RIVEN</label>
+                            </div>
+                            <div class="input-row">
+                                <input type="text" id="council-prompt-input" value="Assess system integration strategy for Vaila OS V3." placeholder="Enter directive for the council assembly...">
+                                <button id="exec-council-btn" class="action-btn-accent">EXECUTE COUNCIL</button>
+                            </div>
+                        </div>
+
+                        <!-- Dialogue results -->
+                        <div class="split-viewport-grid">
+                            <div class="sub-panel">
+                                <h4 class="card-title">DIALOGUE ARENA</h4>
+                                <div id="council-feed" class="terminal-viewer">
+                                    <div class="text-muted">Awaiting directive submission...</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Consensus Synth -->
+                        <div class="controls-action-bar">
+                            <button id="council-synth-btn" class="action-btn">COMPILE SYNTHESIS CONSENSUS</button>
+                            <button id="council-drift-btn" class="action-btn secondary">RUN DRIFT INTEGRITY CHECK</button>
+                        </div>
                     </div>
-                </div>
-            </main>
+                </main>
+
+                <!-- 3. MEMORY CENTER VIEWPORT -->
+                <main class="chat-hub workspace-view hidden" id="view-memory">
+                    <div class="chat-header">
+                        <div class="active-lens-details">
+                            <div class="lens-glow-dot gold"></div>
+                            <div>
+                                <h3>Memory Review Center</h3>
+                                <p>Administer memory candidate queue and durable storage captures</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split-columns-layout">
+                        <!-- Queue List -->
+                        <div class="list-side-pane">
+                            <h4 class="card-title">CANDIDATE QUEUE</h4>
+                            <div id="memory-candidates-list" class="vault-scroll-list">
+                                <!-- Loaded dynamically -->
+                                <div class="text-muted padding-20">Queue empty or synchronized.</div>
+                            </div>
+                        </div>
+
+                        <!-- Form Editor -->
+                        <div class="form-editor-pane">
+                            <h4 class="card-title">MEMORIZATION DIRECTIVE</h4>
+                            <div class="editor-form">
+                                <div class="field-group">
+                                    <label>CANDIDATE ID:</label>
+                                    <span id="mem-cand-id" class="text-muted">NONE SELECTED</span>
+                                </div>
+                                <div class="field-group">
+                                    <label>MEMORY CONTENT:</label>
+                                    <textarea id="mem-cand-text" rows="8" placeholder="Select a memory candidate on the left to inspect or edit..."></textarea>
+                                </div>
+                                <div class="field-group">
+                                    <label>CATEGORY ASSIGNMENT:</label>
+                                    <select id="mem-cand-category">
+                                        <option value="general">general</option>
+                                        <option value="user_preference">user_preference</option>
+                                        <option value="system_rule">system_rule</option>
+                                        <option value="project_architecture">project_architecture</option>
+                                    </select>
+                                </div>
+                                <div class="field-group checkbox-row">
+                                    <input type="checkbox" id="mem-cand-project" checked>
+                                    <label for="mem-cand-project">PROJECT-ONLY RETRIEVAL ACTIVE</label>
+                                </div>
+                                <div class="form-actions-row">
+                                    <button id="mem-approve-btn" class="action-btn-accent">APPROVE DIRECTIVE</button>
+                                    <button id="mem-reject-btn" class="action-btn-red">REJECT DIRECTIVE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- 4. FILES WORKSPACE VIEWPORT -->
+                <main class="chat-hub workspace-view hidden" id="view-files">
+                    <div class="chat-header">
+                        <div class="active-lens-details">
+                            <div class="lens-glow-dot cyan"></div>
+                            <div>
+                                <h3>Workspace Documents Vault</h3>
+                                <p>Manage and analyze workspace file dependencies and inputs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split-columns-layout">
+                        <!-- Files list -->
+                        <div class="list-side-pane">
+                            <h4 class="card-title">SANDBOXED FILES</h4>
+                            <div class="upload-dock-row">
+                                <input type="file" id="file-uploader" style="display: none;">
+                                <button id="trigger-upload-btn" class="action-btn-accent width-100">IMPORT NEW DOCUMENT</button>
+                            </div>
+                            <div id="sandbox-files-list" class="vault-scroll-list mt-10">
+                                <!-- Loaded dynamically -->
+                                <div class="text-muted padding-20">No sandbox documents cached.</div>
+                            </div>
+                        </div>
+
+                        <!-- Details & Analyzer -->
+                        <div class="form-editor-pane">
+                            <h4 class="card-title">FILE DIAGNOSTICS</h4>
+                            <h3 id="workspace-filename" class="selected-item-header">SELECT A VAULT FILE</h3>
+                            <div class="terminal-preview-container">
+                                <pre id="workspace-file-preview" class="doc-viewer-pre">Awaiting file selection...</pre>
+                            </div>
+                            <div class="actions-action-deck">
+                                <button id="file-diagnose-btn" class="action-btn" disabled>ANALYZE DOCUMENT</button>
+                                <button id="file-extract-btn" class="action-btn secondary" disabled>EXTRACT DRAFT MEMORIES</button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- 5. ARTIFACT BROWSER VIEWPORT -->
+                <main class="chat-hub workspace-view hidden" id="view-artifacts">
+                    <div class="chat-header">
+                        <div class="active-lens-details">
+                            <div class="lens-glow-dot purple"></div>
+                            <div>
+                                <h3>Structured Artifacts Vault</h3>
+                                <p>Browse, preview, and export persistent reports and scans</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split-columns-layout">
+                        <!-- List -->
+                        <div class="list-side-pane">
+                            <h4 class="card-title">VAULT ARCHIVES</h4>
+                            <div id="artifacts-list" class="vault-scroll-list">
+                                <!-- Loaded dynamically -->
+                                <div class="text-muted padding-20">Vault empty. Generate reports in systems menu.</div>
+                            </div>
+                        </div>
+
+                        <!-- Previewer -->
+                        <div class="form-editor-pane">
+                            <h4 class="card-title">MARKDOWN PREVIEWER</h4>
+                            <h3 id="artifact-title" class="selected-item-header">SELECT AN ARCHIVE</h3>
+                            <div class="terminal-preview-container flex-grow-1">
+                                <pre id="artifact-content-pre" class="doc-viewer-pre">Awaiting archive selection...</pre>
+                            </div>
+                            <div class="actions-action-deck">
+                                <button id="artifact-copy-btn" class="action-btn" disabled>COPY TO CLIPBOARD</button>
+                                <a id="artifact-download-btn" class="action-btn secondary disabled" href="#" download>EXPORT FILE</a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- 6. SYSTEM MAP VIEWPORT -->
+                <main class="chat-hub workspace-view hidden" id="view-system">
+                    <div class="chat-header">
+                        <div class="active-lens-details">
+                            <div class="lens-glow-dot cyan"></div>
+                            <div>
+                                <h3>System Perception Map</h3>
+                                <p>Real-time scanner, expected files checker, and node diagnostic ledger</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split-columns-layout">
+                        <!-- Left Subpanel: Service health -->
+                        <div class="list-side-pane">
+                            <h4 class="card-title">HEALTH REGISTRY NODES</h4>
+                            <div id="system-health-feed" class="health-nodes-feed">
+                                <div class="text-muted padding-20">Interrogating health status registries...</div>
+                            </div>
+                        </div>
+
+                        <!-- Right Subpanel: Disk scanner -->
+                        <div class="form-editor-pane">
+                            <h4 class="card-title">PROJECT INTEGRITY CHECKS</h4>
+                            <div class="terminal-preview-container flex-grow-1">
+                                <pre id="system-scanner-pre" class="doc-viewer-pre">Scanning project workspace...</pre>
+                            </div>
+                            <div class="controls-action-bar pt-10">
+                                <button id="refresh-system-map-btn" class="action-btn-accent">RE-RUN DIAGNOSTIC SCAN</button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- 7. N8N ACTIVE WORKFLOWS VIEWPORT -->
+                <main class="chat-hub workspace-view hidden" id="view-n8n">
+                    <div class="chat-header">
+                        <div class="active-lens-details">
+                            <div class="lens-glow-dot purple"></div>
+                            <div>
+                                <h3>n8n Active Workflows Console</h3>
+                                <p>Programmatically inspect, create, activate, and delete workflows in Docker</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split-columns-layout">
+                        <!-- Left pane: Workflows List -->
+                        <div class="list-side-pane">
+                            <h4 class="card-title">ACTIVE CONTAINER WORKFLOWS</h4>
+                            <div id="n8n-workflows-list" class="vault-scroll-list">
+                                <!-- Loaded dynamically -->
+                                <div class="text-muted padding-20">Awaiting docker workflow sync...</div>
+                            </div>
+                        </div>
+
+                        <!-- Right pane: Details & Template Creator -->
+                        <div class="form-editor-pane">
+                            <h4 class="card-title">WORKFLOW INTEGRITY CONTROLS</h4>
+                            <h3 id="n8n-workflow-title" class="selected-item-header">SELECT A WORKFLOW</h3>
+                            
+                            <div class="terminal-preview-container">
+                                <pre id="n8n-workflow-nodes-preview" class="doc-viewer-pre">Select a workflow on the left to inspect node configurations...</pre>
+                            </div>
+                            
+                            <div class="form-actions-row">
+                                <button id="n8n-toggle-active-btn" class="action-btn-accent" disabled>ACTIVATE WORKFLOW</button>
+                                <button id="n8n-delete-btn" class="action-btn-red" disabled>DELETE WORKFLOW</button>
+                            </div>
+
+                            <br><hr style="border: 1px solid var(--border-color); margin: 20px 0;"><br>
+
+                            <h4 class="card-title">DRAFT & DEPLOY AI TEMPLATE</h4>
+                            <div class="editor-form">
+                                <div class="field-group">
+                                    <label>WORKFLOW NAME:</label>
+                                    <input type="text" id="n8n-template-name" value="Vaila Discord Notifier">
+                                </div>
+                                <div class="field-group">
+                                    <label>WEBHOOK TRIGGER PATH:</label>
+                                    <input type="text" id="n8n-template-path" value="discord_alert">
+                                </div>
+                                <div class="field-group">
+                                    <label>INTEGRATION ACTION URL:</label>
+                                    <input type="text" id="n8n-template-url" value="http://localhost:8765/chat">
+                                </div>
+                                <div class="form-actions-row">
+                                    <button id="n8n-deploy-template-btn" class="action-btn-accent">DEPLOY WORKFLOW SCHEMA</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rightmost pane: Suggestions & Council Drafts -->
+                        <div class="list-side-pane" style="border-left: 1px solid var(--border-color); border-right: none; width: 340px;">
+                            <h4 class="card-title" style="color: var(--accent-purple);">AI SUGGESTION LAB</h4>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <button id="n8n-council-suggestions-btn" class="action-btn-accent" style="width: 100%; padding: 10px; font-weight: bold; background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.3); color: var(--accent-purple);">
+                                    CONSULT THE COUNCIL
+                                </button>
+                            </div>
+                            
+                            <div id="n8n-suggestions-list" class="vault-scroll-list">
+                                <!-- Suggested templates listed here -->
+                            </div>
+                        </div>
+                    </div>
+                </main>
++
++                <!-- 8. USER PROFILE VIEWPORT -->
++                <main class="chat-hub workspace-view hidden" id="view-profile">
++                    <div class="chat-header">
++                        <div class="active-lens-details">
++                            <div class="lens-glow-dot cyan"></div>
++                            <div>
++                                <h3>User Profile Integration Center</h3>
++                                <p>Manage category-based profile modules and simulate context matching routing</p>
++                            </div>
++                        </div>
++                    </div>
++                    
++                    <div class="split-columns-layout">
++                        <!-- Left pane: Profile Import & Module Selector -->
++                        <div class="list-side-pane">
++                            <h4 class="card-title">PROFILE DIGESTION</h4>
++                            
++                            <!-- ZIP file paths/controls -->
++                            <div class="form-panel-card" style="margin-bottom: 15px; padding: 10px; background: rgba(255, 255, 255, 0.01);">
++                                <div class="field-group" style="margin-bottom: 8px;">
++                                    <label style="font-size: 9px;">LOCAL ZIP ABSOLUTE PATH:</label>
++                                    <input type="text" id="profile-zip-path" value="E:\Vaila Project Assests\vaila_user_profile_modules_v0_1.zip" style="width: 100%; font-size: 11px; padding: 5px; background: #060913; border: 1px solid var(--border-color); color: #fff; border-radius: 4px;">
++                                </div>
++                                <button id="profile-import-path-btn" class="action-btn-accent" style="width: 100%; font-size: 11px; padding: 6px; text-align: center; justify-content: center;">
++                                    IMPORT FROM LOCAL PATH
++                                </button>
++                                
++                                <div style="text-align: center; margin: 10px 0; font-size: 10px; color: var(--text-muted);">--- OR ---</div>
++                                
++                                <input type="file" id="profile-zip-uploader" style="display: none;" accept=".zip">
++                                <button id="profile-trigger-upload-btn" class="action-btn" style="width: 100%; font-size: 11px; padding: 6px; text-align: center; justify-content: center; background: rgba(0, 242, 254, 0.05); border-color: rgba(0, 242, 254, 0.2); color: rgb(var(--color-cyan));">
++                                    UPLOAD & EXTRACT ZIP FILE
++                                </button>
++                            </div>
++
++                            <h4 class="card-title">PROFILE MODULES</h4>
++                            <div id="profile-modules-list" class="vault-scroll-list" style="max-height: calc(100vh - 360px);">
++                                <div class="text-muted padding-20">Awaiting profile module sync...</div>
++                            </div>
++                        </div>
++
++                        <!-- Center pane: Live Markdown Editor -->
++                        <div class="form-editor-pane">
++                            <h4 class="card-title">PROFILE MODULE EDITOR</h4>
++                            <h3 id="profile-module-filename" class="selected-item-header">SELECT A PROFILE MODULE</h3>
++                            
++                            <div class="editor-form" style="display: flex; flex-direction: column; flex-grow: 1; height: calc(100% - 70px);">
++                                <div class="field-group" style="flex-grow: 1; display: flex; flex-direction: column;">
++                                    <label>EDIT MARKDOWN CONTENT:</label>
++                                    <textarea id="profile-module-content" style="flex-grow: 1; min-height: 380px; font-family: var(--font-mono); font-size: 12px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); color: #fff; padding: 12px; border-radius: 6px; resize: none;" placeholder="Select a profile module file on the left to edit its raw rules context..."></textarea>
++                                </div>
++                                <div class="form-actions-row" style="margin-top: 15px;">
++                                    <button id="profile-save-module-btn" class="action-btn-accent" disabled>SAVE MODULE CONTENT</button>
++                                </div>
++                            </div>
++                        </div>
++
++                        <!-- Right pane: Real-Time Context Router Simulator -->
++                        <div class="list-side-pane" style="border-left: 1px solid var(--border-color); border-right: none; width: 340px;">
++                            <h4 class="card-title" style="color: var(--accent-purple);">CONTEXT ROUTER SIMULATOR</h4>
++                            
++                            <div class="form-panel-card" style="padding: 10px; background: rgba(168, 85, 247, 0.03); border: 1px solid rgba(168, 85, 247, 0.15); margin-bottom: 15px;">
++                                <div class="field-group" style="margin-bottom: 8px;">
++                                    <label style="font-size: 9px; color: var(--accent-purple);">ENTER A DIRECTIVE PROMPT TO SIMULATE MATCHES:</label>
++                                    <textarea id="profile-sim-prompt-input" rows="4" style="width: 100%; font-size: 12px; padding: 8px; background: #060913; border: 1px solid var(--border-color); color: #fff; border-radius: 4px; resize: none;" placeholder="e.g., 'Draft a blog post about Inline Skate Ninja lessons in DC...'"></textarea>
++                                </div>
++                                <button id="profile-run-sim-btn" class="action-btn-accent" style="width: 100%; font-size: 11px; padding: 8px; background: rgba(168, 85, 247, 0.2); border-color: rgba(168, 85, 247, 0.4); color: var(--accent-purple); font-weight: bold; text-align: center; justify-content: center;">
++                                    TEST CONTEXT ROUTER
++                                </button>
++                            </div>
++                            
++                            <h4 class="card-title">SIMULATED ROUTING RESULTS</h4>
++                            <div class="terminal-preview-container" style="background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-color); padding: 12px; border-radius: 6px; font-size: 11px;">
++                                <div id="profile-sim-results" class="text-muted">
++                                    Awaiting routing simulation run...
++                                </div>
++                            </div>
++                        </div>
++                    </div>
++                </main>
+
+            </div>
 
             <!-- RIGHT PANEL: COLLAPSIBLE INSPECTOR -->
             <aside id="inspector-panel" class="inspector-sidebar">
@@ -172,11 +551,24 @@
         </div>
     </div>
     
-    <!-- Custom tooltips, loading modals, etc. -->
+    <!-- Loading Overlay -->
     <div id="loading-overlay" class="modal-overlay hidden">
         <div class="loading-modal">
             <div class="modal-spinner"></div>
             <p id="loading-message">Executing system task...</p>
+        </div>
+    </div>
+
+    <!-- Consensus Synthesis modal -->
+    <div id="consensus-modal" class="modal-overlay hidden">
+        <div class="synthesis-modal">
+            <div class="synthesis-header">
+                <h3>SYNTHESIZED COUNCIL REPORT</h3>
+                <span id="close-consensus-btn" class="close-btn">&times;</span>
+            </div>
+            <div class="synthesis-content-container">
+                <pre id="consensus-report-viewer" class="consensus-report-text">Awaiting consensus data...</pre>
+            </div>
         </div>
     </div>
 

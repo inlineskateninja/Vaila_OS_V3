@@ -1,4 +1,4 @@
-﻿{
+{
   "tools": [
     {
       "tool_id": "file_analyzer",
@@ -23,6 +23,86 @@
     {
       "tool_id": "patch_exporter",
       "module": "System_Tools.patch_exporter",
+      "enabled": true
+    },
+    {
+      "tool_id": "user_profile_tool",
+      "module": "System_Tools.user_profile_tool",
+      "enabled": true
+    },
+    {
+      "tool_id": "tool_registry_inspector",
+      "module": "System_Tools.tool_registry_inspector",
+      "enabled": true
+    },
+    {
+      "tool_id": "system_dependency_doctor",
+      "module": "System_Tools.system_dependency_doctor",
+      "enabled": true
+    },
+    {
+      "tool_id": "memory_review_console",
+      "module": "System_Tools.memory_review_console",
+      "enabled": true
+    },
+    {
+      "tool_id": "memory_backend_adapter",
+      "module": "System_Tools.memory_backend_adapter",
+      "enabled": true
+    },
+    {
+      "tool_id": "self_model_diff_tool",
+      "module": "System_Tools.self_model_diff_tool",
+      "enabled": true
+    },
+    {
+      "tool_id": "capability_map_generator",
+      "module": "System_Tools.capability_map_generator",
+      "enabled": true
+    },
+    {
+      "tool_id": "behavior_regression_tester",
+      "module": "System_Tools.behavior_regression_tester",
+      "enabled": true
+    },
+    {
+      "tool_id": "patch_proposal_reviewer",
+      "module": "System_Tools.patch_proposal_reviewer",
+      "enabled": true
+    },
+    {
+      "tool_id": "goal_task_tracker",
+      "module": "System_Tools.goal_task_tracker",
+      "enabled": true
+    },
+    {
+      "tool_id": "n8n_workflow_librarian",
+      "module": "System_Tools.n8n_workflow_librarian",
+      "enabled": true
+    },
+    {
+      "tool_id": "artifact_indexer",
+      "module": "System_Tools.artifact_indexer",
+      "enabled": true
+    },
+    {
+      "tool_id": "safety_boundary_auditor",
+      "module": "System_Tools.safety_boundary_auditor",
+      "enabled": true
+    },
+    {
+      "tool_id": "persona_drift_monitor",
+      "module": "System_Tools.persona_drift_monitor",
+      "enabled": true
+    },
+    {
+      "tool_id": "user_context_router",
+      "module": "System_Tools.user_context_router",
+      "enabled": true
+    },
+    {
+      "tool_id": "self_evolution_planner",
+      "module": "System_Tools.self_evolution_planner",
       "enabled": true
     }
   ]

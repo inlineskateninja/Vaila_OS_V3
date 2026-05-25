@@ -1,26 +1,25 @@
 {
   "status": "changes_detected",
-  "previous_scan_time": "2026-05-25T04:55:41Z",
-  "current_scan_time": "2026-05-25T04:58:40Z",
+  "previous_scan_time": "2026-05-25T04:58:40Z",
+  "current_scan_time": "2026-05-25T07:41:24Z",
   "summary_counts": {
-    "added_files": 2,
-    "removed_files": 5,
+    "added_files": 7,
+    "removed_files": 0,
     "modified_files": 7,
     "new_issues": 0,
     "resolved_issues": 0,
     "capability_changes": 11
   },
   "added_files": [
-    "core_system_files/system_state/scan_reports/change_2026_05_25_045541_176432.json",
-    "core_system_files/system_state/scan_reports/scan_2026_05_25_045541_161712.json"
-  ],
-  "removed_files": [
     "core_system_files/system_services/python_backend/.pytest_cache/.gitignore",
     "core_system_files/system_services/python_backend/.pytest_cache/CACHEDIR.TAG",
     "core_system_files/system_services/python_backend/.pytest_cache/README.md",
     "core_system_files/system_services/python_backend/.pytest_cache/v/cache/lastfailed",
-    "core_system_files/system_services/python_backend/.pytest_cache/v/cache/nodeids"
+    "core_system_files/system_services/python_backend/.pytest_cache/v/cache/nodeids",
+    "core_system_files/system_state/scan_reports/change_2026_05_25_045840_036250.json",
+    "core_system_files/system_state/scan_reports/scan_2026_05_25_045840_021431.json"
   ],
+  "removed_files": [],
   "modified_files": [
     "core_system_files/system_state/self_model/architecture_snapshot.json",
     "core_system_files/system_state/self_model/capability_map.json",
@@ -30,7 +29,7 @@
     "core_system_files/system_state/self_model/last_scan_summary.md",
     "core_system_files/system_state/self_model/unresolved_issues.json"
   ],
-  "unchanged_files_count": 324,
+  "unchanged_files_count": 326,
   "added_services": [],
   "removed_services": [],
   "added_routers": [],

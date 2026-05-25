@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "scanned_at": "2026-05-25T04:58:40Z",
+  "scanned_at": "2026-05-25T07:41:24Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "config": {
     "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
@@ -157,11 +157,79 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 0,
+        "classification_source": "deterministic"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/.gitignore",
+      "name": ".gitignore",
+      "extension": "",
+      "size_bytes": 39,
+      "modified_time": "2026-05-25T00:32:58Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown",
+        "classification_source": "deterministic"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/CACHEDIR.TAG",
+      "name": "CACHEDIR.TAG",
+      "extension": ".tag",
+      "size_bytes": 191,
+      "modified_time": "2026-05-25T00:32:58Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown",
+        "classification_source": "deterministic"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/README.md",
+      "name": "README.md",
+      "extension": ".md",
+      "size_bytes": 310,
+      "modified_time": "2026-05-25T00:32:58Z",
+      "category": "documentation",
+      "metadata": {
+        "category_reason": "documentation",
         "classification_source": "llm",
-        "deterministic_category": "script",
+        "deterministic_category": "documentation",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "script"
+        "llm_reason": "The file is a documentation file."
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/v/cache/lastfailed",
+      "name": "lastfailed",
+      "extension": "",
+      "size_bytes": 2,
+      "modified_time": "2026-05-25T00:38:58Z",
+      "category": "test_file",
+      "metadata": {
+        "category_reason": "unknown",
+        "classification_source": "llm",
+        "deterministic_category": "unknown",
+        "llm_model": "qwen/qwen3-1.7b",
+        "llm_confidence": "high",
+        "llm_reason": "File resides in pytest cache directory, likely test-related artifact"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/v/cache/nodeids",
+      "name": "nodeids",
+      "extension": "",
+      "size_bytes": 4714,
+      "modified_time": "2026-05-25T01:17:02Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown",
+        "classification_source": "llm",
+        "deterministic_category": "unknown",
+        "llm_model": "qwen/qwen3-1.7b",
+        "llm_confidence": "high",
+        "llm_reason": "Deterministic category is 'unknown' and the file extension is empty, indicating it's a cache directory."
       }
     },
     {
@@ -175,11 +243,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 0,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -211,7 +275,7 @@
         "deterministic_category": "script",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "script"
+        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a script."
       }
     },
     {
@@ -229,7 +293,7 @@
         "deterministic_category": "script",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "script"
+        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a Python backend API client."
       }
     },
     {
@@ -247,7 +311,7 @@
         "deterministic_category": "script",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the metadata."
+        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a Python backend application."
       }
     },
     {
@@ -265,7 +329,7 @@
         "deterministic_category": "memory_file",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "Deterministic category 'memory_file' based on file extension .py and presence of memory-related functionality."
+        "llm_reason": "Deterministic category 'memory_file' based on extension '.py' and presence of memory-related functionality."
       }
     },
     {
@@ -333,11 +397,7 @@
         "category_reason": "service",
         "has_deprecated_import": false,
         "line_count": 907,
-        "classification_source": "llm",
-        "deterministic_category": "service",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file is a Python backend service file with clear indications of its role in the system."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -351,11 +411,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 904,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script'."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -369,11 +425,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 333,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a Python backend application."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -387,11 +439,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 209,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a Python backend application."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -405,11 +453,7 @@
         "category_reason": "service",
         "has_deprecated_import": false,
         "line_count": 97,
-        "classification_source": "llm",
-        "deterministic_category": "service",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file is a Python backend service responsible for interacting with the LLM."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -2129,6 +2173,18 @@
       }
     },
     {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_045840_036250.json",
+      "name": "change_2026_05_25_045840_036250.json",
+      "extension": ".json",
+      "size_bytes": 2910,
+      "modified_time": "2026-05-25T04:58:40Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown",
+        "classification_source": "deterministic"
+      }
+    },
+    {
       "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_013616_635845.json",
       "name": "recommendations_2026_05_25_013616_635845.json",
       "extension": ".json",
@@ -3437,11 +3493,23 @@
       }
     },
     {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_045840_021431.json",
+      "name": "scan_2026_05_25_045840_021431.json",
+      "extension": ".json",
+      "size_bytes": 169784,
+      "modified_time": "2026-05-25T04:58:40Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown",
+        "classification_source": "deterministic"
+      }
+    },
+    {
       "path": "core_system_files/system_state/self_model/architecture_snapshot.json",
       "name": "architecture_snapshot.json",
       "extension": ".json",
-      "size_bytes": 1974,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "size_bytes": 1884,
+      "modified_time": "2026-05-25T04:58:40Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3453,7 +3521,7 @@
       "name": "capability_map.json",
       "extension": ".json",
       "size_bytes": 346,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T04:58:40Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3464,8 +3532,8 @@
       "path": "core_system_files/system_state/self_model/change_report.json",
       "name": "change_report.json",
       "extension": ".json",
-      "size_bytes": 2907,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "size_bytes": 2910,
+      "modified_time": "2026-05-25T04:58:40Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3476,8 +3544,8 @@
       "path": "core_system_files/system_state/self_model/file_inventory.json",
       "name": "file_inventory.json",
       "extension": ".json",
-      "size_bytes": 170427,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "size_bytes": 169903,
+      "modified_time": "2026-05-25T04:58:40Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3489,7 +3557,7 @@
       "name": "last_change_summary.md",
       "extension": ".md",
       "size_bytes": 139,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T04:58:40Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation",
@@ -3513,7 +3581,7 @@
       "name": "last_scan_summary.md",
       "extension": ".md",
       "size_bytes": 787,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T04:58:40Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation",
@@ -3537,7 +3605,7 @@
       "name": "unresolved_issues.json",
       "extension": ".json",
       "size_bytes": 20,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T04:58:40Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -4435,6 +4503,10 @@
       "reason": "ignored_folder"
     },
     {
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_llm_classification_service.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
       "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_manifest_service.cpython-311.pyc",
       "reason": "ignored_folder"
     },
@@ -4858,16 +4930,16 @@
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 190,
+    "unknown": 195,
     "memory_file": 29,
-    "documentation": 6,
+    "documentation": 7,
+    "test_file": 3,
     "service": 14,
     "router": 3,
     "model_schema": 1,
-    "test_file": 2,
     "persona_policy": 47,
     "config_file": 4,
     "persona_manifest": 1
   },
-  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_25_045840_021431.json"
+  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_25_074124_706510.json"
 }

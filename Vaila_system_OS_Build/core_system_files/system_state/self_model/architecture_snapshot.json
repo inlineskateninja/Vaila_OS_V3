@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generated_at": "2026-05-25T04:58:40Z",
+  "generated_at": "2026-05-25T07:41:24Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "present_expected": [
     "core_system_files/app.py",
@@ -14,6 +14,7 @@
   ],
   "missing_expected": [],
   "useful_unexpected": [
+    "core_system_files/system_services/python_backend/.pytest_cache/v/cache/lastfailed",
     "core_system_files/system_services/python_backend/app/core.py",
     "core_system_files/system_services/python_backend/app/llm_client.py",
     "core_system_files/system_services/python_backend/app/router.py",
@@ -32,13 +33,13 @@
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 190,
+    "unknown": 195,
     "memory_file": 29,
-    "documentation": 6,
+    "documentation": 7,
+    "test_file": 3,
     "service": 14,
     "router": 3,
     "model_schema": 1,
-    "test_file": 2,
     "persona_policy": 47,
     "config_file": 4,
     "persona_manifest": 1

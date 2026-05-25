@@ -36,9 +36,12 @@ class N8NService:
             "api_key_configured": bool(self.api_key),
             "webhook_secret_configured": bool(self.webhook_secret),
             "timeout_seconds": self.timeout_seconds,
-            "mode": "webhook",
+            "mode": "rest_and_webhook",
         }
 
+    # -------------------------------------------------------------
+    # WEBHOOK METHODS
+    # -------------------------------------------------------------
     def call_webhook(self, path: str, payload: dict[str, Any]) -> dict[str, Any]:
         if not self.enabled:
             return {
@@ -84,6 +87,78 @@ class N8NService:
     def call_workflow_tool(self, tool_name: str, payload: dict[str, Any]) -> dict[str, Any]:
         return self.call_webhook(tool_name, payload)
 
+    # -------------------------------------------------------------
+    # REST API ACTIVE WORKFLOW MANAGEMENT
+    # -------------------------------------------------------------
+    def list_workflows(self) -> dict[str, Any]:
+        url = f"{self.base_url}/api/v1/workflows"
+        try:
+            response = requests.get(url, headers=self._headers(), timeout=self.timeout_seconds)
+            response.raise_for_status()
+            return {"ok": True, "workflows": response.json().get("data", [])}
+        except requests.RequestException as exc:
+            return {"ok": False, "error": self._handle_request_exception("list workflows", exc)}
+
+    def get_workflow(self, workflow_id: str) -> dict[str, Any]:
+        url = f"{self.base_url}/api/v1/workflows/{workflow_id}"
+        try:
+            response = requests.get(url, headers=self._headers(), timeout=self.timeout_seconds)
+            response.raise_for_status()
+            return {"ok": True, "workflow": response.json()}
+        except requests.RequestException as exc:
+            return {"ok": False, "error": self._handle_request_exception(f"fetch workflow '{workflow_id}'", exc)}
+
+    def create_workflow(self, name: str, nodes: list[dict[str, Any]], connections: dict[str, Any]) -> dict[str, Any]:
+        url = f"{self.base_url}/api/v1/workflows"
+        payload = {
+            "name": name,
+            "nodes": nodes,
+            "connections": connections,
+            "active": False,
+            "settings": {}
+        }
+        try:
+            response = requests.post(url, json=payload, headers=self._headers(), timeout=self.timeout_seconds)
+            response.raise_for_status()
+            return {"ok": True, "workflow": response.json()}
+        except requests.RequestException as exc:
+            return {"ok": False, "error": self._handle_request_exception(f"create workflow '{name}'", exc)}
+
+    def update_workflow(self, workflow_id: str, update_data: dict[str, Any]) -> dict[str, Any]:
+        url = f"{self.base_url}/api/v1/workflows/{workflow_id}"
+        try:
+            response = requests.put(url, json=update_data, headers=self._headers(), timeout=self.timeout_seconds)
+            response.raise_for_status()
+            return {"ok": True, "workflow": response.json()}
+        except requests.RequestException as exc:
+            return {"ok": False, "error": self._handle_request_exception(f"update workflow '{workflow_id}'", exc)}
+
+    def delete_workflow(self, workflow_id: str) -> dict[str, Any]:
+        url = f"{self.base_url}/api/v1/workflows/{workflow_id}"
+        try:
+            response = requests.delete(url, headers=self._headers(), timeout=self.timeout_seconds)
+            response.raise_for_status()
+            return {"ok": True, "deleted": True}
+        except requests.RequestException as exc:
+            return {"ok": False, "error": self._handle_request_exception(f"delete workflow '{workflow_id}'", exc)}
+
+    def toggle_workflow(self, workflow_id: str, active: bool) -> dict[str, Any]:
+        # n8n enables/disables workflows via a simple active flag update
+        return self.update_workflow(workflow_id, {"active": active})
+
+    # -------------------------------------------------------------
+    # AUXILIARY PRIVATE UTILITIES
+    # -------------------------------------------------------------
+    def _handle_request_exception(self, action: str, exc: requests.RequestException) -> str:
+        err_msg = str(exc)
+        if exc.response is not None:
+            try:
+                err_json = exc.response.json()
+                if "message" in err_json:
+                    err_msg = f"{err_msg} // Detail: {err_json.get('message')}"
+            except Exception:
+                err_msg = f"{err_msg} // Detail: {exc.response.text[:500]}"
+        return f"Failed to {action}: {err_msg}"
     def _headers(self) -> dict[str, str]:
         headers: dict[str, str] = {}
         if self.api_key:

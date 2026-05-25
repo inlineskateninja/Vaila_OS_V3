@@ -1,8 +1,24 @@
-﻿{
+{
   "routes": {
     "file_analysis": "file_analyzer",
     "self_assessment": "self_assessment",
     "log_summary": "log_summarizer",
-    "document_import": "document_importer"
+    "document_import": "document_importer",
+    "user_profile": "user_profile_tool",
+    "tool_registry_inspection": "tool_registry_inspector",
+    "system_dependency_doctor": "system_dependency_doctor",
+    "memory_review_console": "memory_review_console",
+    "memory_backend_adapter": "memory_backend_adapter",
+    "self_model_diff": "self_model_diff_tool",
+    "capability_map": "capability_map_generator",
+    "behavior_regression": "behavior_regression_tester",
+    "patch_proposal_review": "patch_proposal_reviewer",
+    "goal_task_tracking": "goal_task_tracker",
+    "n8n_librarian": "n8n_workflow_librarian",
+    "artifact_indexing": "artifact_indexer",
+    "safety_boundary_auditing": "safety_boundary_auditor",
+    "persona_drift_monitoring": "persona_drift_monitor",
+    "user_context_routing": "user_context_router",
+    "self_evolution_planning": "self_evolution_planner"
   }
 }
