@@ -1,7 +1,32 @@
-﻿{
+{
   "service_id": "google",
+  "display_name": "Google Workspace",
   "enabled": false,
   "auth_required": true,
   "adapter_status": "planned",
-  "notes": "Google services should remain behind explicit permission and adapter boundaries."
+  "notes": "Google services should remain behind explicit permission and adapter boundaries. This registry declares planned assistant capabilities only; it does not enable external API calls.",
+  "planned_tools": [
+    "google_calendar",
+    "google_drive",
+    "gmail",
+    "google_tasks",
+    "google_people"
+  ],
+  "oauth": {
+    "status": "not_configured",
+    "client_secret_source": ".env_or_Secrets",
+    "token_storage": "Secrets/google_token.json",
+    "scopes": {
+      "google_calendar": ["calendar.events"],
+      "google_drive": ["drive.metadata.readonly", "drive.readonly"],
+      "gmail": ["gmail.readonly", "gmail.compose", "gmail.modify"],
+      "google_tasks": ["tasks"],
+      "google_people": ["contacts.readonly", "contacts"]
+    }
+  },
+  "safety": {
+    "writes_require_user_approval": true,
+    "destructive_actions_require_explicit_confirmation": true,
+    "external_calls_enabled_by_default": false
+  }
 }

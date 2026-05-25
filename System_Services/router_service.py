@@ -5,11 +5,13 @@ from pathlib import Path
 from typing import Any
 
 from System_Services.envelope_service import PromptEnvelope
+from System_Services.tool_intent_service import ToolIntentService
 
 
 class RouterService:
     def __init__(self, project_root: Path) -> None:
         self.project_root = project_root
+        self.tool_intents = ToolIntentService(project_root=project_root)
 
         self.persona_patterns = {
             "proto_jane": r"\b(proto jane|jane)\b",
@@ -77,7 +79,21 @@ class RouterService:
                 break
 
         if task_type == "general_chat":
-            confidence = 1
+            tool_intent = self.tool_intents.detect_intent(text, source=envelope.source)
+            tool_intent_data = self._tool_intent_to_dict(tool_intent)
+            if tool_intent.tool_id != "general_chat" and tool_intent.confidence >= 0.75:
+                task_type = "assistant_tool"
+                task_reason = f"detected assistant tool intent: {tool_intent.tool_id}.{tool_intent.action}"
+                confidence = 3
+            elif tool_intent.tool_id != "general_chat" and tool_intent.confidence >= 0.45:
+                task_type = "assistant_tool_candidate"
+                task_reason = f"candidate assistant tool intent: {tool_intent.tool_id}.{tool_intent.action}"
+                confidence = 2
+            else:
+                confidence = 1
+                tool_intent_data = {}
+        else:
+            tool_intent_data = {}
 
         prompt_interpreter_enabled = bool(envelope.metadata.get("prompt_interpreter_enabled"))
         if envelope.source in {"stt", "stt_voice", "voice_stt"}:
@@ -89,6 +105,28 @@ class RouterService:
             "task_type": task_type,
             "confidence": confidence,
             "reasons": [persona_reason, task_reason],
-            "needs_prompt_interpreter": prompt_interpreter_enabled and confidence < 2,
+            "needs_prompt_interpreter": (
+                True if task_type == "assistant_tool_candidate" else prompt_interpreter_enabled and confidence < 2
+            ),
+            "needs_clarification": task_type == "assistant_tool_candidate",
             "prompt_interpreter_allowed": prompt_interpreter_enabled,
+            "tool_intent": tool_intent_data,
+        }
+
+    def _tool_intent_to_dict(self, tool_intent: Any) -> dict[str, Any]:
+        return {
+            "intent_id": tool_intent.intent_id,
+            "tool_id": tool_intent.tool_id,
+            "service_id": tool_intent.service_id,
+            "action": tool_intent.action,
+            "confidence": tool_intent.confidence,
+            "risk_level": tool_intent.risk_level,
+            "approval_required": tool_intent.approval_required,
+            "source": tool_intent.source,
+            "raw_text": tool_intent.raw_text,
+            "normalized_text": tool_intent.normalized_text,
+            "entities": tool_intent.entities,
+            "matched_patterns": tool_intent.matched_patterns,
+            "needs_clarification": tool_intent.needs_clarification,
+            "clarification_question": tool_intent.clarification_question,
         }

@@ -25,6 +25,9 @@ from System_Services.logging_service import LoggingService
 from System_Services.orchestration_service import OrchestrationService
 from System_Services.router_service import RouterService
 from System_Services.connected_service_manager import ConnectedServiceManager
+from System_Services.tool_intent_service import ToolIntentService
+from System_Services.tool_permission_service import ToolPermissionService
+from System_Services.approval_service import ApprovalService
 
 app = FastAPI(title="Vaila OS V3 Local API & GUI", version="0.3.0")
 
@@ -95,6 +98,9 @@ envelope_service = EnvelopeService(project_root=PROJECT_ROOT)
 router = RouterService(project_root=PROJECT_ROOT)
 orchestrator = OrchestrationService(project_root=PROJECT_ROOT, logger=logger)
 service_manager = ConnectedServiceManager(project_root=PROJECT_ROOT)
+tool_intents = ToolIntentService(project_root=PROJECT_ROOT)
+tool_permissions = ToolPermissionService(project_root=PROJECT_ROOT)
+approval_service = ApprovalService(project_root=PROJECT_ROOT)
 
 # Thread Pool for executing parallel Council requests
 thread_executor = ThreadPoolExecutor(max_workers=5)
@@ -137,6 +143,12 @@ class SaveModuleRequest(BaseModel):
 
 class SimulateRouteRequest(BaseModel):
     prompt: str
+
+class CreateToolApprovalRequest(BaseModel):
+    text: str
+    source: str = "text"
+    proposed_action_summary: str | None = None
+    proposed_payload: dict[str, Any] | None = None
 
 # Helper Functions
 def read_recent_logs(folder_name: str, prefix: str, limit: int = 50) -> list[dict[str, Any]]:
@@ -208,6 +220,35 @@ def load_durable_memories() -> list[dict[str, Any]]:
     except Exception as exc:
         logger.log_error({"event_type": "api_load_durable_failed", "error": str(exc)})
     return memories
+
+def tool_intent_to_dict(intent: Any) -> dict[str, Any]:
+    return {
+        "intent_id": intent.intent_id,
+        "tool_id": intent.tool_id,
+        "service_id": intent.service_id,
+        "action": intent.action,
+        "confidence": intent.confidence,
+        "risk_level": intent.risk_level,
+        "approval_required": intent.approval_required,
+        "source": intent.source,
+        "raw_text": intent.raw_text,
+        "normalized_text": intent.normalized_text,
+        "entities": intent.entities,
+        "matched_patterns": intent.matched_patterns,
+        "needs_clarification": intent.needs_clarification,
+        "clarification_question": intent.clarification_question,
+    }
+
+def load_assistant_tools() -> list[dict[str, Any]]:
+    tools_path = PROJECT_ROOT / "Tools_Registry" / "assistant_tools.json"
+    if not tools_path.exists():
+        return []
+    try:
+        data = json.loads(tools_path.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    tools = data.get("tools", []) if isinstance(data, dict) else []
+    return [tool for tool in tools if isinstance(tool, dict)]
 
 # --- ROUTING ENDPOINTS ---
 
@@ -358,6 +399,71 @@ def get_system_info() -> dict[str, Any]:
             "resolved_model": orchestrator.llm._resolved_model or "(auto)",
         },
     }
+
+
+# --- ASSISTANT TOOL SAFETY ENDPOINTS ---
+
+@app.get("/api/tools")
+def get_assistant_tools() -> dict[str, Any]:
+    tools = load_assistant_tools()
+    return {
+        "tools": tools,
+        "count": len(tools),
+        "execution_enabled": False,
+    }
+
+@app.get("/api/tools/intents/simulate")
+def simulate_tool_intent(text: str, source: str = "text") -> dict[str, Any]:
+    intent = tool_intents.detect_intent(text=text, source=source)
+    permission = tool_permissions.explain_permission(intent)
+    return {
+        "intent": tool_intent_to_dict(intent),
+        "permission": permission,
+        "execution_enabled": False,
+    }
+
+@app.get("/api/tools/approvals")
+def get_pending_tool_approvals() -> dict[str, Any]:
+    approvals = approval_service.list_pending_approvals()
+    return {
+        "approvals": approvals,
+        "count": len(approvals),
+    }
+
+@app.post("/api/tools/approvals")
+def create_tool_approval(request: CreateToolApprovalRequest) -> dict[str, Any]:
+    intent = tool_intents.detect_intent(text=request.text, source=request.source)
+    proposed_action = {
+        "summary": request.proposed_action_summary
+        or f"Prepare {intent.tool_id}.{intent.action} for approval. No tool execution will occur.",
+        "payload": request.proposed_payload or {
+            "intent": tool_intent_to_dict(intent),
+            "execution_enabled": False,
+        },
+    }
+    approval = approval_service.create_approval_request(intent, proposed_action)
+    return {
+        "approval": approval,
+        "intent": tool_intent_to_dict(intent),
+        "permission": tool_permissions.explain_permission(intent),
+        "execution_enabled": False,
+    }
+
+@app.post("/api/tools/approvals/{approval_id}/approve")
+def approve_tool_approval(approval_id: str) -> dict[str, Any]:
+    result = approval_service.approve_request(approval_id)
+    if not result.get("ok"):
+        raise HTTPException(status_code=404, detail=result.get("error", "approval_not_found"))
+    result["execution_enabled"] = False
+    return result
+
+@app.post("/api/tools/approvals/{approval_id}/reject")
+def reject_tool_approval(approval_id: str) -> dict[str, Any]:
+    result = approval_service.reject_request(approval_id)
+    if not result.get("ok"):
+        raise HTTPException(status_code=404, detail=result.get("error", "approval_not_found"))
+    result["execution_enabled"] = False
+    return result
 
 @app.get("/api/logs/session")
 def get_session_logs(limit: int = 50) -> list[dict[str, Any]]:

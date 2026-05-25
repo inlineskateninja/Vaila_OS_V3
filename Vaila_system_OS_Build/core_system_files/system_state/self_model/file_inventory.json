@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "scanned_at": "2026-05-25T07:41:24Z",
+  "scanned_at": "2026-05-25T10:09:26Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "config": {
     "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
@@ -61,7 +61,7 @@
         "deterministic_category": "script",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "script"
+        "llm_reason": "The file '__init__.py' is a script file, often used to initialize modules in a package."
       }
     },
     {
@@ -77,7 +77,7 @@
         "deterministic_category": "unknown",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "unknown"
+        "llm_reason": "The file 'agents.json' has an unknown category based on the provided metadata."
       }
     },
     {
@@ -95,7 +95,7 @@
         "deterministic_category": "core_entrypoint",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "core_entrypoint"
+        "llm_reason": "The file 'app.py' is a core entrypoint file, typically used as the main application module in a project."
       }
     },
     {
@@ -111,7 +111,7 @@
         "deterministic_category": "unknown",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "unknown"
+        "llm_reason": "The file 'services.json' has an unknown category based on the provided metadata."
       }
     },
     {
@@ -127,7 +127,7 @@
         "deterministic_category": "memory_file",
         "llm_model": "qwen/qwen3-1.7b",
         "llm_confidence": "high",
-        "llm_reason": "memory_file"
+        "llm_reason": "The file 'memory_config.json' is a memory file, typically used to configure memory-related settings."
       }
     },
     {
@@ -139,11 +139,7 @@
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation",
-        "classification_source": "llm",
-        "deterministic_category": "documentation",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "documentation"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -157,7 +153,11 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 0,
-        "classification_source": "deterministic"
+        "classification_source": "llm",
+        "deterministic_category": "script",
+        "llm_model": "qwen/qwen3-1.7b",
+        "llm_confidence": "high",
+        "llm_reason": "The file '__init__.py' is a script file, often used to initialize modules in a package."
       }
     },
     {
@@ -169,7 +169,11 @@
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "classification_source": "llm",
+        "deterministic_category": "unknown",
+        "llm_model": "qwen/qwen3-1.7b",
+        "llm_confidence": "high",
+        "llm_reason": "The file '.gitignore' has an unknown category based on the provided metadata."
       }
     },
     {
@@ -181,7 +185,11 @@
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "classification_source": "llm",
+        "deterministic_category": "unknown",
+        "llm_model": "qwen/qwen3-1.7b",
+        "llm_confidence": "high",
+        "llm_reason": "The file 'CACHEDIR.TAG' has an unknown category based on the provided metadata"
       }
     },
     {
@@ -243,7 +251,11 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 0,
-        "classification_source": "deterministic"
+        "classification_source": "llm",
+        "deterministic_category": "script",
+        "llm_model": "qwen/qwen3-1.7b",
+        "llm_confidence": "high",
+        "llm_reason": "The file '__init__.py' is a script file, often used to initialize modules in a package."
       }
     },
     {
@@ -2185,6 +2197,18 @@
       }
     },
     {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_074124_723315.json",
+      "name": "change_2026_05_25_074124_723315.json",
+      "extension": ".json",
+      "size_bytes": 2907,
+      "modified_time": "2026-05-25T07:41:24Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown",
+        "classification_source": "deterministic"
+      }
+    },
+    {
       "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_013616_635845.json",
       "name": "recommendations_2026_05_25_013616_635845.json",
       "extension": ".json",
@@ -3505,11 +3529,23 @@
       }
     },
     {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_074124_706510.json",
+      "name": "scan_2026_05_25_074124_706510.json",
+      "extension": ".json",
+      "size_bytes": 172183,
+      "modified_time": "2026-05-25T07:41:24Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown",
+        "classification_source": "deterministic"
+      }
+    },
+    {
       "path": "core_system_files/system_state/self_model/architecture_snapshot.json",
       "name": "architecture_snapshot.json",
       "extension": ".json",
-      "size_bytes": 1884,
-      "modified_time": "2026-05-25T04:58:40Z",
+      "size_bytes": 1974,
+      "modified_time": "2026-05-25T07:41:24Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3521,7 +3557,7 @@
       "name": "capability_map.json",
       "extension": ".json",
       "size_bytes": 346,
-      "modified_time": "2026-05-25T04:58:40Z",
+      "modified_time": "2026-05-25T07:41:24Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3532,8 +3568,8 @@
       "path": "core_system_files/system_state/self_model/change_report.json",
       "name": "change_report.json",
       "extension": ".json",
-      "size_bytes": 2910,
-      "modified_time": "2026-05-25T04:58:40Z",
+      "size_bytes": 2907,
+      "modified_time": "2026-05-25T07:41:24Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3544,8 +3580,8 @@
       "path": "core_system_files/system_state/self_model/file_inventory.json",
       "name": "file_inventory.json",
       "extension": ".json",
-      "size_bytes": 169903,
-      "modified_time": "2026-05-25T04:58:40Z",
+      "size_bytes": 172302,
+      "modified_time": "2026-05-25T07:41:24Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3557,7 +3593,7 @@
       "name": "last_change_summary.md",
       "extension": ".md",
       "size_bytes": 139,
-      "modified_time": "2026-05-25T04:58:40Z",
+      "modified_time": "2026-05-25T07:41:24Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation",
@@ -3581,7 +3617,7 @@
       "name": "last_scan_summary.md",
       "extension": ".md",
       "size_bytes": 787,
-      "modified_time": "2026-05-25T04:58:40Z",
+      "modified_time": "2026-05-25T07:41:24Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation",
@@ -3605,7 +3641,7 @@
       "name": "unresolved_issues.json",
       "extension": ".json",
       "size_bytes": 20,
-      "modified_time": "2026-05-25T04:58:40Z",
+      "modified_time": "2026-05-25T07:41:24Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -4855,7 +4891,15 @@
       "reason": "ignored_folder"
     },
     {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_backend_interface.cpython-311-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
       "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_backend_interface.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_config.cpython-311-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
@@ -4863,7 +4907,15 @@
       "reason": "ignored_folder"
     },
     {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_migration.cpython-311-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
       "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_migration.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_recall_log.cpython-311-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
@@ -4871,7 +4923,15 @@
       "reason": "ignored_folder"
     },
     {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_vector_interfaces.cpython-311-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
       "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_vector_interfaces.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_sqlite_memory_backend.cpython-311-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
@@ -4879,7 +4939,15 @@
       "reason": "ignored_folder"
     },
     {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_change_service.cpython-311-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
       "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_change_service.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_perception.cpython-311-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
@@ -4887,11 +4955,23 @@
       "reason": "ignored_folder"
     },
     {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_recommendation_service.cpython-311-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
       "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_recommendation_service.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_repair_packet_service.cpython-311-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
       "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_repair_packet_service.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_self_query_integration.cpython-311-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
@@ -4930,7 +5010,7 @@
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 195,
+    "unknown": 197,
     "memory_file": 29,
     "documentation": 7,
     "test_file": 3,
@@ -4941,5 +5021,5 @@
     "config_file": 4,
     "persona_manifest": 1
   },
-  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_25_074124_706510.json"
+  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_25_100926_082442.json"
 }

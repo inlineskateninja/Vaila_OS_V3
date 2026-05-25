@@ -1,8 +1,8 @@
 # Vaila System Perception Summary
 
-- Generated: 2026-05-25T07:41:24Z
+- Generated: 2026-05-25T10:09:26Z
 - Project root: E:\Vaila_OS_V3\Vaila_system_OS_Build
-- Files scanned: 340
+- Files scanned: 342
 - Issues detected: 0
 
 ## Capability Map
@@ -30,7 +30,7 @@
 - script: 32
 - service: 14
 - test_file: 3
-- unknown: 195
+- unknown: 197
 
 ## Issues
 - No unresolved issues detected.

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 from copy import deepcopy
 from dataclasses import dataclass, field
@@ -11,6 +12,9 @@ from System_Services.llm_gateway import LLMGateway
 from System_Services.logging_service import LoggingService
 from System_Services.memory_service import MemoryService
 from System_Services.prompt_interpreter import PromptInterpreter
+from System_Services.tool_execution_service import ToolExecutionService, ToolResult
+from System_Services.tool_intent_service import ToolIntent
+from System_Services.tool_permission_service import ToolPermissionService
 from System_Tools.file_analyzer import FileAnalyzer
 from System_Tools.log_summarizer import LogSummarizer
 from System_Tools.self_assessment import SelfAssessmentTool
@@ -52,6 +56,8 @@ class OrchestrationService:
         self.llm = LLMGateway(project_root=project_root)
         self.memory = MemoryService(project_root=project_root, logger=logger)
         self.prompt_interpreter = PromptInterpreter(project_root=project_root)
+        self.tool_permissions = ToolPermissionService(project_root=project_root)
+        self.tool_execution = ToolExecutionService(project_root=project_root)
         self.file_analyzer = FileAnalyzer(project_root=project_root)
         self.log_summarizer = LogSummarizer(project_root=project_root)
         self.self_assessment = SelfAssessmentTool(project_root=project_root)
@@ -93,6 +99,16 @@ class OrchestrationService:
         audit_queued = False
 
         task_type = route.get("task_type")
+
+        if task_type == "assistant_tool":
+            response = self._handle_assistant_tool(envelope=envelope, route=route)
+            self.logger.run_background(self.memory.capture_memory_candidate, envelope, deepcopy(route))
+            return response
+
+        if task_type == "assistant_tool_candidate":
+            response = self._handle_assistant_tool_candidate(envelope=envelope, route=route)
+            self.logger.run_background(self.memory.capture_memory_candidate, envelope, deepcopy(route))
+            return response
 
         if task_type == "file_analysis":
             file_path = self._extract_windows_path(envelope.user_text)
@@ -255,6 +271,140 @@ class OrchestrationService:
                 },
             },
         )
+
+    def _handle_assistant_tool(self, envelope: PromptEnvelope, route: dict[str, Any]) -> OrchestrationResponse:
+        tool_intent = self._route_tool_intent(route, envelope)
+        permission = self.tool_permissions.explain_permission(tool_intent)
+        approved = bool(envelope.metadata.get("tool_approved") or envelope.metadata.get("approved_tool_execution"))
+
+        result = self.tool_execution.execute_intent(tool_intent, approved=approved)
+        visible_text = self._format_tool_response(
+            result=result,
+            route=route,
+            permission=permission,
+        )
+
+        return OrchestrationResponse(
+            visible_text=visible_text,
+            meta={
+                "request_id": envelope.request_id,
+                "route": route,
+                "used_tool_context": True,
+                "assistant_tool": {
+                    "intent": self._tool_intent_to_dict(tool_intent),
+                    "permission": permission,
+                    "result": result.to_dict(),
+                },
+                "memory_candidate_capture": "background_queued",
+                "prompt_interpreter": "not_needed",
+            },
+        )
+
+    def _handle_assistant_tool_candidate(self, envelope: PromptEnvelope, route: dict[str, Any]) -> OrchestrationResponse:
+        tool_intent = self._route_tool_intent(route, envelope)
+        question = tool_intent.clarification_question or (
+            f"I might use {tool_intent.tool_id}.{tool_intent.action}, but I need one more detail before I touch tools. "
+            "What exactly would you like me to do?"
+        )
+        persona = route.get("persona", "proto_jane")
+        visible_text = f"{self._persona_prefix(persona)}{question}"
+
+        return OrchestrationResponse(
+            visible_text=visible_text,
+            meta={
+                "request_id": envelope.request_id,
+                "route": route,
+                "used_tool_context": False,
+                "assistant_tool_candidate": {
+                    "intent": self._tool_intent_to_dict(tool_intent),
+                    "executed": False,
+                },
+                "memory_candidate_capture": "background_queued",
+                "prompt_interpreter": "clarification_requested",
+            },
+        )
+
+    def _route_tool_intent(self, route: dict[str, Any], envelope: PromptEnvelope) -> ToolIntent:
+        data = route.get("tool_intent")
+        if not isinstance(data, dict) or not data:
+            from System_Services.tool_intent_service import ToolIntentService
+
+            return ToolIntentService(project_root=self.project_root).detect_intent(envelope.user_text, source=envelope.source)
+
+        return ToolIntent(
+            intent_id=str(data.get("intent_id", "general_chat")),
+            tool_id=str(data.get("tool_id", "general_chat")),
+            service_id=str(data.get("service_id", "assistant")),
+            action=str(data.get("action", "chat")),
+            confidence=float(data.get("confidence", 0.0)),
+            risk_level=str(data.get("risk_level", "unknown")),
+            approval_required=bool(data.get("approval_required", False)),
+            source=str(data.get("source", envelope.source)),
+            raw_text=str(data.get("raw_text", envelope.user_text)),
+            normalized_text=str(data.get("normalized_text", "")),
+            entities=data.get("entities", {}) if isinstance(data.get("entities", {}), dict) else {},
+            matched_patterns=data.get("matched_patterns", []) if isinstance(data.get("matched_patterns", []), list) else [],
+            needs_clarification=bool(data.get("needs_clarification", False)),
+            clarification_question=str(data.get("clarification_question", "")),
+        )
+
+    def _format_tool_response(
+        self,
+        result: ToolResult,
+        route: dict[str, Any],
+        permission: dict[str, Any],
+    ) -> str:
+        persona = route.get("persona", "proto_jane")
+        prefix = self._persona_prefix(persona)
+
+        if result.status == "approval_required":
+            return (
+                f"{prefix}I can use the {result.tool_id} tool for `{result.action}`, but this action needs approval first.\n\n"
+                f"Risk: {permission.get('risk_level', result.status)}\n"
+                f"Approval ID: {result.approval_id}\n"
+                f"Summary: {result.summary}\n\n"
+                "No tool action has been executed."
+            )
+
+        if result.status == "not_connected":
+            return (
+                f"{prefix}The `{result.tool_id}` tool exists and routed correctly, but the service is not connected yet.\n\n"
+                f"{result.summary}"
+            )
+
+        if result.ok:
+            return f"{prefix}{result.summary}"
+
+        return f"{prefix}{result.summary or 'The tool could not complete.'}"
+
+    def _persona_prefix(self, persona: str) -> str:
+        if persona == "vecht":
+            return "Action check: "
+        if persona == "maelith":
+            return "Constraint check: "
+        if persona == "serren":
+            return "I can feel the shape of that request. "
+        if persona == "riven":
+            return "System reflection: "
+        return ""
+
+    def _tool_intent_to_dict(self, tool_intent: ToolIntent) -> dict[str, Any]:
+        return {
+            "intent_id": tool_intent.intent_id,
+            "tool_id": tool_intent.tool_id,
+            "service_id": tool_intent.service_id,
+            "action": tool_intent.action,
+            "confidence": tool_intent.confidence,
+            "risk_level": tool_intent.risk_level,
+            "approval_required": tool_intent.approval_required,
+            "source": tool_intent.source,
+            "raw_text": tool_intent.raw_text,
+            "normalized_text": tool_intent.normalized_text,
+            "entities": tool_intent.entities,
+            "matched_patterns": tool_intent.matched_patterns,
+            "needs_clarification": tool_intent.needs_clarification,
+            "clarification_question": tool_intent.clarification_question,
+        }
 
     def _audit_prompt_interpretation(self, envelope: PromptEnvelope, route: dict[str, Any]) -> None:
         interpreted = self.prompt_interpreter.interpret(envelope=envelope, route=route)
