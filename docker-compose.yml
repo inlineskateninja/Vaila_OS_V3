@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: n8n_vaila
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+      # Secure and restrict API Key usage
+      - N8N_API_KEY=vaila_secure_api_key_99
+      # Enforce secure logins
+      - N8N_ENFORCE_SETTINGS_FILE-LEVEL=true
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+volumes:
+  n8n_data:

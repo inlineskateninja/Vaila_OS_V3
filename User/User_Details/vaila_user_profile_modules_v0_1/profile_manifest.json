@@ -1,0 +1,89 @@
+{
+  "profile_name": "Malik Lloyd User Profile Modules",
+  "version": "0.1",
+  "primary_user": "Malik Lloyd",
+  "recommended_default_modules": [
+    "01_identity_core.md",
+    "02_interaction_style.md"
+  ],
+  "router_module": "13_context_loading_rules.md",
+  "modules": [
+    {
+      "file": "README.md",
+      "title": "Vaila User Profile Modules v0.1"
+    },
+    {
+      "file": "00_profile_index.md",
+      "title": "Profile Index"
+    },
+    {
+      "file": "01_identity_core.md",
+      "title": "01 Identity Core"
+    },
+    {
+      "file": "02_interaction_style.md",
+      "title": "02 Interaction Style"
+    },
+    {
+      "file": "03_learning_and_technical_guidance.md",
+      "title": "03 Learning and Technical Guidance"
+    },
+    {
+      "file": "04_project_vaila_context.md",
+      "title": "04 Project Vaila Context"
+    },
+    {
+      "file": "05_persona_system.md",
+      "title": "05 Persona System"
+    },
+    {
+      "file": "06_work_skills_context.md",
+      "title": "06 Work Skills Context"
+    },
+    {
+      "file": "07_inline_skate_ninja.md",
+      "title": "07 Inline Skate Ninja"
+    },
+    {
+      "file": "08_content_brand.md",
+      "title": "08 Content and Brand"
+    },
+    {
+      "file": "09_personal_os_and_productivity.md",
+      "title": "09 Personal OS and Productivity"
+    },
+    {
+      "file": "10_sensitive_context_and_boundaries.md",
+      "title": "10 Sensitive Context and Boundaries"
+    },
+    {
+      "file": "11_writing_style.md",
+      "title": "11 Writing Style"
+    },
+    {
+      "file": "12_long_term_goals.md",
+      "title": "12 Long-Term Goals"
+    },
+    {
+      "file": "13_context_loading_rules.md",
+      "title": "13 Context Loading Rules"
+    }
+  ],
+  "priority_order": [
+    "safety",
+    "current_user_instruction",
+    "live_conversation_context",
+    "current_project_files",
+    "loaded_profile_modules",
+    "general_knowledge"
+  ],
+  "style_constraints": {
+    "avoid_em_dash_character": true,
+    "default_tone": [
+      "clear",
+      "direct",
+      "grounded",
+      "honest"
+    ]
+  }
+}

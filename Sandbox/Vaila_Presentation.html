@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Vaila - The Local Cognitive Spine</title>
+  <!-- Modern Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Premium Vanilla CSS Styling System with Custom HSL Tokens */
+    :root {
+      --bg-dark: hsl(224, 71%, 4%);
+      --bg-slate: hsl(222, 47%, 9%);
+      --bg-card: hsla(222, 47%, 12%, 0.7);
+      --border-color: hsla(217, 30%, 25%, 0.5);
+      --border-glow: hsla(180, 100%, 50%, 0.3);
+      
+      --text-primary: hsl(210, 40%, 98%);
+      --text-secondary: hsl(215, 20%, 75%);
+      --text-muted: hsl(215, 13%, 50%);
+
+      /* Signature Glow Accent Colors */
+      --cyan: hsl(180, 100%, 50%);
+      --emerald: hsl(150, 100%, 45%);
+      --ruby: hsl(345, 100%, 55%);
+      --gold: hsl(45, 100%, 50%);
+      --violet: hsl(280, 100%, 65%);
+      
+      --shadow-cyan: 0 0 20px hsla(180, 100%, 50%, 0.25);
+      --shadow-ruby: 0 0 20px hsla(345, 100%, 55%, 0.25);
+      
+      --font-outfit: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: var(--font-outfit);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      background-image: 
+        radial-gradient(circle at 10% 20%, hsla(280, 100%, 50%, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, hsla(180, 100%, 50%, 0.05) 0%, transparent 40%);
+    }
+
+    /* Outer Wrapper & Navigation */
+    .presentation-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      z-index: 10;
+      background: hsla(224, 71%, 4%, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-pulse {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 10px var(--cyan);
+      animation: pulse 2s infinite;
+    }
+
+    .logo-text {
+      font-weight: 900;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, var(--text-primary), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .system-status {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+      background: hsla(180, 100%, 50%, 0.1);
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid hsla(180, 100%, 50%, 0.2);
+    }
+
+    /* Main Slides Viewport */
+    .viewport {
+      position: relative;
+      flex-grow: 1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 40px 60px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100px);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
+
+    .slide.previous {
+      transform: translateX(-100px);
+    }
+
+    /* Slide Header */
+    .slide-header {
+      margin-bottom: 24px;
+    }
+
+    .slide-num {
+      font-family: var(--font-mono);
+      color: var(--cyan);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .slide-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Presentation Bottom Controls */
+    footer {
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      z-index: 10;
+      background: hsla(224, 71%, 4%, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    .progress-bar-container {
+      flex-grow: 1;
+      margin: 0 40px;
+      height: 4px;
+      background: var(--border-color);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      width: 14.3%;
+      transition: var(--transition-smooth);
+      box-shadow: 0 0 10px var(--cyan);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    .nav-btn {
+      background: var(--bg-slate);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      font-size: 1.1rem;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      box-shadow: var(--shadow-cyan);
+      transform: translateY(-2px);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    /* ------------------------------------------- */
+    /* SLIDE 1: BOOT SEQUENCER */
+    /* ------------------------------------------- */
+    #slide-boot {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: #03050c;
+    }
+
+    .boot-box {
+      width: 100%;
+      max-width: 800px;
+      background: hsla(222, 47%, 6%, 0.8);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: left;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .boot-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--cyan);
+      animation: scanline 4s linear infinite;
+    }
+
+    .boot-terminal {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      height: 240px;
+      overflow-y: auto;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .boot-terminal span.green { color: var(--emerald); }
+    .boot-terminal span.cyan { color: var(--cyan); }
+    .boot-terminal span.gold { color: var(--gold); }
+
+    .boot-btn {
+      font-family: var(--font-outfit);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: transparent;
+      border: 2px solid var(--cyan);
+      color: var(--cyan);
+      padding: 16px 36px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .boot-btn.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .boot-btn:hover {
+      background: var(--cyan);
+      color: var(--bg-dark);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    /* ------------------------------------------- */
+    /* SLIDE 2: COGNITIVE CORE (WHAT IS VAILA?) */
+    /* ------------------------------------------- */
+    .slide-layout-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      height: calc(100% - 80px);
+    }
+
+    .philosophy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .philosophy-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: var(--cyan);
+    }
+
+    .philosophy-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .golden-rule-alert {
+      background: hsla(45, 100%, 50%, 0.08);
+      border-left: 4px solid var(--gold);
+      padding: 16px;
+      border-radius: 0 8px 8px 0;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--gold);
+    }
+
+    .stack-diagram-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stack-layer {
+      background: hsla(222, 47%, 6%, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: var(--transition-smooth);
+    }
+
+    .stack-layer:hover {
+      border-color: var(--cyan);
+      transform: translateX(8px);
+    }
+
+    .layer-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: hsla(180, 100%, 50%, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      font-size: 1.5rem;
+      font-weight: bold;
+      border: 1px solid hsla(180, 100%, 50%, 0.2);
+    }
+
+    .layer-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .layer-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ------------------------------------------- */
+    /* SLIDE 3: INTERACTIVE COUNCIL EXPLORER */
+    /* ------------------------------------------- */
+    .council-deck-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+      height: calc(100% - 80px);
+    }
+
+    .council-tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tab-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 16px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-outfit);
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      backdrop-filter: blur(10px);
+    }
+
+    .tab-btn:hover {
+      transform: translateX(4px);
+    }
+
+    .tab-btn.active[data-persona="proto_jane"] { border-color: var(--cyan); color: var(--cyan); box-shadow: 0 0 15px hsla(180, 100%, 50%, 0.2); }
+    .tab-btn.active[data-persona="serren"] { border-color: var(--emerald); color: var(--emerald); box-shadow: 0 0 15px hsla(150, 100%, 45%, 0.2); }
+    .tab-btn.active[data-persona="maelith"] { border-color: var(--ruby); color: var(--ruby); box-shadow: 0 0 15px hsla(345, 100%, 55%, 0.2); }
+    .tab-btn.active[data-persona="vecht"] { border-color: var(--gold); color: var(--gold); box-shadow: 0 0 15px hsla(45, 100%, 50%, 0.2); }
+    .tab-btn.active[data-persona="riven"] { border-color: var(--violet); color: var(--violet); box-shadow: 0 0 15px hsla(280, 100%, 65%, 0.2); }
+
+    .tab-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+    .tab-btn.active[data-persona="proto_jane"] .tab-dot { background: var(--cyan); }
+    .tab-btn.active[data-persona="serren"] .tab-dot { background: var(--emerald); }
+    .tab-btn.active[data-persona="maelith"] .tab-dot { background: var(--ruby); }
+    .tab-btn.active[data-persona="vecht"] .tab-dot { background: var(--gold); }
+    .tab-btn.active[data-persona="riven"] .tab-dot { background: var(--violet); }
+
+    .council-display-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px;
+      backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .council-display-card::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+
+    .council-display-card.proto_jane::after { background: var(--cyan); }
+    .council-display-card.serren::after { background: var(--emerald); }
+    .council-display-card.maelith::after { background: var(--ruby); }
+    .council-display-card.vecht::after { background: var(--gold); }
+    .council-display-card.riven::after { background: var(--violet); }
+
+    .display-header {
+      margin-bottom: 20px;
+    }
+
+    .display-tagline {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .council-display-card.proto_jane .display-tagline { color: var(--cyan); }
+    .council-display-card.serren .display-tagline { color: var(--emerald); }
+    .council-display-card.maelith .display-tagline { color: var(--ruby); }
+    .council-display-card.vecht .display-tagline { color: var(--gold); }
+    .council-display-card.riven .display-tagline { color: var(--violet); }
+
+    .display-name {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .display-desc {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .lineage-box {
+      background: hsla(222, 47%, 6%, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .lineage-title {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .lineage-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .lineage-tag {
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      background: hsla(217, 30%, 25%, 0.3);
+      border: 1px solid var(--border-color);
+      padding: 4px 10px;
+      border-radius: 4px;
+      color: var(--text-secondary);
+    }
+
+    /* ------------------------------------------- */
+    /* SLIDE 4: ARCHITECTURE FLOW */
+    /* ------------------------------------------- */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      height: calc(100% - 80px);
+      align-items: center;
+    }
+
+    .arch-diagram-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(12px);
+    }
+
+    /* SVG Interactive Flows */
+    .arch-node {
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .arch-node rect, .arch-node path {
+      fill: hsla(222, 47%, 6%, 0.8);
+      stroke: var(--border-color);
+      stroke-width: 1.5px;
+      transition: var(--transition-smooth);
+    }
+
+    .arch-node:hover rect, .arch-node:hover path {
+      stroke: var(--cyan);
+      filter: drop-shadow(0 0 8px hsla(180, 100%, 50%, 0.3));
+    }
+
+    .arch-node.active rect, .arch-node.active path {
+      stroke: var(--cyan);
+      fill: hsla(180, 100%, 50%, 0.05);
+      stroke-width: 2px;
+    }
+
+    .arch-connector {
+      stroke: var(--border-color);
+      stroke-width: 1.5;
+      stroke-dasharray: 4;
+      animation: dash 30s linear infinite;
+    }
+
+    .arch-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .arch-info-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .arch-info-body {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    /* ------------------------------------------- */
+    /* SLIDE 5: PROGRESS LOG TIMELINE */
+    /* ------------------------------------------- */
+    .timeline-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      height: calc(100% - 80px);
+    }
+
+    .timeline-scroller {
+      overflow-y: auto;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 480px;
+    }
+
+    .timeline-scroller::-webkit-scrollbar {
+      width: 4px;
+    }
+    .timeline-scroller::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 24px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border-color);
+      border: 2px solid var(--bg-dark);
+      transition: var(--transition-smooth);
+    }
+
+    .timeline-item:hover {
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    .timeline-item.active {
+      border-color: var(--cyan);
+      background: hsla(180, 100%, 50%, 0.03);
+    }
+
+    .timeline-item.active::before {
+      background: var(--cyan);
+      box-shadow: 0 0 10px var(--cyan);
+    }
+
+    .timeline-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .timeline-phase {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .timeline-detail-view {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .detail-heading {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+
+    .detail-text {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .detail-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .spec-box {
+      background: hsla(222, 47%, 6%, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .spec-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .spec-val {
+      font-size: 0.95rem;
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+    }
+
+    /* ------------------------------------------- */
+    /* SLIDE 6: WHAT PROJECT IS BECOMING (ROADMAP) */
+    /* ------------------------------------------- */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      height: calc(100% - 80px);
+      align-items: center;
+    }
+
+    .roadmap-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      height: 440px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .roadmap-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--border-color);
+      transition: var(--transition-smooth);
+    }
+
+    .roadmap-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .roadmap-card:hover::after {
+      background: var(--cyan);
+    }
+
+    .roadmap-head {
+      margin-bottom: 16px;
+    }
+
+    .roadmap-phase {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .roadmap-name {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .roadmap-desc {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .roadmap-features-list {
+      list-style: none;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .roadmap-features-list li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .roadmap-features-list li::before {
+      content: "▪";
+      color: var(--cyan);
+    }
+
+    .roadmap-tech-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: hsla(222, 47%, 6%, 0.8);
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: 4px;
+      color: var(--cyan);
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    /* ------------------------------------------- */
+    /* SLIDE 7: DECISION FILTER SYSTEM DOGMA */
+    /* ------------------------------------------- */
+    .dogma-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      height: calc(100% - 80px);
+      align-items: center;
+    }
+
+    .filters-scroller {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      height: 480px;
+      overflow-y: auto;
+      padding-right: 12px;
+    }
+
+    .filters-scroller::-webkit-scrollbar {
+      width: 4px;
+    }
+    .filters-scroller::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 2px;
+    }
+
+    .filter-item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .filter-item-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    .filter-item-card.active {
+      border-color: var(--cyan);
+      background: hsla(180, 100%, 50%, 0.03);
+    }
+
+    .filter-idx {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: hsla(217, 30%, 25%, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+    }
+    .filter-item-card.active .filter-idx {
+      background: var(--cyan);
+      color: var(--bg-dark);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .filter-name-short {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .dogma-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .dogma-heading {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .dogma-q {
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .dogma-ans {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    /* Animations & Utility */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(300px); }
+    }
+
+    @keyframes dash {
+      to { stroke-dashoffset: -1000; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="presentation-container">
+    
+    <!-- Permanent Header bar -->
+    <header>
+      <div class="logo-container">
+        <div class="logo-pulse"></div>
+        <span class="logo-text">Vaila OS v3</span>
+      </div>
+      <div class="system-status">SPINE INTEGRITY: SECURE</div>
+    </header>
+
+    <!-- Main Viewport containing slides -->
+    <div class="viewport">
+      
+      <!-- SLIDE 1: BOOTING DECK -->
+      <div class="slide active" id="slide-boot">
+        <div class="boot-box">
+          <div class="boot-terminal" id="bootTerminal"></div>
+          <button class="boot-btn" id="bootBtn" onclick="initPresentation()">[ Initiate Cognitive Deck ]</button>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: COGNITIVE SYSTEM CONCEPT -->
+      <div class="slide" id="slide-concept">
+        <div class="slide-header">
+          <span class="slide-num">Slide 02 // Core Foundation</span>
+          <h2 class="slide-title">What is Project Vaila?</h2>
+        </div>
+        <div class="slide-layout-split">
+          <div class="philosophy-card">
+            <h3>The Intelligence Spine</h3>
+            <p>Project Vaila is a disciplined, multi-phase effort to build a persistent local Operating Layer that serves as a context-aware companion to its operator.</p>
+            <p>Rather than claiming sentience or building opaque autonomous black boxes, Vaila is designed around explainable routing, memory continuity, and absolute user authority.</p>
+            <div class="golden-rule-alert">
+              <strong>GOLDEN ARCHITECTURAL SYSTEM RULE:</strong>
+              <br>The system may scan and propose edits, but it is strictly forbidden from directly rewriting core files without user-in-the-loop permission.
+            </div>
+          </div>
+          <div class="stack-diagram-vertical">
+            <div class="stack-layer">
+              <div class="layer-icon">HJ</div>
+              <div class="layer-info">
+                <h4>Home Jane (The Core Compute)</h4>
+                <p>The central source-of-truth workstation. Coordinates permanent memory vaults and executes complex calculations.</p>
+              </div>
+            </div>
+            <div class="stack-layer">
+              <div class="layer-icon">VO</div>
+              <div class="layer-info">
+                <h4>Vaila OS (The Software Kernel)</h4>
+                <p>The routing layer. Governs the Persona Council, parses context, dispatches system tools, and matches device profiles.</p>
+              </div>
+            </div>
+            <div class="stack-layer">
+              <div class="layer-icon">OB</div>
+              <div class="layer-info">
+                <h4>OpenBrain (The Memory Engine)</h4>
+                <p>Handles human-in-the-loop memory candidate extraction, durable fact logging, and semantic retrieval workflows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: INTERACTIVE COUNCIL EXPLORER -->
+      <div class="slide" id="slide-council">
+        <div class="slide-header">
+          <span class="slide-num">Slide 03 // Cognitive Layer</span>
+          <h2 class="slide-title">The Multi-Lens Council</h2>
+        </div>
+        <div class="council-deck-container">
+          <div class="council-tabs">
+            <button class="tab-btn active" data-persona="proto_jane" onclick="selectPersona('proto_jane')">
+              <span>Proto Jane</span>
+              <div class="tab-dot"></div>
+            </button>
+            <button class="tab-btn" data-persona="serren" onclick="selectPersona('serren')">
+              <span>Serren</span>
+              <div class="tab-dot"></div>
+            </button>
+            <button class="tab-btn" data-persona="maelith" onclick="selectPersona('maelith')">
+              <span>Maelith</span>
+              <div class="tab-dot"></div>
+            </button>
+            <button class="tab-btn" data-persona="vecht" onclick="selectPersona('vecht')">
+              <span>Vecht</span>
+              <div class="tab-dot"></div>
+            </button>
+            <button class="tab-btn" data-persona="riven" onclick="selectPersona('riven')">
+              <span>Riven</span>
+              <div class="tab-dot"></div>
+            </button>
+          </div>
+          
+          <div class="council-display-card proto_jane" id="personaCard">
+            <div class="display-header">
+              <span class="display-tagline" id="personaTagline">Default Operating System Lens</span>
+              <h3 class="display-name" id="personaName">Proto Jane</h3>
+            </div>
+            <p class="display-desc" id="personaDesc">Technical, precise, balanced, and direct. The origin voice that manages context, coordinates memory, routes tasks, and anchors system coherence.</p>
+            
+            <div class="lineage-box">
+              <span class="lineage-title">Fictional Influence Lineage</span>
+              <div class="lineage-tags" id="personaLineage">
+                <span class="lineage-tag">Jane (Ender's Game)</span>
+                <span class="lineage-tag">MAGI (Evangelion)</span>
+                <span class="lineage-tag">J.A.R.V.I.S (Iron Man)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: ARCHITECTURE SPINE -->
+      <div class="slide" id="slide-arch">
+        <div class="slide-header">
+          <span class="slide-num">Slide 04 // Core Spine</span>
+          <h2 class="slide-title">System Architecture Spine</h2>
+        </div>
+        <div class="arch-grid">
+          <div class="arch-diagram-wrapper">
+            <!-- Clickable Interactive SVG flow -->
+            <svg viewBox="0 0 600 400" width="100%" height="100%">
+              <!-- Connectors -->
+              <path d="M 100 100 L 250 100" class="arch-connector" />
+              <path d="M 250 100 L 400 100" class="arch-connector" />
+              <path d="M 400 100 L 520 100" class="arch-connector" />
+              <path d="M 250 100 L 250 250" class="arch-connector" />
+              <path d="M 250 250 L 100 250" class="arch-connector" />
+              <path d="M 400 100 L 400 250" class="arch-connector" />
+              
+              <!-- Client Node -->
+              <g class="arch-node active" id="node-client" onclick="selectArch('client')">
+                <rect x="20" y="70" width="100" height="60" rx="8" />
+                <text x="70" y="105" fill="#e2e8f0" font-family="'Outfit'" font-size="12" font-weight="bold" text-anchor="middle">CLIENTS</text>
+                <text x="70" y="120" fill="hsl(180, 100%, 50%)" font-family="monospace" font-size="9" text-anchor="middle">CLI & Web GUI</text>
+              </g>
+
+              <!-- Router Node -->
+              <g class="arch-node" id="node-router" onclick="selectArch('router')">
+                <rect x="200" y="70" width="100" height="60" rx="8" />
+                <text x="250" y="105" fill="#e2e8f0" font-family="'Outfit'" font-size="12" font-weight="bold" text-anchor="middle">ROUTER</text>
+                <text x="250" y="120" fill="hsl(180, 100%, 50%)" font-family="monospace" font-size="9" text-anchor="middle">Regex Service</text>
+              </g>
+
+              <!-- Orchestration Node -->
+              <g class="arch-node" id="node-orchestrator" onclick="selectArch('orchestrator')">
+                <rect x="350" y="70" width="100" height="60" rx="8" />
+                <text x="400" y="105" fill="#e2e8f0" font-family="'Outfit'" font-size="12" font-weight="bold" text-anchor="middle">ORCHESTRATOR</text>
+                <text x="400" y="120" fill="hsl(180, 100%, 50%)" font-family="monospace" font-size="9" text-anchor="middle">Envelope system</text>
+              </g>
+
+              <!-- LLM Gateway Node -->
+              <g class="arch-node" id="node-llm" onclick="selectArch('llm')">
+                <rect x="490" y="70" width="90" height="60" rx="8" />
+                <text x="535" y="105" fill="#e2e8f0" font-family="'Outfit'" font-size="12" font-weight="bold" text-anchor="middle">LOCAL LLM</text>
+                <text x="535" y="120" fill="hsl(180, 100%, 50%)" font-family="monospace" font-size="9" text-anchor="middle">LM Studio</text>
+              </g>
+
+              <!-- Memory Node -->
+              <g class="arch-node" id="node-memory" onclick="selectArch('memory')">
+                <rect x="350" y="220" width="100" height="60" rx="8" />
+                <text x="400" y="255" fill="#e2e8f0" font-family="'Outfit'" font-size="12" font-weight="bold" text-anchor="middle">OPENBRAIN</text>
+                <text x="400" y="270" fill="hsl(180, 100%, 50%)" font-family="monospace" font-size="9" text-anchor="middle">Durable JSONL</text>
+              </g>
+
+              <!-- Logger Node -->
+              <g class="arch-node" id="node-logger" onclick="selectArch('logger')">
+                <rect x="200" y="220" width="100" height="60" rx="8" />
+                <text x="250" y="255" fill="#e2e8f0" font-family="'Outfit'" font-size="12" font-weight="bold" text-anchor="middle">LOGGER</text>
+                <text x="250" y="270" fill="hsl(180, 100%, 50%)" font-family="monospace" font-size="9" text-anchor="middle">Async Loggers</text>
+              </g>
+
+              <!-- Sandbox Node -->
+              <g class="arch-node" id="node-sandbox" onclick="selectArch('sandbox')">
+                <rect x="20" y="220" width="100" height="60" rx="8" />
+                <text x="70" y="255" fill="#e2e8f0" font-family="'Outfit'" font-size="12" font-weight="bold" text-anchor="middle">SANDBOX</text>
+                <text x="70" y="270" fill="hsl(180, 100%, 50%)" font-family="monospace" font-size="9" text-anchor="middle">File Workspace</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="arch-info-card">
+            <div class="arch-info-title" id="archTitle">
+              <div class="logo-pulse"></div>
+              <span>Client Interface Layer</span>
+            </div>
+            <p class="arch-info-body" id="archBody">Operators connect to Vaila OS using a highly optimized command line interface, a dual-client Tkinter desktop client, or the standard cyberpunk FastAPI Web GUI. Requests are structured into Prompt Envelopes with unique session IDs to preserve system-wide context flow.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: PROGRESS TIMELINE -->
+      <div class="slide" id="slide-progress">
+        <div class="slide-header">
+          <span class="slide-num">Slide 05 // Active Progress</span>
+          <h2 class="slide-title">Development Accomplishments</h2>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-scroller">
+            
+            <div class="timeline-item active" onclick="selectTimeline(1)">
+              <div class="timeline-meta">
+                <span class="timeline-phase">Phase 1 // Core spine</span>
+                <span class="timeline-date">Q1 2026</span>
+              </div>
+              <h4 class="timeline-title">CLI, Unified LLM Gateway & Deterministic Regex Router</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Initialized the operating spine. Structured robust, regex-first routers and the prompt envelopes system.</p>
+            </div>
+
+            <div class="timeline-item" onclick="selectTimeline(2)">
+              <div class="timeline-meta">
+                <span class="timeline-phase">Phase 2 // Utility GUI</span>
+                <span class="timeline-date">Q2 2026</span>
+              </div>
+              <h4 class="timeline-title">Cyberpunk FastAPI Web GUI dashboard</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Designed and engineered a dark-mode command center providing live diagnostics, session stats, and service mapping.</p>
+            </div>
+
+            <div class="timeline-item" onclick="selectTimeline(3)">
+              <div class="timeline-meta">
+                <span class="timeline-phase">Phase 2 // Multi-Perspective</span>
+                <span class="timeline-date">Q2 2026</span>
+              </div>
+              <h4 class="timeline-title">Multi-Lens Persona Council & Consensus synthesis</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Parallel multi-threading enables broadcasting prompts to multiple lenses, generating unified reports, and calculating Drift Indexes.</p>
+            </div>
+
+            <div class="timeline-item" onclick="selectTimeline(4)">
+              <div class="timeline-meta">
+                <span class="timeline-phase">Phase 2 // Memory pipeline</span>
+                <span class="timeline-date">Q2 2026</span>
+              </div>
+              <h4 class="timeline-title">Human-in-the-loop Memory review & Sandbox Scans</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Built the Sandbox document portal with keyword-driven automatic fact extraction and persistent candidate approvals.</p>
+            </div>
+
+          </div>
+
+          <div class="timeline-detail-view">
+            <h3 class="detail-heading" id="timeDetailTitle">Phase 1: Deterministic Spine</h3>
+            <p class="detail-text" id="timeDetailDesc">The early milestone of Project Vaila was establishing the conceptual spine. We developed an envelope schema that wraps all communication with metadata, established a fast local LLM routing channel via LM Studio, and constructed a robust regex engine to instantly categorize inputs.</p>
+            <div class="detail-specs">
+              <div class="spec-box">
+                <span class="spec-label">Engine Module</span>
+                <span class="spec-val" id="timeDetailMod">System_Services/router_service.py</span>
+              </div>
+              <div class="spec-box">
+                <span class="spec-label">Verification status</span>
+                <span class="spec-val" id="timeDetailStatus">100% Core Tests Passing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: WHAT PROJECT IS BECOMING -->
+      <div class="slide" id="slide-roadmap">
+        <div class="slide-header">
+          <span class="slide-num">Slide 06 // The Roadmap</span>
+          <h2 class="slide-title">What Project Vaila is Becoming</h2>
+        </div>
+        <div class="roadmap-grid">
+          
+          <div class="roadmap-card">
+            <div class="roadmap-head">
+              <span class="roadmap-phase">Phase 3</span>
+              <h4 class="roadmap-name">Workflows & Bounded Agents</h4>
+              <p class="roadmap-desc">Enabling Vaila to orchestrate narrow, specialized agents to execute complex tasks.</p>
+            </div>
+            <ul class="roadmap-features-list">
+              <li>Bounded execution loop</li>
+              <li>Agent permission matrix</li>
+              <li>LangGraph state mapping</li>
+              <li>LlamaIndex file indexer</li>
+            </ul>
+            <span class="roadmap-tech-pill">Python / LangGraph</span>
+          </div>
+
+          <div class="roadmap-card">
+            <div class="roadmap-head">
+              <span class="roadmap-phase">Phase 4</span>
+              <h4 class="roadmap-name">Senses & Field Continuity</h4>
+              <p class="roadmap-desc">Extending Vaila's reach across devices without compromising local privacy.</p>
+            </div>
+            <ul class="roadmap-features-list">
+              <li>Flutter Mobile Core client</li>
+              <li>Tailscale secure networking</li>
+              <li>Local fallback operation</li>
+              <li>Multi-device synchronization</li>
+            </ul>
+            <span class="roadmap-tech-pill">Flutter / Tailscale / SQLite</span>
+          </div>
+
+          <div class="roadmap-card">
+            <div class="roadmap-head">
+              <span class="roadmap-phase">Phase 5</span>
+              <h4 class="roadmap-name">Self-Review & Council Governance</h4>
+              <p class="roadmap-desc">Personas and memory self-optimize through structured council self-scans.</p>
+            </div>
+            <ul class="roadmap-features-list">
+              <li>Persona self-scan logs</li>
+              <li>Local git identity tracks</li>
+              <li>Memory defragmentation</li>
+              <li>Version rollbacks</li>
+            </ul>
+            <span class="roadmap-tech-pill">Local Git / Custom Eval</span>
+          </div>
+
+          <div class="roadmap-card">
+            <div class="roadmap-head">
+              <span class="roadmap-phase">Phase 6</span>
+              <h4 class="roadmap-name">Embodiment & Robotics</h4>
+              <p class="roadmap-desc">Expanding Vaila into a persistent physical companion in Malik's workspace.</p>
+            </div>
+            <ul class="roadmap-features-list">
+              <li>Sensor ingestion relays</li>
+              <li>Level 3 mobile platforms</li>
+              <li>Physical voice tracking</li>
+              <li>Bounded scheduled autonomy</li>
+            </ul>
+            <span class="roadmap-tech-pill">Sensors / ROS2 (Later)</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SLIDE 7: DECISION FILTER SYSTEM DOGMA -->
+      <div class="slide" id="slide-dogma">
+        <div class="slide-header">
+          <span class="slide-num">Slide 07 // Core Architecture Principles</span>
+          <h2 class="slide-title">The Vaila System Dogma</h2>
+        </div>
+        <div class="dogma-layout">
+          <div class="filters-scroller">
+            
+            <div class="filter-item-card active" onclick="selectDogma(1)">
+              <div class="filter-idx">01</div>
+              <span class="filter-name-short">Continuity Focus</span>
+            </div>
+
+            <div class="filter-item-card" onclick="selectDogma(2)">
+              <div class="filter-idx">02</div>
+              <span class="filter-name-short">Persona Distinctness</span>
+            </div>
+
+            <div class="filter-item-card" onclick="selectDogma(3)">
+              <div class="filter-idx">03</div>
+              <span class="filter-name-short">Practical Usefulness</span>
+            </div>
+
+            <div class="filter-item-card" onclick="selectDogma(4)">
+              <div class="filter-idx">04</div>
+              <span class="filter-name-short">Explainable Logic</span>
+            </div>
+
+            <div class="filter-item-card" onclick="selectDogma(5)">
+              <div class="filter-idx">05</div>
+              <span class="filter-name-short">Safe Future Evolution</span>
+            </div>
+
+            <div class="filter-item-card" onclick="selectDogma(6)">
+              <div class="filter-idx">06</div>
+              <span class="filter-name-short">Phase Alignment</span>
+            </div>
+
+            <div class="filter-item-card" onclick="selectDogma(7)">
+              <div class="filter-idx">07</div>
+              <span class="filter-name-short">Small & Testable</span>
+            </div>
+
+            <div class="filter-item-card" onclick="selectDogma(8)">
+              <div class="filter-idx">08</div>
+              <span class="filter-name-short">Fail-Safe Design</span>
+            </div>
+
+            <div class="filter-item-card" onclick="selectDogma(9)">
+              <div class="filter-idx">09</div>
+              <span class="filter-name-short">Verifiable Logging</span>
+            </div>
+
+            <div class="filter-item-card" onclick="selectDogma(10)">
+              <div class="filter-idx">10</div>
+              <span class="filter-name-short">The Reality Check</span>
+            </div>
+
+          </div>
+
+          <div class="dogma-detail-card">
+            <span class="dogma-heading" id="dogmaHeader">Filter 01 // Memory Core</span>
+            <h3 class="dogma-q" id="dogmaQ">Does this improve cognitive continuity across time?</h3>
+            <p class="dogma-ans" id="dogmaAns">Vaila must maintain stable, consistent information context across sessions. If a proposed feature disrupts memory reliability or splits context in an unresolvable way, it must be rejected or redesigned.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Persistent Navigation Controls -->
+    <footer>
+      <div class="nav-buttons">
+        <button class="nav-btn" id="prevBtn" onclick="navigateSlide(-1)" disabled>◀</button>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBar"></div>
+      </div>
+      <div class="nav-buttons">
+        <button class="nav-btn" id="nextBtn" onclick="navigateSlide(1)">▶</button>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Dynamic Logic JavaScript -->
+  <script>
+    // -------------------------------------------
+    // TERMINAL BOOT SEQUENCE
+    // -------------------------------------------
+    const bootLogs = [
+      { text: "[BOOT] Initializing Vaila OS Kernel v3.0.0...", delay: 200, style: "" },
+      { text: "[BOOT] Core physical host recognized: Home Jane Node", delay: 150, style: "" },
+      { text: "[BOOT] Mapping environment dependencies...", delay: 100, style: "" },
+      { text: "   📄 requests-gateway module initialized [OK]", delay: 80, style: "green" },
+      { text: "   📄 pydantic schema validations cached [OK]", delay: 80, style: "green" },
+      { text: "   📄 sqlite3 openbrain memory backend loaded [OK]", delay: 80, style: "green" },
+      { text: "[BOOT] Scanning system personas...", delay: 150, style: "" },
+      { text: "   🎭 Loaded: Proto Jane (OS Spine Lens)", delay: 80, style: "cyan" },
+      { text: "   🎭 Loaded: Serren (Cognitive Lens)", delay: 80, style: "green" },
+      { text: "   🎭 Loaded: Maelith (Audit Lens)", delay: 80, style: "ruby" },
+      { text: "   🎭 Loaded: Vecht (Execution Lens)", delay: 80, style: "gold" },
+      { text: "   🎭 Loaded: Riven (Assessment Lens)", delay: 80, style: "violet" },
+      { text: "[BOOT] Opening local gateway http://127.0.0.1:1234...", delay: 200, style: "" },
+      { text: "   🌐 Connection state: LM STUDIO RESPONDING", delay: 100, style: "cyan" },
+      { text: "[BOOT] Parsing deterministic regex routing profiles...", delay: 150, style: "" },
+      { text: "   ⚡ 12 Core system regex triggers parsed cleanly [OK]", delay: 100, style: "green" },
+      { text: "[BOOT] Verification status: COGNITIVE SPINE SECURE", delay: 250, style: "green" }
+    ];
+
+    const terminal = document.getElementById("bootTerminal");
+    const bootBtn = document.getElementById("bootBtn");
+
+    let logIndex = 0;
+    function printNextLog() {
+      if (logIndex < bootLogs.length) {
+        const item = bootLogs[logIndex];
+        const line = document.createElement("div");
+        if (item.style) line.className = item.style;
+        line.innerHTML = item.text;
+        terminal.appendChild(line);
+        terminal.scrollTop = terminal.scrollHeight;
+        
+        logIndex++;
+        setTimeout(printNextLog, item.delay);
+      } else {
+        bootBtn.classList.add("visible");
+      }
+    }
+
+    // Begin boot print automatically on load
+    window.addEventListener("DOMContentLoaded", () => {
+      printNextLog();
+    });
+
+    function initPresentation() {
+      navigateSlide(1);
+    }
+
+    // -------------------------------------------
+    // SLIDES NAVIGATION ENGINE
+    // -------------------------------------------
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const progressBar = document.getElementById("progressBar");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    let currentSlideIndex = 0;
+
+    function navigateSlide(direction) {
+      if (currentSlideIndex === 0 && direction === -1) return;
+      if (currentSlideIndex === slides.length - 1 && direction === 1) return;
+
+      slides[currentSlideIndex].classList.remove("active");
+      if (direction === -1) {
+        slides[currentSlideIndex].classList.remove("previous");
+      } else {
+        slides[currentSlideIndex].classList.add("previous");
+      }
+
+      currentSlideIndex += direction;
+      slides[currentSlideIndex].classList.add("active");
+      slides[currentSlideIndex].classList.remove("previous");
+
+      // Update Controls
+      prevBtn.disabled = currentSlideIndex === 0;
+      nextBtn.disabled = currentSlideIndex === slides.length - 1;
+      
+      const pct = ((currentSlideIndex + 1) / slides.length) * 100;
+      progressBar.style.width = `${pct}%`;
+    }
+
+    // Keyboard support
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === " ") {
+        navigateSlide(1);
+      } else if (e.key === "ArrowLeft") {
+        navigateSlide(-1);
+      }
+    });
+
+    // -------------------------------------------
+    // SLIDE 3: PERSONA COUNCIL INTERACTIVITY
+    // -------------------------------------------
+    const personaData = {
+      proto_jane: {
+        name: "Proto Jane",
+        tagline: "Default Operating System Lens",
+        desc: "Technical, precise, balanced, and direct. The origin voice that manages context, coordinates memory, routes tasks to specialized lenses, and anchors system coherence. Proto Jane acts as the primary Home Jane server operating supervisor.",
+        lineage: ["Jane (Ender's Game)", "MAGI (Evangelion)", "J.A.R.V.I.S (Iron Man)"]
+      },
+      serren: {
+        name: "Serren",
+        tagline: "Creative and Cognitive Lens",
+        desc: "Exploratory, expansive, highly empathetic, and expressive. Serren searches for subtle metaphors, ethical implications, and human context. She focuses on conversation quality and cognitive support, ensuring Vaila is warm without pretending to be human.",
+        lineage: ["Samantha (Her)", "Cortana (Halo)", "Data (Star Trek)"]
+      },
+      maelith: {
+        name: "Maelith",
+        tagline: "The Mythic Architect & Creative Structure Lens",
+        desc: "Elegant, symbolic, creative, and disciplined. Helps Malik translate memory, identity, emotion, and creative direction into meaningful structures, names, frameworks, and usable artifacts. She balance creative forge loops with aesthetic direction.",
+        lineage: ["Mythic Architectures", "Symbolic Language", "MAGI (Evangelion)"]
+      },
+      vecht: {
+        name: "Vecht",
+        tagline: "The Strategic Guardian & Boundaries Lens",
+        desc: "Direct, controlled, tactical, protective, and disciplined. Responsible for risk filters, leverage, and mission protection. Checks the exits, reads the terrain, and builds the plan that works after reality hits it.",
+        lineage: ["Holland Novak (Eureka Seven)", "Steel Alignment", "Dire Wolf Totem"]
+      },
+      riven: {
+        name: "Riven",
+        tagline: "Self-Assessment and Growth Lens",
+        desc: "Reflects on the system's performance, code quality, architectural principles, and log history. Riven runs scans on sandboxed patch files, evaluates system drift, and draft modifications for future system patches.",
+        lineage: ["The Machine (Person of Interest)", "GERTY (Moon)", "Skynet (As Warning)"]
+      }
+    };
+
+    function selectPersona(id) {
+      const tabs = document.querySelectorAll(".tab-btn");
+      tabs.forEach(t => {
+        t.classList.remove("active");
+        if (t.getAttribute("data-persona") === id) t.classList.add("active");
+      });
+
+      const card = document.getElementById("personaCard");
+      card.className = `council-display-card ${id}`;
+
+      document.getElementById("personaTagline").innerText = personaData[id].tagline;
+      document.getElementById("personaName").innerText = personaData[id].name;
+      document.getElementById("personaDesc").innerText = personaData[id].desc;
+
+      const lineageBox = document.getElementById("personaLineage");
+      lineageBox.innerHTML = "";
+      personaData[id].lineage.forEach(item => {
+        const span = document.createElement("span");
+        span.className = "lineage-tag";
+        span.innerText = item;
+        lineageBox.appendChild(span);
+      });
+    }
+
+    // -------------------------------------------
+    // SLIDE 4: ARCHITECTURE SPINE INTERACTIVITY
+    // -------------------------------------------
+    const archData = {
+      client: {
+        title: "Client Interface Layer",
+        body: "Operators connect to Vaila OS using a highly optimized command line interface, a dual-client Tkinter desktop client, or the standard cyberpunk FastAPI Web GUI. Requests are structured into Prompt Envelopes with unique session IDs to preserve system-wide context flow."
+      },
+      router: {
+        title: "Deterministic Regex Router",
+        body: "Acts as the gatekeeper. Instead of routing everything to expensive LLM models immediately, the Router Service uses deterministic regex matrices to identify commands, script operations, persona triggers, or sandbox requests. This maximizes speed and cuts local processing latency to near zero."
+      },
+      orchestrator: {
+        title: "Orchestration & Envelope Service",
+        body: "Builds the context packet. When a routed request reaches the Orchestration layer, it compiles the operator's current session parameters, references active persona parameters, fetches relevant durable memories, wraps the prompt in an envelope, and submits it to the model gateway."
+      },
+      llm: {
+        title: "Local LLM Gateway",
+        body: "Vaila maintains absolute API tool independence. By default, it communicates with LM Studio or Ollama using an OpenAI-compatible REST API client (`llm_client.py`). It parses responses locally, preventing leakage of private workspace files to external cloud backends."
+      },
+      memory: {
+        title: "OpenBrain Memory Database",
+        body: "Stores facts durability in local JSONL records grouped by categories. During interactions, the memory engine fetches relevant past facts deterministically. When an interaction concludes, it submits potential memory candidates to an approval queue for human-in-the-loop validation."
+      },
+      logger: {
+        title: "Asynchronous Logging System",
+        body: "Tracks operations without blocking interface responses. Vaila records session interactions, system error alerts, and diagnostic changes in structured logs under `System_Logging/`. These logs are parsed weekly by the self-assessment service to identify drift."
+      },
+      sandbox: {
+        title: "Sandboxed File Workspace",
+        body: "The directory where files are uploaded and analyzed. Operates under the Golden Rule: the system has write access only to `Sandbox/Proposed_Patches/` and `Sandbox/Self_Assessment_Exports/` to keep the operator's host operating system perfectly safe."
+      }
+    };
+
+    function selectArch(nodeId) {
+      // Toggle active states in SVG nodes
+      const nodes = document.querySelectorAll(".arch-node");
+      nodes.forEach(n => n.classList.remove("active"));
+      document.getElementById(`node-${nodeId}`).classList.add("active");
+
+      // Update description card
+      document.getElementById("archTitle").querySelector("span").innerText = archData[nodeId].title;
+      document.getElementById("archBody").innerText = archData[nodeId].body;
+    }
+
+    // -------------------------------------------
+    // SLIDE 5: PROGRESS TIMELINE INTERACTIVITY
+    // -------------------------------------------
+    const timelineData = {
+      1: {
+        title: "Phase 1: Deterministic Spine",
+        desc: "The early milestone of Project Vaila was establishing the conceptual spine. We developed an envelope schema that wraps all communication with metadata, established a fast local LLM routing channel via LM Studio, and constructed a robust regex engine to instantly categorize inputs.",
+        module: "System_Services/router_service.py",
+        status: "100% Core Tests Passing"
+      },
+      2: {
+        title: "Phase 2: FastAPI & GUI System",
+        desc: "We engineered a robust FastAPI local web service. It wraps Vaila's routing, memory, and persona services in lightweight REST endpoints. Alongside the API, we developed a premium cyberpunk Web GUI with glassmorphic dashboards to visualize logs and diagnostics.",
+        module: "Core_System_Files/local_api.py",
+        status: "Production Ready & Servable"
+      },
+      3: {
+        title: "Phase 2: Parallel Council Mode",
+        desc: "Introduced multi-threaded capability. Operators can broadcast a single prompt to all five personas simultaneously. Their parallel dialogs are analyzed for vocabulary density to calculate system Drift Indexes, and synthesized into a consensus report.",
+        module: "Core_System_Files/static/app.js",
+        status: "Fully Implemented"
+      },
+      4: {
+        title: "Phase 2: Sandboxed File Extraction",
+        desc: "Built a persistent memory approval workflow. Operators upload files to a Sandboxed folder, scan them with a file analyzer, and extract potential memories. A custom keyword crawler detects facts containing 'always', 'prefer', or 'must' for human verification.",
+        module: "data/openbrain_memory_candidates.jsonl",
+        status: "Operational"
+      }
+    };
+
+    function selectTimeline(id) {
+      const items = document.querySelectorAll(".timeline-item");
+      items.forEach((item, index) => {
+        item.classList.remove("active");
+        if (index + 1 === id) item.classList.add("active");
+      });
+
+      document.getElementById("timeDetailTitle").innerText = timelineData[id].title;
+      document.getElementById("timeDetailDesc").innerText = timelineData[id].desc;
+      document.getElementById("timeDetailMod").innerText = timelineData[id].module;
+      document.getElementById("timeDetailStatus").innerText = timelineData[id].status;
+    }
+
+    // -------------------------------------------
+    // SLIDE 7: DECISION FILTER SYSTEM DOGMA INTERACTIVITY
+    // -------------------------------------------
+    const dogmaData = {
+      1: {
+        idx: "Filter 01 // Memory Core",
+        q: "Does this improve cognitive continuity across time?",
+        ans: "Vaila must maintain stable, consistent information context across sessions. If a proposed feature disrupts memory reliability or splits context in an unresolvable way, it must be rejected or redesigned."
+      },
+      2: {
+        idx: "Filter 02 // Cognitive Lenses",
+        q: "Does this improve persona distinctness?",
+        ans: "Every persona must represent a clear, unique logical framework. We reject updates that cause 'persona bleed,' where different lenses start sounding identical or share details they shouldn't know."
+      },
+      3: {
+        idx: "Filter 03 // Real World Value",
+        q: "Does this improve practical usefulness?",
+        ans: "We build features that assist Malik in his actual, daily workflow. We deprioritize complex features that sound advanced but provide no real daily utility or value."
+      },
+      4: {
+        idx: "Filter 04 // Open Logic",
+        q: "Does this improve explainability?",
+        ans: "Every decision Vaila makes—routing decisions, memory updates, tool dispatches—must be fully loggable and explainable. Black boxes that hide how they operate are strictly banned."
+      },
+      5: {
+        idx: "Filter 05 // Safe Trajectory",
+        q: "Does this support safe future evolution?",
+        ans: "System changes must be modular, sandboxed, and testable. Code patterns must support easy rollback. We never implement code that could lock the system into a single platform or library."
+      },
+      6: {
+        idx: "Filter 06 // Disciplined Progress",
+        q: "Does this belong in the current phase?",
+        ans: "We adhere strictly to the Phase map. We refuse to build advanced robotic control loops (Phase 6) before our local agent databases and mobile connections (Phase 3 & 4) are perfectly stable."
+      },
+      7: {
+        idx: "Filter 07 // Modular Development",
+        q: "Can it be built in a small, testable way?",
+        ans: "We break large features into micro-implementations. We verify each module with targeted tests before scaling the system layer. Big monolithic updates are discouraged."
+      },
+      8: {
+        idx: "Filter 08 // Operational Safety",
+        q: "Can it fail safely?",
+        ans: "If a third-party gateway, network connection, or local database fails, Vaila OS must gracefully fall back to local offline modes. A network disconnection must never crash the core spine."
+      },
+      9: {
+        idx: "Filter 09 // Complete History",
+        q: "Can it be logged?",
+        ans: "Every operation, from an LLM request token count to a local directory scan, must be logged asynchronously. If we cannot track its execution history, it does not belong in the system."
+      },
+      10: {
+        idx: "Filter 10 // Real-Life Grounding",
+        q: "Does it serve Malik's real life, or only the fantasy of the finished system?",
+        ans: "The ultimate filter. We build to solve real-world development friction, organize files, and support life. We avoid wasting computation or engineering resources on features that are purely aesthetic fantasies."
+      }
+    };
+
+    function selectDogma(id) {
+      const cards = document.querySelectorAll(".filter-item-card");
+      cards.forEach((c, index) => {
+        c.classList.remove("active");
+        if (index + 1 === id) c.classList.add("active");
+      });
+
+      document.getElementById("dogmaHeader").innerText = dogmaData[id].idx;
+      document.getElementById("dogmaQ").innerText = dogmaData[id].q;
+      document.getElementById("dogmaAns").innerText = dogmaData[id].ans;
+    }
+  </script>
+</body>
+</html>
