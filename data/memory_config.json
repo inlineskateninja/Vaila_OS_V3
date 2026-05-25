@@ -1,0 +1,6 @@
+{
+  "backend": "jsonl",
+  "sqlite_path": "data/vaila_memory.sqlite3",
+  "vector_backend": "none",
+  "external_memory": "none"
+}

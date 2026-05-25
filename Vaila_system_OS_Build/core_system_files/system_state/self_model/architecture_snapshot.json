@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generated_at": "2026-05-24T23:07:18Z",
+  "generated_at": "2026-05-25T01:17:20Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "present_expected": [
     "core_system_files/app.py",
@@ -30,9 +30,9 @@
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 43,
-    "documentation": 5,
-    "memory_file": 10,
+    "unknown": 96,
+    "documentation": 6,
+    "memory_file": 28,
     "service": 9,
     "router": 3,
     "model_schema": 1,

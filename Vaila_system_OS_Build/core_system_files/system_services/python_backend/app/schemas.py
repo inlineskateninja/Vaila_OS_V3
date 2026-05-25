@@ -17,9 +17,26 @@ class MemoryRecord:
     category: str = "general"
     created_at: str = ""
     relevance_score: float = 1.0
+    review_status: str = "approved"
+    approved_at: str = ""
+    sensitivity: str = "normal"
+    memory_type: str = "fact"
+    expires_at: str = ""
+    supersedes: list[str] = field(default_factory=list)
+    superseded_by: list[str] = field(default_factory=list)
+    source_event_id: str = ""
+    created_by: str = "vaila"
+    last_recalled_at: str = ""
+    recall_count: int = 0
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "MemoryRecord":
+        raw_recall = data.get("recall_count", 0)
+        try:
+            recall_count = int(raw_recall)
+        except (ValueError, TypeError):
+            recall_count = 0
+
         return cls(
             id=data.get("id", ""),
             question=data.get("question", ""),
@@ -34,6 +51,17 @@ class MemoryRecord:
             category=data.get("category", "general"),
             created_at=data.get("created_at", data.get("last_updated", "")),
             relevance_score=float(data.get("relevance_score", 1.0)),
+            review_status=data.get("review_status", "approved"),
+            approved_at=data.get("approved_at", ""),
+            sensitivity=data.get("sensitivity", "normal"),
+            memory_type=data.get("memory_type", "fact"),
+            expires_at=data.get("expires_at", ""),
+            supersedes=data.get("supersedes", []),
+            superseded_by=data.get("superseded_by", []),
+            source_event_id=data.get("source_event_id", ""),
+            created_by=data.get("created_by", "vaila"),
+            last_recalled_at=data.get("last_recalled_at", ""),
+            recall_count=recall_count,
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -41,6 +69,8 @@ class MemoryRecord:
 
     def to_prompt_block(self) -> str:
         source_line = f"Source: {self.source_path}\n" if self.source_path else ""
+        type_line = f"Type: {self.memory_type}\n" if self.memory_type != "fact" else ""
+        sens_line = f"Sensitivity: {self.sensitivity}\n" if self.sensitivity != "normal" else ""
         return (
             f"[Memory: {self.id}]\n"
             f"Question: {self.question}\n"
@@ -48,6 +78,8 @@ class MemoryRecord:
             f"Tags: {', '.join(self.tags)}\n"
             f"Category: {self.category}\n"
             f"Last updated: {self.last_updated}\n"
+            f"{type_line}"
+            f"{sens_line}"
             f"{source_line}"
         )
 
@@ -71,9 +103,20 @@ class MemoryCandidate:
     review_note: str = ""
     category: str = "general"
     relevance_score: float = 1.0
+    sensitivity: str = "normal"
+    memory_type: str = "fact"
+    source_event_id: str = ""
+    proposed_by: str = "vaila"
+    requires_user_approval: bool = True
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "MemoryCandidate":
+        raw_approval = data.get("requires_user_approval", True)
+        if isinstance(raw_approval, str):
+            requires_user_approval = raw_approval.lower() not in {"false", "no", "0"}
+        else:
+            requires_user_approval = bool(raw_approval)
+
         return cls(
             id=data.get("id", ""),
             question=data.get("question", ""),
@@ -92,6 +135,11 @@ class MemoryCandidate:
             review_note=data.get("review_note", ""),
             category=data.get("category", "general"),
             relevance_score=float(data.get("relevance_score", 1.0)),
+            sensitivity=data.get("sensitivity", "normal"),
+            memory_type=data.get("memory_type", "fact"),
+            source_event_id=data.get("source_event_id", ""),
+            proposed_by=data.get("proposed_by", "vaila"),
+            requires_user_approval=requires_user_approval,
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -113,6 +161,12 @@ class MemoryCandidate:
             category=self.category,
             created_at=self.created_at,
             relevance_score=self.relevance_score,
+            review_status="approved",
+            approved_at=approved_at,
+            sensitivity=self.sensitivity,
+            memory_type=self.memory_type,
+            source_event_id=self.source_event_id,
+            created_by=self.proposed_by,
         )
 
     def to_review_block(self) -> str:

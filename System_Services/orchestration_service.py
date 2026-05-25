@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import re
 from copy import deepcopy
@@ -35,6 +35,16 @@ class OrchestrationService:
         self.file_analyzer = FileAnalyzer(project_root=project_root)
         self.log_summarizer = LogSummarizer(project_root=project_root)
         self.self_assessment = SelfAssessmentTool(project_root=project_root)
+        self.chat_histories: dict[str, list[dict[str, str]]] = {}
+
+    def get_history(self, session_id: str) -> list[dict[str, str]]:
+        if session_id not in self.chat_histories:
+            self.chat_histories[session_id] = []
+        return self.chat_histories[session_id]
+
+    def clear_history(self, session_id: str) -> None:
+        if session_id in self.chat_histories:
+            self.chat_histories[session_id].clear()
 
     def handle(self, envelope: PromptEnvelope, route: dict[str, Any]) -> OrchestrationResponse:
         tool_context = ""
@@ -59,20 +69,34 @@ class OrchestrationService:
 
         persona_context = self._load_persona_context(route.get("persona", "proto_jane"))
 
+        # Retrieve session-specific chat history
+        session_id = envelope.metadata.get("session_id", "default")
+        history = self.get_history(session_id)
+
         messages = [
             {
                 "role": "system",
                 "content": self._build_system_prompt(persona_context=persona_context, route=route),
-            },
-            {
-                "role": "user",
-                "content": self._build_user_content(envelope=envelope, tool_context=tool_context),
-            },
+            }
         ]
+        # Append conversation history
+        messages.extend(history)
+        # Append current user prompt
+        messages.append({
+            "role": "user",
+            "content": self._build_user_content(envelope=envelope, tool_context=tool_context),
+        })
 
         try:
             llm_text = self.llm.execute_with_fallback(messages=messages)
             visible_text = llm_text.strip() if llm_text.strip() else self._fallback_response(route, tool_context)
+            
+            # Save successful turns to history
+            if not llm_error and visible_text:
+                history.append({"role": "user", "content": envelope.user_text})
+                history.append({"role": "assistant", "content": visible_text})
+                if len(history) > 20:
+                    history[:] = history[-20:]
         except Exception as exc:
             llm_error = str(exc)
             self.logger.log_error(

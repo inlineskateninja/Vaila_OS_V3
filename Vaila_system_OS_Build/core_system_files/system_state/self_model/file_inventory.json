@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "scanned_at": "2026-05-24T23:07:18Z",
+  "scanned_at": "2026-05-25T01:17:20Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "config": {
     "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
@@ -114,6 +114,61 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 0
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/.gitignore",
+      "name": ".gitignore",
+      "extension": "",
+      "size_bytes": 39,
+      "modified_time": "2026-05-25T00:32:58Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/CACHEDIR.TAG",
+      "name": "CACHEDIR.TAG",
+      "extension": ".tag",
+      "size_bytes": 191,
+      "modified_time": "2026-05-25T00:32:58Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/README.md",
+      "name": "README.md",
+      "extension": ".md",
+      "size_bytes": 310,
+      "modified_time": "2026-05-25T00:32:58Z",
+      "category": "documentation",
+      "metadata": {
+        "category_reason": "documentation"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/v/cache/lastfailed",
+      "name": "lastfailed",
+      "extension": "",
+      "size_bytes": 2,
+      "modified_time": "2026-05-25T00:38:58Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/.pytest_cache/v/cache/nodeids",
+      "name": "nodeids",
+      "extension": "",
+      "size_bytes": 4714,
+      "modified_time": "2026-05-25T01:17:02Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
       }
     },
     {
@@ -237,13 +292,13 @@
       "path": "core_system_files/system_services/python_backend/app/core.py",
       "name": "core.py",
       "extension": ".py",
-      "size_bytes": 43173,
-      "modified_time": "2026-05-24T22:54:14Z",
+      "size_bytes": 44858,
+      "modified_time": "2026-05-25T00:34:30Z",
       "category": "service",
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 863
+        "line_count": 907
       }
     },
     {
@@ -322,6 +377,149 @@
         "category_reason": "core_entrypoint",
         "has_deprecated_import": false,
         "line_count": 492
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 692,
+      "modified_time": "2026-05-25T01:16:55Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 20
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/backend.py",
+      "name": "backend.py",
+      "extension": ".py",
+      "size_bytes": 2463,
+      "modified_time": "2026-05-25T00:19:39Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 74
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/config.py",
+      "name": "config.py",
+      "extension": ".py",
+      "size_bytes": 3646,
+      "modified_time": "2026-05-25T01:16:57Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 93
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/embedding_provider.py",
+      "name": "embedding_provider.py",
+      "extension": ".py",
+      "size_bytes": 719,
+      "modified_time": "2026-05-25T01:16:50Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 32
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/jsonl_backend.py",
+      "name": "jsonl_backend.py",
+      "extension": ".py",
+      "size_bytes": 3170,
+      "modified_time": "2026-05-25T00:19:41Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 85
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/migrate.py",
+      "name": "migrate.py",
+      "extension": ".py",
+      "size_bytes": 7135,
+      "modified_time": "2026-05-25T00:35:25Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 176
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/models.py",
+      "name": "models.py",
+      "extension": ".py",
+      "size_bytes": 54,
+      "modified_time": "2026-05-25T00:19:36Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 1
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/recall_log.py",
+      "name": "recall_log.py",
+      "extension": ".py",
+      "size_bytes": 2717,
+      "modified_time": "2026-05-25T00:27:57Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 81
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/sqlite_backend.py",
+      "name": "sqlite_backend.py",
+      "extension": ".py",
+      "size_bytes": 14343,
+      "modified_time": "2026-05-25T00:32:13Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 371
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/sqlite_schema.py",
+      "name": "sqlite_schema.py",
+      "extension": ".py",
+      "size_bytes": 3786,
+      "modified_time": "2026-05-25T00:32:07Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 129
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/vector_backend.py",
+      "name": "vector_backend.py",
+      "extension": ".py",
+      "size_bytes": 1073,
+      "modified_time": "2026-05-25T01:16:52Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 37
       }
     },
     {
@@ -406,13 +604,13 @@
       "path": "core_system_files/system_services/python_backend/app/paths.py",
       "name": "paths.py",
       "extension": ".py",
-      "size_bytes": 2586,
-      "modified_time": "2026-05-23T20:39:59Z",
+      "size_bytes": 2970,
+      "modified_time": "2026-05-25T00:32:05Z",
       "category": "script",
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 65
+        "line_count": 71
       }
     },
     {
@@ -588,26 +786,26 @@
       "path": "core_system_files/system_services/python_backend/app/schemas.py",
       "name": "schemas.py",
       "extension": ".py",
-      "size_bytes": 9263,
-      "modified_time": "2026-05-23T21:34:15Z",
+      "size_bytes": 11640,
+      "modified_time": "2026-05-25T00:23:32Z",
       "category": "model_schema",
       "metadata": {
         "category_reason": "model_schema",
         "has_deprecated_import": false,
-        "line_count": 282
+        "line_count": 336
       }
     },
     {
       "path": "core_system_files/system_services/python_backend/app/service.py",
       "name": "service.py",
       "extension": ".py",
-      "size_bytes": 7622,
-      "modified_time": "2026-05-24T22:27:23Z",
+      "size_bytes": 8355,
+      "modified_time": "2026-05-25T00:38:42Z",
       "category": "core_entrypoint",
       "metadata": {
         "category_reason": "core_entrypoint",
         "has_deprecated_import": false,
-        "line_count": 240
+        "line_count": 260
       }
     },
     {
@@ -751,6 +949,106 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 225
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/data/logs/activity.jsonl",
+      "name": "activity.jsonl",
+      "extension": ".jsonl",
+      "size_bytes": 4465,
+      "modified_time": "2026-05-25T00:33:02Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/data/memory_config.json",
+      "name": "memory_config.json",
+      "extension": ".json",
+      "size_bytes": 132,
+      "modified_time": "2026-05-25T00:34:37Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file"
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/test_memory_backend_interface.py",
+      "name": "test_memory_backend_interface.py",
+      "extension": ".py",
+      "size_bytes": 8373,
+      "modified_time": "2026-05-25T00:23:38Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 254
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/test_memory_config.py",
+      "name": "test_memory_config.py",
+      "extension": ".py",
+      "size_bytes": 5970,
+      "modified_time": "2026-05-25T00:34:41Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 171
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/test_memory_migration.py",
+      "name": "test_memory_migration.py",
+      "extension": ".py",
+      "size_bytes": 8802,
+      "modified_time": "2026-05-25T00:38:54Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 239
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/test_memory_recall_log.py",
+      "name": "test_memory_recall_log.py",
+      "extension": ".py",
+      "size_bytes": 3686,
+      "modified_time": "2026-05-25T00:30:39Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 118
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/test_memory_vector_interfaces.py",
+      "name": "test_memory_vector_interfaces.py",
+      "extension": ".py",
+      "size_bytes": 1662,
+      "modified_time": "2026-05-25T01:17:00Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 44
+      }
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/test_sqlite_memory_backend.py",
+      "name": "test_sqlite_memory_backend.py",
+      "extension": ".py",
+      "size_bytes": 7107,
+      "modified_time": "2026-05-25T00:32:55Z",
+      "category": "memory_file",
+      "metadata": {
+        "category_reason": "memory_file",
+        "has_deprecated_import": false,
+        "line_count": 228
       }
     },
     {
@@ -908,6 +1206,270 @@
       "extension": ".json",
       "size_bytes": 2483,
       "modified_time": "2026-05-24T23:07:18Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_230718_567074.json",
+      "name": "change_2026_05_24_230718_567074.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-24T23:07:18Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_232908_764316.json",
+      "name": "change_2026_05_24_232908_764316.json",
+      "extension": ".json",
+      "size_bytes": 2050,
+      "modified_time": "2026-05-24T23:29:08Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_24_232909_101696.json",
+      "name": "change_2026_05_24_232909_101696.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-24T23:29:09Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_000201_358464.json",
+      "name": "change_2026_05_25_000201_358464.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:02:01Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_000201_698287.json",
+      "name": "change_2026_05_25_000201_698287.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:02:01Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_001027_640054.json",
+      "name": "change_2026_05_25_001027_640054.json",
+      "extension": ".json",
+      "size_bytes": 2050,
+      "modified_time": "2026-05-25T00:10:27Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_001027_975660.json",
+      "name": "change_2026_05_25_001027_975660.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:10:27Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_001045_067812.json",
+      "name": "change_2026_05_25_001045_067812.json",
+      "extension": ".json",
+      "size_bytes": 2119,
+      "modified_time": "2026-05-25T00:10:45Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_001045_417663.json",
+      "name": "change_2026_05_25_001045_417663.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:10:45Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_002013_036440.json",
+      "name": "change_2026_05_25_002013_036440.json",
+      "extension": ".json",
+      "size_bytes": 2606,
+      "modified_time": "2026-05-25T00:20:13Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_002013_407660.json",
+      "name": "change_2026_05_25_002013_407660.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:20:13Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_002353_728468.json",
+      "name": "change_2026_05_25_002353_728468.json",
+      "extension": ".json",
+      "size_bytes": 2287,
+      "modified_time": "2026-05-25T00:23:53Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_002354_080066.json",
+      "name": "change_2026_05_25_002354_080066.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:23:54Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003055_739186.json",
+      "name": "change_2026_05_25_003055_739186.json",
+      "extension": ".json",
+      "size_bytes": 2946,
+      "modified_time": "2026-05-25T00:30:55Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003056_095763.json",
+      "name": "change_2026_05_25_003056_095763.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:30:56Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003302_128917.json",
+      "name": "change_2026_05_25_003302_128917.json",
+      "extension": ".json",
+      "size_bytes": 3231,
+      "modified_time": "2026-05-25T00:33:02Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003302_490376.json",
+      "name": "change_2026_05_25_003302_490376.json",
+      "extension": ".json",
+      "size_bytes": 2565,
+      "modified_time": "2026-05-25T00:33:02Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003316_010591.json",
+      "name": "change_2026_05_25_003316_010591.json",
+      "extension": ".json",
+      "size_bytes": 2288,
+      "modified_time": "2026-05-25T00:33:16Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003316_388516.json",
+      "name": "change_2026_05_25_003316_388516.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:33:16Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003453_590129.json",
+      "name": "change_2026_05_25_003453_590129.json",
+      "extension": ".json",
+      "size_bytes": 2689,
+      "modified_time": "2026-05-25T00:34:53Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003453_975431.json",
+      "name": "change_2026_05_25_003453_975431.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:34:53Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003906_433613.json",
+      "name": "change_2026_05_25_003906_433613.json",
+      "extension": ".json",
+      "size_bytes": 2615,
+      "modified_time": "2026-05-25T00:39:06Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_003906_819553.json",
+      "name": "change_2026_05_25_003906_819553.json",
+      "extension": ".json",
+      "size_bytes": 2483,
+      "modified_time": "2026-05-25T00:39:06Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_011720_054692.json",
+      "name": "change_2026_05_25_011720_054692.json",
+      "extension": ".json",
+      "size_bytes": 2636,
+      "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -1178,11 +1740,275 @@
       }
     },
     {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_230718_556324.json",
+      "name": "scan_2026_05_24_230718_556324.json",
+      "extension": ".json",
+      "size_bytes": 75568,
+      "modified_time": "2026-05-24T23:07:18Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_232908_752152.json",
+      "name": "scan_2026_05_24_232908_752152.json",
+      "extension": ".json",
+      "size_bytes": 76307,
+      "modified_time": "2026-05-24T23:29:08Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_24_232909_090019.json",
+      "name": "scan_2026_05_24_232909_090019.json",
+      "extension": ".json",
+      "size_bytes": 77046,
+      "modified_time": "2026-05-24T23:29:09Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_000201_347991.json",
+      "name": "scan_2026_05_25_000201_347991.json",
+      "extension": ".json",
+      "size_bytes": 77785,
+      "modified_time": "2026-05-25T00:02:01Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_000201_687493.json",
+      "name": "scan_2026_05_25_000201_687493.json",
+      "extension": ".json",
+      "size_bytes": 78524,
+      "modified_time": "2026-05-25T00:02:01Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_001027_629235.json",
+      "name": "scan_2026_05_25_001027_629235.json",
+      "extension": ".json",
+      "size_bytes": 79263,
+      "modified_time": "2026-05-25T00:10:27Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_001027_965175.json",
+      "name": "scan_2026_05_25_001027_965175.json",
+      "extension": ".json",
+      "size_bytes": 80002,
+      "modified_time": "2026-05-25T00:10:27Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_001045_056635.json",
+      "name": "scan_2026_05_25_001045_056635.json",
+      "extension": ".json",
+      "size_bytes": 80741,
+      "modified_time": "2026-05-25T00:10:45Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_001045_407411.json",
+      "name": "scan_2026_05_25_001045_407411.json",
+      "extension": ".json",
+      "size_bytes": 81480,
+      "modified_time": "2026-05-25T00:10:45Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_002013_025452.json",
+      "name": "scan_2026_05_25_002013_025452.json",
+      "extension": ".json",
+      "size_bytes": 85162,
+      "modified_time": "2026-05-25T00:20:13Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_002013_396685.json",
+      "name": "scan_2026_05_25_002013_396685.json",
+      "extension": ".json",
+      "size_bytes": 85901,
+      "modified_time": "2026-05-25T00:20:13Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_002353_717696.json",
+      "name": "scan_2026_05_25_002353_717696.json",
+      "extension": ".json",
+      "size_bytes": 86641,
+      "modified_time": "2026-05-25T00:23:53Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_002354_069267.json",
+      "name": "scan_2026_05_25_002354_069267.json",
+      "extension": ".json",
+      "size_bytes": 87380,
+      "modified_time": "2026-05-25T00:23:54Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003055_728309.json",
+      "name": "scan_2026_05_25_003055_728309.json",
+      "extension": ".json",
+      "size_bytes": 89321,
+      "modified_time": "2026-05-25T00:30:55Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003056_084544.json",
+      "name": "scan_2026_05_25_003056_084544.json",
+      "extension": ".json",
+      "size_bytes": 90060,
+      "modified_time": "2026-05-25T00:30:56Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003302_118067.json",
+      "name": "scan_2026_05_25_003302_118067.json",
+      "extension": ".json",
+      "size_bytes": 93968,
+      "modified_time": "2026-05-25T00:33:02Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003302_479548.json",
+      "name": "scan_2026_05_25_003302_479548.json",
+      "extension": ".json",
+      "size_bytes": 95050,
+      "modified_time": "2026-05-25T00:33:02Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003315_999572.json",
+      "name": "scan_2026_05_25_003315_999572.json",
+      "extension": ".json",
+      "size_bytes": 95790,
+      "modified_time": "2026-05-25T00:33:16Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003316_378294.json",
+      "name": "scan_2026_05_25_003316_378294.json",
+      "extension": ".json",
+      "size_bytes": 96529,
+      "modified_time": "2026-05-25T00:33:16Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003453_579634.json",
+      "name": "scan_2026_05_25_003453_579634.json",
+      "extension": ".json",
+      "size_bytes": 99137,
+      "modified_time": "2026-05-25T00:34:53Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003453_964632.json",
+      "name": "scan_2026_05_25_003453_964632.json",
+      "extension": ".json",
+      "size_bytes": 99876,
+      "modified_time": "2026-05-25T00:34:53Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003906_419186.json",
+      "name": "scan_2026_05_25_003906_419186.json",
+      "extension": ".json",
+      "size_bytes": 101806,
+      "modified_time": "2026-05-25T00:39:06Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_003906_808597.json",
+      "name": "scan_2026_05_25_003906_808597.json",
+      "extension": ".json",
+      "size_bytes": 102547,
+      "modified_time": "2026-05-25T00:39:06Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
+      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_011720_043489.json",
+      "name": "scan_2026_05_25_011720_043489.json",
+      "extension": ".json",
+      "size_bytes": 105125,
+      "modified_time": "2026-05-25T01:17:20Z",
+      "category": "unknown",
+      "metadata": {
+        "category_reason": "unknown"
+      }
+    },
+    {
       "path": "core_system_files/system_state/self_model/architecture_snapshot.json",
       "name": "architecture_snapshot.json",
       "extension": ".json",
       "size_bytes": 1681,
-      "modified_time": "2026-05-24T23:07:18Z",
+      "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -1193,7 +2019,7 @@
       "name": "capability_map.json",
       "extension": ".json",
       "size_bytes": 346,
-      "modified_time": "2026-05-24T23:07:18Z",
+      "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -1203,8 +2029,8 @@
       "path": "core_system_files/system_state/self_model/change_report.json",
       "name": "change_report.json",
       "extension": ".json",
-      "size_bytes": 2483,
-      "modified_time": "2026-05-24T23:07:18Z",
+      "size_bytes": 2636,
+      "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -1214,8 +2040,8 @@
       "path": "core_system_files/system_state/self_model/file_inventory.json",
       "name": "file_inventory.json",
       "extension": ".json",
-      "size_bytes": 74948,
-      "modified_time": "2026-05-24T23:07:18Z",
+      "size_bytes": 105244,
+      "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -1226,7 +2052,7 @@
       "name": "last_change_summary.md",
       "extension": ".md",
       "size_bytes": 139,
-      "modified_time": "2026-05-24T23:07:18Z",
+      "modified_time": "2026-05-25T01:17:20Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation"
@@ -1237,7 +2063,7 @@
       "name": "last_scan_summary.md",
       "extension": ".md",
       "size_bytes": 785,
-      "modified_time": "2026-05-24T23:07:18Z",
+      "modified_time": "2026-05-25T01:17:20Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation"
@@ -1248,7 +2074,7 @@
       "name": "unresolved_issues.json",
       "extension": ".json",
       "size_bytes": 20,
-      "modified_time": "2026-05-24T23:07:18Z",
+      "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -1956,6 +2782,30 @@
       "reason": "ignored_folder"
     },
     {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_backend_interface.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_config.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_migration.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_recall_log.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_vector_interfaces.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_sqlite_memory_backend.cpython-313-pytest-9.0.3.pyc",
+      "reason": "ignored_folder"
+    },
+    {
       "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_change_service.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
@@ -2322,14 +3172,58 @@
     {
       "path": "core_system_files/system_services/python_backend/app/models/__pycache__/__init__.cpython-313.pyc",
       "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/backend.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/config.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/embedding_provider.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/jsonl_backend.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/migrate.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/models.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/recall_log.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_backend.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_schema.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/vector_backend.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
     }
   ],
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 43,
-    "documentation": 5,
-    "memory_file": 10,
+    "unknown": 96,
+    "documentation": 6,
+    "memory_file": 28,
     "service": 9,
     "router": 3,
     "model_schema": 1,
@@ -2338,5 +3232,5 @@
     "config_file": 4,
     "persona_manifest": 1
   },
-  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_24_230718_556324.json"
+  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_25_011720_429068.json"
 }

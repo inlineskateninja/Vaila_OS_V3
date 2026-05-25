@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from pathlib import Path
 
@@ -33,7 +33,16 @@ def run_cli(project_root: Path) -> None:
             status.info("Shutdown requested.")
             break
 
-        envelope = envelope_service.create(user_text=user_text, source="cli")
+        if user_text.lower() == "clear":
+            orchestrator.clear_history("cli_session")
+            status.info("Conversation history cleared.")
+            continue
+
+        envelope = envelope_service.create(
+            user_text=user_text,
+            source="cli",
+            metadata={"session_id": "cli_session"},
+        )
         route = router.route(envelope)
         status.route(route)
 

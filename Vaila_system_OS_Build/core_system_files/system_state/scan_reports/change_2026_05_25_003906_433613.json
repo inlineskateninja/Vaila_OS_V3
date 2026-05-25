@@ -1,0 +1,96 @@
+{
+  "status": "changes_detected",
+  "previous_scan_time": "2026-05-25T00:34:53Z",
+  "current_scan_time": "2026-05-25T00:39:06Z",
+  "summary_counts": {
+    "added_files": 4,
+    "removed_files": 0,
+    "modified_files": 6,
+    "new_issues": 0,
+    "resolved_issues": 0,
+    "capability_changes": 11
+  },
+  "added_files": [
+    "core_system_files/system_services/python_backend/app/memory/migrate.py",
+    "core_system_files/system_services/python_backend/tests/test_memory_migration.py",
+    "core_system_files/system_state/scan_reports/change_2026_05_25_003453_975431.json",
+    "core_system_files/system_state/scan_reports/scan_2026_05_25_003453_964632.json"
+  ],
+  "removed_files": [],
+  "modified_files": [
+    "core_system_files/system_services/python_backend/.pytest_cache/v/cache/lastfailed",
+    "core_system_files/system_services/python_backend/.pytest_cache/v/cache/nodeids",
+    "core_system_files/system_services/python_backend/app/memory/__init__.py",
+    "core_system_files/system_services/python_backend/app/service.py",
+    "core_system_files/system_state/self_model/change_report.json",
+    "core_system_files/system_state/self_model/file_inventory.json"
+  ],
+  "unchanged_files_count": 214,
+  "added_services": [],
+  "removed_services": [],
+  "added_routers": [],
+  "removed_routers": [],
+  "added_personas": [],
+  "removed_personas": [],
+  "capability_changes": [
+    {
+      "name": "can_load_latest_snapshot",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "can_save_snapshots",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "can_scan_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "detected_import_issues",
+      "previous": null,
+      "current": false
+    },
+    {
+      "name": "detected_missing_architecture",
+      "previous": null,
+      "current": false
+    },
+    {
+      "name": "has_config_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_memory_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_persona_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_router_layer",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_service_layer",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_tests",
+      "previous": null,
+      "current": true
+    }
+  ],
+  "new_issues": [],
+  "resolved_issues": [],
+  "persistent_issues": [],
+  "notes": []
+}

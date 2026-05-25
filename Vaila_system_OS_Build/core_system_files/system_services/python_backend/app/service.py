@@ -6,6 +6,8 @@ from pydantic import BaseModel, Field
 
 from app.core import VailaCore
 from app.routers.system_perception_router import router as system_perception_router
+from app.memory import migrate_jsonl_to_sqlite
+
 
 
 class ChatRequest(BaseModel):
@@ -44,6 +46,10 @@ class RejectCandidateRequest(BaseModel):
 class DeleteMemoryProposalRequest(BaseModel):
     topic: str = Field(..., min_length=1)
     limit: int = Field(default=20, ge=1, le=100)
+
+
+class MigrationRequest(BaseModel):
+    dry_run: bool = True
 
 
 core = VailaCore()
@@ -238,3 +244,17 @@ def project_review(limit: int = 50) -> dict[str, Any]:
     if limit < 1 or limit > 200:
         raise HTTPException(status_code=400, detail="limit must be between 1 and 200")
     return core.project_review(limit=limit)
+
+
+@app.get("/memory/recalls")
+def recent_memory_recalls(limit: int = 50) -> dict[str, Any]:
+    if limit < 1 or limit > 200:
+        raise HTTPException(status_code=400, detail="limit must be between 1 and 200")
+    events = core.memory_recall_log.list_recent(limit=limit)
+    return {"ok": True, "limit": limit, "events": [event.to_dict() for event in events]}
+
+
+@app.post("/memory/migrate/jsonl-to-sqlite")
+def migrate_memory(request: MigrationRequest) -> dict[str, Any]:
+    summary = migrate_jsonl_to_sqlite(core.project_root, dry_run=request.dry_run)
+    return {"ok": len(summary["errors"]) == 0, "summary": summary}

@@ -17,6 +17,8 @@ class VailaPaths:
     import_report_path: Path
     persona_root: Path
     foundation_root: Path
+    memory_recall_log_path: Path
+    sqlite_db_path: Path
 
 
 def find_project_root(start: str | Path | None = None) -> Path:
@@ -48,6 +50,8 @@ def get_vaila_paths(project_root: str | Path) -> VailaPaths:
             import_report_path=data_root / "imports" / "reports" / "import_reports.jsonl",
             persona_root=root / "personas",
             foundation_root=root,
+            memory_recall_log_path=data_root / "logs" / "memory_recall.jsonl",
+            sqlite_db_path=data_root / "vaila_memory.sqlite3",
         )
 
     return VailaPaths(
@@ -62,4 +66,6 @@ def get_vaila_paths(project_root: str | Path) -> VailaPaths:
         import_report_path=system_root / "system_logging" / "session_logs" / "import_reports.jsonl",
         persona_root=system_root / "persona_files",
         foundation_root=system_root / "core_system_files" / "system_dogma",
+        memory_recall_log_path=system_root / "system_logging" / "session_logs" / "memory_recall.jsonl",
+        sqlite_db_path=system_root / "device_storage" / "vaila_memory.sqlite3",
     )

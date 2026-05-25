@@ -16,6 +16,14 @@ from app.llm_client import LLMClientError, LMStudioClient
 from app.local_responses import build_local_response
 from app.memory_commands import candidate_from_activity, command_list, extract_memory_candidates
 from app.memory_store import MemoryStore
+from app.memory import (
+    load_memory_config,
+    save_default_memory_config_if_missing,
+    build_memory_backend,
+    MemoryStoreAdapter,
+    CandidateStoreAdapter,
+)
+from app.memory.recall_log import MemoryRecallEvent, MemoryRecallLog
 from app.model_evaluator import ModelEvaluator
 from app.model_registry import ModelRegistry
 from app.orchestration import OrchestrationPacket, build_orchestration_packet
@@ -65,8 +73,17 @@ class VailaCore:
         self.model_eval_path = self.paths.model_eval_path
         self.tool_result_path = self.paths.tool_result_path
 
-        self.memory_store = MemoryStore(self.memory_root)
-        self.candidate_store = CandidateStore(self.candidate_root)
+        save_default_memory_config_if_missing(self.project_root)
+        self.memory_config = load_memory_config(self.project_root)
+        self.memory_backend = build_memory_backend(self.project_root, self.memory_config)
+
+        if hasattr(self.memory_backend, "memory_store"):
+            self.memory_store = self.memory_backend.memory_store
+            self.candidate_store = self.memory_backend.candidate_store
+        else:
+            self.memory_store = MemoryStoreAdapter(self.memory_backend)
+            self.candidate_store = CandidateStoreAdapter(self.memory_backend)
+        self.memory_recall_log = MemoryRecallLog(self.paths.memory_recall_log_path)
         self.activity_log = ActivityLog(self.activity_log_path)
         self.model_evaluator = ModelEvaluator(self.model_eval_path)
         self.tool_results = ToolResultStore(self.tool_result_path)
@@ -102,8 +119,8 @@ class VailaCore:
         }
 
     def load_local_state(self) -> dict[str, Any]:
-        self.memory_store.load()
-        self.candidate_store.load()
+        self.memory_backend.load()
+        self.memory_recall_log.load()
         self.activity_log.load()
         self.model_evaluator.load()
         self.tool_results.load()
@@ -118,13 +135,13 @@ class VailaCore:
         return summary
 
     def state_summary(self) -> dict[str, Any]:
+        summary = self.memory_backend.state_summary()
         return {
-            "memory_records": len(self.memory_store.records),
-            "memory_categories": self.memory_store.category_counts(),
-            "memory_recency": self.memory_store.recency_counts(),
-            "pending_candidates": len(self.candidate_store.list_candidates("pending")),
-            "approved_candidates": len(self.candidate_store.list_candidates("approved")),
-            "rejected_candidates": len(self.candidate_store.list_candidates("rejected")),
+            **summary,
+            "memory_backend": self.memory_config.get("backend", "jsonl"),
+            "vector_backend": self.memory_config.get("vector_backend", "none"),
+            "external_memory": self.memory_config.get("external_memory", "none"),
+            "memory_recall_events": self.memory_recall_log.count(),
             "activity_events": len(self.activity_log.events),
             "tool_results": len(self.tool_results.records),
             "service_integrations": len(self.service_integrations.integrations),
@@ -170,17 +187,44 @@ class VailaCore:
     def route(self, user_text: str, persona_override: str | None = None) -> RoutePlan:
         return route_user_input(user_text, persona_override=persona_override)
 
-    def retrieve_memory(self, route_plan: RoutePlan, per_query_limit: int = 3) -> list[MemoryRecord]:
+    def retrieve_memory(self, route_plan: RoutePlan, per_query_limit: int = 3, request_id: str | None = None) -> list[MemoryRecord]:
         retrieved: list[MemoryRecord] = []
+        seen_queries = set()
+
         for query in route_plan.memory_queries:
-            results = self.memory_store.search(
+            if query in seen_queries:
+                continue
+            seen_queries.add(query)
+
+            scored_results = self.memory_backend.search_memory_scored(
                 query=query,
                 persona=route_plan.persona,
                 tags=route_plan.memory_tags,
                 limit=per_query_limit,
-                prefer_recent=True,
             )
-            retrieved.extend(results)
+
+            query_records = [record for score, record in scored_results]
+            retrieved.extend(query_records)
+
+            event = MemoryRecallEvent(
+                id="",
+                created_at="",
+                request_id=request_id or "",
+                persona=route_plan.persona,
+                task_type=route_plan.task_type,
+                query=query,
+                memory_ids=[record.id for record in query_records],
+                scores=[score for score, record in scored_results],
+                filters={
+                    "tags": route_plan.memory_tags,
+                    "category": None
+                },
+                used_in_context=True,
+                source="chat",
+                notes=""
+            )
+            self.memory_recall_log.append(event)
+
         unique_records: dict[str, MemoryRecord] = {}
         for record in retrieved:
             unique_records[record.id] = record
@@ -308,7 +352,7 @@ class VailaCore:
                 orchestration_packet=orchestration_packet,
             )
 
-        memories = self.retrieve_memory(route_plan)
+        memories = self.retrieve_memory(route_plan, request_id=request_envelope.id)
         orchestration_packet = build_orchestration_packet(
             request_envelope=request_envelope,
             route_plan=route_plan,
@@ -618,7 +662,7 @@ class VailaCore:
                 result["response"] = f"{notice}\n\n{response_text}"
         result["response_timestamp"] = utc_now()
         candidates = extract_memory_candidates(user_text, route_plan)
-        added = self.candidate_store.add_many(candidates) if candidates else []
+        added = self.memory_backend.create_candidates(candidates) if candidates else []
         result["memory_candidates_created"] = [candidate.to_dict() for candidate in added]
         result["memory_candidate_count"] = len(added)
         if candidates and not added:
@@ -715,7 +759,7 @@ class VailaCore:
     def import_document(self, path: str | Path, tags: list[str] | None = None, persona_scope: list[str] | None = None) -> dict[str, Any]:
         resolved_path = self.resolve_user_path(str(path))
         report, candidates = self.document_importer.import_document(resolved_path, tags=tags or [], persona_scope=persona_scope or ["all"])
-        added = self.candidate_store.add_many(candidates)
+        added = self.memory_backend.create_candidates(candidates)
         result = {"ok": True, "report": report.to_dict(), "added_count": len(added), "skipped_duplicate_count": len(candidates) - len(added), "added_candidate_ids": [candidate.id for candidate in added]}
         self.activity_log.append("document_imported", f"Imported {resolved_path.name} as memory candidates", {"path": str(resolved_path), "added_count": len(added), "skipped_duplicate_count": len(candidates) - len(added)})
         return result
@@ -753,19 +797,19 @@ class VailaCore:
         return self.candidate_store.get(candidate_id)
 
     def approve_candidate(self, candidate_id: str) -> dict[str, Any]:
-        candidate, target_path = self.candidate_store.approve(candidate_id, self.memory_store)
-        result = {"ok": True, "candidate": candidate.to_dict(), "written_to": self._display_path(target_path), "memory_records": len(self.memory_store.records)}
+        candidate, target_path = self.memory_backend.approve_candidate(candidate_id)
+        result = {"ok": True, "candidate": candidate.to_dict(), "written_to": self._display_path(target_path), "memory_records": len(self.memory_backend.memory_store.records)}
         self.activity_log.append("candidate_approved", f"Approved memory candidate {candidate.id}", {"candidate_id": candidate.id, "written_to": result["written_to"], "category": candidate.category})
         return result
 
     def reject_candidate(self, candidate_id: str, note: str = "") -> dict[str, Any]:
-        candidate = self.candidate_store.reject(candidate_id, note=note)
+        candidate = self.memory_backend.reject_candidate(candidate_id, note=note)
         result = {"ok": True, "candidate": candidate.to_dict()}
         self.activity_log.append("candidate_rejected", f"Rejected memory candidate {candidate.id}", {"candidate_id": candidate.id, "review_note": note})
         return result
 
     def search_memory(self, query: str, persona: str = "proto_jane", tags: list[str] | None = None, limit: int = 8, category: str | None = None) -> list[dict[str, Any]]:
-        scored = self.memory_store.search_scored(query=query, persona=persona, tags=tags or [], limit=limit, category=category)
+        scored = self.memory_backend.search_memory_scored(query=query, persona=persona, tags=tags or [], limit=limit, category=category)
         return [{"score": score, "recency": self._memory_recency(record), **record.to_dict()} for score, record in scored]
 
     def list_personas(self) -> list[dict[str, Any]]:

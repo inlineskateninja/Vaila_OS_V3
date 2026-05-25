@@ -198,6 +198,7 @@ class VailaDesktopClient:
                 "interface": "desktop_client",
                 "selected_persona": self._selected_persona_id(),
                 "prompt_interpreter_enabled": False,
+                "session_id": "desktop_session",
             }
             envelope = self.envelope_service.create(
                 user_text=raw_text,
@@ -338,6 +339,7 @@ class VailaDesktopClient:
         return "\n".join(rows) if rows else "No logs found."
 
     def clear_chat(self) -> None:
+        self.orchestrator.clear_history("desktop_session")
         self.prompt.delete("1.0", tk.END)
         self.response.delete("1.0", tk.END)
         self.status_var.set("Ready.")

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAILA OS // CORE ACTIVE V3</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="vaila-app">
+        <!-- TOP BRANDING BAR -->
+        <header class="app-header">
+            <div class="brand-group">
+                <span class="pulse-indicator online"></span>
+                <h1>VAILA OS <span class="version-tag">V3.2.0</span></h1>
+            </div>
+            <div class="header-status">
+                <span class="status-label">LLM GATEWAY:</span>
+                <span id="gateway-status" class="status-val text-cyan">checking...</span>
+                <span class="divider">//</span>
+                <span class="status-label">ROUTER:</span>
+                <span class="status-val text-green">regex_first_v3</span>
+            </div>
+            <button id="toggle-inspector-btn" class="icon-btn" title="Toggle Inspector">
+                <span class="icon">&#9656;</span> INSPECTOR
+            </button>
+        </header>
+
+        <!-- MAIN WORKSPACE -->
+        <div class="workspace">
+            
+            <!-- LEFT PANEL: CONTROL SIDEBAR -->
+            <aside class="control-sidebar">
+                <section class="panel-section">
+                    <h2 class="section-title">INTELLIGENCE CORES</h2>
+                    <div id="persona-list" class="persona-deck">
+                        <!-- Loaded dynamically via app.js -->
+                        <div class="loading-spinner">Initializing lenses...</div>
+                    </div>
+                </section>
+
+                <section class="panel-section operational-hub">
+                    <h2 class="section-title">SYSTEM OPERATIONS</h2>
+                    <div class="button-grid">
+                        <button id="run-assessment-btn" class="action-btn" data-tooltip="Run full system diagnostics and sandbox assessments.">
+                            <span class="btn-icon">&#128736;</span> Self Assessment
+                        </button>
+                        <button id="run-summarize-btn" class="action-btn" data-tooltip="Analyze recent JSONL daily logs.">
+                            <span class="btn-icon">&#128203;</span> Summarize Logs
+                        </button>
+                        <button id="run-diagnostics-btn" class="action-btn" data-tooltip="Test LLM server accessibility.">
+                            <span class="btn-icon">&#128268;</span> Check Gateway
+                        </button>
+                        <button id="clear-chat-btn" class="action-btn secondary" data-tooltip="Reset active session view.">
+                            <span class="btn-icon">&#128465;</span> Clear Session
+                        </button>
+                    </div>
+                </section>
+                
+                <footer class="sidebar-footer">
+                    <span class="footer-meta">USER: Malik</span>
+                    <span class="footer-meta">ROLE: Root Administrator</span>
+                </footer>
+            </aside>
+
+            <!-- CENTER PANEL: CHAT HUB -->
+            <main class="chat-hub">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="active-lens-details">
+                        <div id="active-lens-indicator" class="lens-glow-dot cyan"></div>
+                        <div>
+                            <h3 id="active-lens-name">Proto Jane</h3>
+                            <p id="active-lens-tagline">Default Operating System lens</p>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <span id="latency-tag" class="meta-tag hidden">0.0s</span>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Feed -->
+                <div id="chat-feed" class="chat-feed">
+                    <div class="message system-msg">
+                        <div class="msg-sender">SYSTEM BOOT</div>
+                        <div class="msg-content">
+                            <p><strong>Vaila OS V3 Online.</strong> System identity is stable, memories mapped, fallback gateway routes active.</p>
+                            <p class="text-muted">Select an intelligence core on the left to align the cognitive lens, or type directly to trigger auto-regex routing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input Dock -->
+                <div class="input-dock">
+                    <div class="input-wrapper">
+                        <textarea id="prompt-input" placeholder="Communicate with Vaila (Press Ctrl+Enter to send)..." rows="2"></textarea>
+                        <button id="send-prompt-btn" class="send-btn" title="Send Request">
+                            <span class="send-arrow">&#10148;</span>
+                        </button>
+                    </div>
+                    <div class="input-meta">
+                        <span>Press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to dispatch</span>
+                        <span id="character-count">0 chars</span>
+                    </div>
+                </div>
+            </main>
+
+            <!-- RIGHT PANEL: COLLAPSIBLE INSPECTOR -->
+            <aside id="inspector-panel" class="inspector-sidebar">
+                <div class="inspector-header">
+                    <h3>INTELLIGENCE INSPECTOR</h3>
+                    <span class="close-btn" id="close-inspector-x">&times;</span>
+                </div>
+
+                <div class="inspector-scroll">
+                    <!-- Router Intelligence -->
+                    <div class="inspector-card">
+                        <h4 class="card-title">ROUTING DECISION</h4>
+                        <div class="routing-score-block">
+                            <div class="score-meta">
+                                <span class="label">Confidence Score</span>
+                                <span id="route-confidence" class="value badge badge-green">N/A</span>
+                            </div>
+                            <div class="confidence-bar-outer">
+                                <div id="confidence-bar-inner" class="confidence-bar-inner" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="routing-details-list">
+                            <div class="detail-item">
+                                <span class="label">Task Route:</span>
+                                <span id="route-task-type" class="value badge">waiting</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Matched Lens:</span>
+                                <span id="route-persona" class="value badge">waiting</span>
+                            </div>
+                        </div>
+
+                        <div class="rationales-section">
+                            <h5>Routing Rationales:</h5>
+                            <ul id="routing-reasons" class="reasons-list">
+                                <li class="text-muted">No transactions registered in this session.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Live Logging Console -->
+                    <div class="inspector-card">
+                        <div class="card-header-with-actions">
+                            <h4 class="card-title">REAL-TIME CONSOLE</h4>
+                            <div class="console-tabs">
+                                <button id="console-tab-session" class="tab-btn active">Session</button>
+                                <button id="console-tab-errors" class="tab-btn">Errors</button>
+                            </div>
+                        </div>
+                        <div id="console-output" class="console-terminal">
+                            <div class="terminal-line text-muted">[system] ready for log ingestion...</div>
+                        </div>
+                    </div>
+
+                    <!-- Metadata Transaction Inspector -->
+                    <div class="inspector-card">
+                        <h4 class="card-title">TRANSACTION METADATA</h4>
+                        <div id="metadata-viewer" class="metadata-json-viewer">
+                            <span class="text-muted">Waiting for active exchange payload...</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+    
+    <!-- Custom tooltips, loading modals, etc. -->
+    <div id="loading-overlay" class="modal-overlay hidden">
+        <div class="loading-modal">
+            <div class="modal-spinner"></div>
+            <p id="loading-message">Executing system task...</p>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
