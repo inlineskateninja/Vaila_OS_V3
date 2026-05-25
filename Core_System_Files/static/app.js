@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Upgraded state hooks
         currentView: "chat",
         activeCandidates: [],
+        durableMemories: [],
         selectedCandidate: null,
         activeFiles: [],
         selectedFile: null,
@@ -153,6 +154,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Memory center components
         memoryCandidatesList: document.getElementById("memory-candidates-list"),
+        durableMemoriesList: document.getElementById("durable-memories-list"),
+        durableMemoryCount: document.getElementById("durable-memory-count"),
         memCandId: document.getElementById("mem-cand-id"),
         memCandText: document.getElementById("mem-cand-text"),
         memCandCategory: document.getElementById("mem-cand-category"),
@@ -216,6 +219,14 @@ document.addEventListener("DOMContentLoaded", () => {
         await loadSystemInfo();
         await checkGateway();
         await startConsolePolling();
+    }
+
+    function escapeHtml(text) {
+        return String(text || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;");
     }
 
     async function loadAuthStatus() {
@@ -338,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Load data specific to the view
         if (viewName === "memory") {
-            loadMemoryCandidates();
+            loadMemoryCenter();
         } else if (viewName === "files") {
             loadSandboxFiles();
         } else if (viewName === "artifacts") {
@@ -675,6 +686,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // -------------------------------------------------------------
     // MEMORY CENTER QUEUE REVIEW
     // -------------------------------------------------------------
+    async function loadMemoryCenter() {
+        await Promise.all([
+            loadMemoryCandidates(),
+            loadDurableMemories()
+        ]);
+    }
+
     async function loadMemoryCandidates() {
         elements.memoryCandidatesList.innerHTML = `<div class="text-muted padding-20">Syncing candidate reviews queue...</div>`;
         try {
@@ -684,6 +702,20 @@ document.addEventListener("DOMContentLoaded", () => {
             renderCandidatesList();
         } catch (err) {
             elements.memoryCandidatesList.innerHTML = `<div class="text-red padding-20">Sync failure: ${err.message}</div>`;
+        }
+    }
+
+    async function loadDurableMemories() {
+        if (!elements.durableMemoriesList) return;
+        elements.durableMemoriesList.innerHTML = `<div class="text-muted padding-20">Loading durable memories...</div>`;
+        try {
+            const res = await apiFetch("/api/memory/durable");
+            if (!res.ok) throw new Error("Durable memory endpoint returned status code: " + res.status);
+            state.durableMemories = await res.json();
+            renderDurableMemoriesList();
+        } catch (err) {
+            elements.durableMemoryCount.innerText = "0";
+            elements.durableMemoriesList.innerHTML = `<div class="text-red padding-20">Load failure: ${escapeHtml(err.message)}</div>`;
         }
     }
 
@@ -703,14 +735,51 @@ document.addEventListener("DOMContentLoaded", () => {
             card.className = "vault-item-card";
             card.innerHTML = `
                 <div class="vault-item-header">
-                    <span>${c.candidate_id.substring(0, 10).toUpperCase()}</span>
-                    <span class="text-muted">${payload.source || 'agent'}</span>
+                    <span>${escapeHtml(c.candidate_id.substring(0, 10).toUpperCase())}</span>
+                    <span class="text-muted">${escapeHtml(payload.source || 'agent')}</span>
                 </div>
-                <div class="vault-item-snippet">${snippet}</div>
+                <div class="vault-item-snippet">${escapeHtml(snippet)}</div>
             `;
             
             card.addEventListener("click", () => selectCandidate(c));
             elements.memoryCandidatesList.appendChild(card);
+        });
+    }
+
+    function renderDurableMemoriesList() {
+        elements.durableMemoriesList.innerHTML = "";
+        elements.durableMemoryCount.innerText = String(state.durableMemories.length);
+
+        if (state.durableMemories.length === 0) {
+            elements.durableMemoriesList.innerHTML = `<div class="text-muted padding-20">No durable memories saved yet.</div>`;
+            return;
+        }
+
+        state.durableMemories.forEach(memory => {
+            const text = memory.text || "(empty memory)";
+            const snippet = text.length > 120 ? text.substring(0, 120) + "..." : text;
+            const card = document.createElement("div");
+            card.className = "vault-item-card";
+            card.innerHTML = `
+                <div class="vault-item-header">
+                    <span>${escapeHtml((memory.memory_id || "memory").substring(0, 14).toUpperCase())}</span>
+                    <span class="text-muted">${escapeHtml(memory.category || "general")}</span>
+                </div>
+                <div class="vault-item-snippet">${escapeHtml(snippet)}</div>
+                <div class="node-meta-details">Project only: ${memory.project_only ? "yes" : "no"} // ${escapeHtml(memory.approved_at || "unknown time")}</div>
+            `;
+            card.addEventListener("click", () => {
+                elements.memCandId.innerText = memory.memory_id || "DURABLE MEMORY";
+                elements.memCandText.value = text;
+                elements.memCandCategory.value = memory.category || "general";
+                elements.memCandProject.checked = Boolean(memory.project_only);
+                elements.memApproveBtn.disabled = true;
+                elements.memRejectBtn.disabled = true;
+                document.querySelectorAll("#durable-memories-list .vault-item-card").forEach(node => node.classList.remove("active"));
+                card.classList.add("active");
+                document.querySelectorAll("#memory-candidates-list .vault-item-card").forEach(node => node.classList.remove("active"));
+            });
+            elements.durableMemoriesList.appendChild(card);
         });
     }
 
@@ -731,6 +800,9 @@ document.addEventListener("DOMContentLoaded", () => {
         elements.memCandText.value = payload.text || "";
         elements.memCandCategory.value = payload.route?.task_type || "general";
         elements.memCandProject.checked = true;
+        elements.memApproveBtn.disabled = false;
+        elements.memRejectBtn.disabled = false;
+        document.querySelectorAll("#durable-memories-list .vault-item-card").forEach(node => node.classList.remove("active"));
     }
 
     async function approveMemoryCandidate() {
@@ -775,7 +847,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Memory candidate approved and synchronized successfully!");
             
             clearMemoryForm();
-            await loadMemoryCandidates();
+            await loadMemoryCenter();
         } catch (err) {
             alert("Approval failure: " + err.message);
         } finally {
@@ -822,6 +894,8 @@ document.addEventListener("DOMContentLoaded", () => {
         elements.memCandText.value = "";
         elements.memCandCategory.value = "general";
         elements.memCandProject.checked = true;
+        elements.memApproveBtn.disabled = false;
+        elements.memRejectBtn.disabled = false;
         state.selectedCandidate = null;
     }
 

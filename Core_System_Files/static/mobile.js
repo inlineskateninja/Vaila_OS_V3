@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
         sendBtn: document.getElementById("send-btn"),
         memoryList: document.getElementById("memory-list"),
         memoryCount: document.getElementById("memory-count"),
+        durableMemoryList: document.getElementById("durable-memory-list"),
+        durableMemoryCount: document.getElementById("durable-memory-count"),
         fileInput: document.getElementById("file-input"),
         filesList: document.getElementById("files-list"),
         filesCount: document.getElementById("files-count"),
@@ -273,12 +275,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function loadMemory() {
+        showEmpty(elements.durableMemoryList, "Loading saved memories...");
         showEmpty(elements.memoryList, "Loading memory candidates...");
         try {
-            const res = await apiFetch("/api/memory/candidates");
-            if (!res.ok) throw new Error(`Status ${res.status}`);
-            const candidates = await res.json();
-            elements.memoryCount.textContent = candidates.length;
+            const [durableRes, candidateRes] = await Promise.all([
+                apiFetch("/api/memory/durable"),
+                apiFetch("/api/memory/candidates")
+            ]);
+            if (!durableRes.ok) throw new Error(`Saved memories status ${durableRes.status}`);
+            if (!candidateRes.ok) throw new Error(`Candidate status ${candidateRes.status}`);
+
+            const durableMemories = await durableRes.json();
+            const candidates = await candidateRes.json();
+            elements.durableMemoryCount.textContent = `${durableMemories.length} saved`;
+            elements.memoryCount.textContent = `${candidates.length} review`;
+
+            renderDurableMemories(durableMemories);
+
             if (!candidates.length) {
                 showEmpty(elements.memoryList, "No memory candidates are waiting.");
                 return;
@@ -311,9 +324,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 elements.memoryList.appendChild(card);
             });
         } catch (err) {
-            elements.memoryCount.textContent = "0";
+            elements.durableMemoryCount.textContent = "0 saved";
+            elements.memoryCount.textContent = "0 review";
+            showError(elements.durableMemoryList, `Saved memory load failed: ${err.message}`);
             showError(elements.memoryList, `Memory load failed: ${err.message}`);
         }
+    }
+
+    function renderDurableMemories(memories) {
+        if (!memories.length) {
+            showEmpty(elements.durableMemoryList, "No saved memories yet.");
+            return;
+        }
+
+        elements.durableMemoryList.innerHTML = "";
+        memories.slice(0, 40).forEach((memory) => {
+            const text = memory.text || "(empty memory)";
+            const card = document.createElement("article");
+            card.className = "item-card";
+            card.innerHTML = `
+                <span class="item-kicker">${escapeHtml(memory.category || "general")}</span>
+                <h3>${escapeHtml(memory.memory_id || "Saved Memory")}</h3>
+                <p>${escapeHtml(text).slice(0, 260)}</p>
+                <div class="meta">
+                    <span class="pill good">Saved</span>
+                    <span class="pill">${memory.project_only ? "Project" : "Global"}</span>
+                </div>
+            `;
+            card.addEventListener("click", () => {
+                openDialog(memory.memory_id || "Saved Memory", text);
+            });
+            elements.durableMemoryList.appendChild(card);
+        });
     }
 
     async function loadFiles() {

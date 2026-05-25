@@ -1,0 +1,97 @@
+{
+  "registry_type": "assistant_tool_permissions",
+  "version": "0.1",
+  "default_policy": "no_external_calls_until_adapter_enabled",
+  "rules": [
+    {
+      "tool_id": "google_calendar",
+      "auth_required": true,
+      "external_service": true,
+      "can_read_user_data": true,
+      "can_write_user_data": true,
+      "can_delete_user_data": true,
+      "requires_user_approval_for_writes": true
+    },
+    {
+      "tool_id": "google_drive",
+      "auth_required": true,
+      "external_service": true,
+      "can_read_user_data": true,
+      "can_write_user_data": true,
+      "can_delete_user_data": false,
+      "requires_user_approval_for_writes": true
+    },
+    {
+      "tool_id": "gmail",
+      "auth_required": true,
+      "external_service": true,
+      "can_read_user_data": true,
+      "can_write_user_data": true,
+      "can_delete_user_data": false,
+      "requires_user_approval_for_writes": true
+    },
+    {
+      "tool_id": "google_tasks",
+      "auth_required": true,
+      "external_service": true,
+      "can_read_user_data": true,
+      "can_write_user_data": true,
+      "can_delete_user_data": true,
+      "requires_user_approval_for_writes": true
+    },
+    {
+      "tool_id": "google_people",
+      "auth_required": true,
+      "external_service": true,
+      "can_read_user_data": true,
+      "can_write_user_data": true,
+      "can_delete_user_data": false,
+      "requires_user_approval_for_writes": true
+    },
+    {
+      "tool_id": "notes",
+      "auth_required": false,
+      "external_service": false,
+      "can_read_user_data": true,
+      "can_write_user_data": true,
+      "can_delete_user_data": true,
+      "requires_user_approval_for_writes": false
+    },
+    {
+      "tool_id": "reminders",
+      "auth_required": false,
+      "external_service": false,
+      "can_read_user_data": true,
+      "can_write_user_data": true,
+      "can_delete_user_data": true,
+      "requires_user_approval_for_writes": true
+    },
+    {
+      "tool_id": "web_research",
+      "auth_required": false,
+      "external_service": true,
+      "can_read_user_data": false,
+      "can_write_user_data": false,
+      "can_delete_user_data": false,
+      "requires_user_approval_for_writes": false
+    },
+    {
+      "tool_id": "local_file_assistant",
+      "auth_required": false,
+      "external_service": false,
+      "can_read_user_data": true,
+      "can_write_user_data": true,
+      "can_delete_user_data": true,
+      "requires_user_approval_for_writes": true
+    },
+    {
+      "tool_id": "calculator",
+      "auth_required": false,
+      "external_service": false,
+      "can_read_user_data": false,
+      "can_write_user_data": false,
+      "can_delete_user_data": false,
+      "requires_user_approval_for_writes": false
+    }
+  ]
+}

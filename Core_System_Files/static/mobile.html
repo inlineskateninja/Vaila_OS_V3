@@ -64,10 +64,16 @@
                 <div class="section-head">
                     <div>
                         <span class="overline">Review</span>
-                        <h2>Memory Queue</h2>
+                        <h2>Memory</h2>
                     </div>
-                    <span id="memory-count" class="count-pill">0</span>
+                    <div class="memory-counts">
+                        <span id="durable-memory-count" class="count-pill">0 saved</span>
+                        <span id="memory-count" class="count-pill">0 review</span>
+                    </div>
                 </div>
+                <div class="memory-subhead">Saved Memories</div>
+                <div id="durable-memory-list" class="card-stack compact-stack"></div>
+                <div class="memory-subhead">Review Queue</div>
                 <div id="memory-list" class="card-stack"></div>
             </section>
 

@@ -1,0 +1,253 @@
+{
+  "registry_type": "assistant_tools",
+  "version": "0.1",
+  "tools": [
+    {
+      "tool_id": "google_calendar",
+      "display_name": "Google Calendar",
+      "service_id": "google",
+      "enabled": false,
+      "module": "Assistant_Tools.google_calendar",
+      "description": "Read, search, create, update, and summarize calendar events after Google OAuth is configured.",
+      "actions": ["list_events", "search_events", "create_event", "update_event", "delete_event", "summarize_schedule"],
+      "risk_levels": {
+        "list_events": "medium",
+        "search_events": "medium",
+        "create_event": "high",
+        "update_event": "high",
+        "delete_event": "critical",
+        "summarize_schedule": "medium"
+      },
+      "approval_required_actions": ["create_event", "update_event", "delete_event"],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "What is on my calendar today?",
+        "Schedule a 30 minute focus block tomorrow afternoon.",
+        "Move my dentist appointment to next Friday if there is an opening."
+      ]
+    },
+    {
+      "tool_id": "google_drive",
+      "display_name": "Google Drive",
+      "service_id": "google",
+      "enabled": false,
+      "module": "Assistant_Tools.google_drive",
+      "description": "Find, read, organize, and prepare summaries of files in Google Drive after authorization.",
+      "actions": ["search_files", "read_file", "summarize_file", "create_folder", "move_file", "share_file"],
+      "risk_levels": {
+        "search_files": "medium",
+        "read_file": "medium",
+        "summarize_file": "medium",
+        "create_folder": "low",
+        "move_file": "high",
+        "share_file": "critical"
+      },
+      "approval_required_actions": ["create_folder", "move_file", "share_file"],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "Find the latest Vaila planning document in Drive.",
+        "Summarize the PDF I edited this week.",
+        "Create a folder for this project and organize the related docs."
+      ]
+    },
+    {
+      "tool_id": "gmail",
+      "display_name": "Gmail",
+      "service_id": "google",
+      "enabled": false,
+      "module": "Assistant_Tools.gmail",
+      "description": "Search, summarize, draft, label, and prepare replies to email after Gmail authorization.",
+      "actions": ["search_email", "summarize_thread", "draft_reply", "send_email", "label_email", "archive_email"],
+      "risk_levels": {
+        "search_email": "medium",
+        "summarize_thread": "medium",
+        "draft_reply": "medium",
+        "send_email": "critical",
+        "label_email": "high",
+        "archive_email": "high"
+      },
+      "approval_required_actions": ["send_email", "label_email", "archive_email"],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "Summarize my unread email from today.",
+        "Draft a polite reply saying I can meet next week.",
+        "Find the email with the contract attachment."
+      ]
+    },
+    {
+      "tool_id": "google_tasks",
+      "display_name": "Google Tasks",
+      "service_id": "google",
+      "enabled": false,
+      "module": "Assistant_Tools.google_tasks",
+      "description": "Read, create, update, complete, and prioritize Google Tasks after authorization.",
+      "actions": ["list_tasks", "create_task", "update_task", "complete_task", "delete_task", "prioritize_tasks"],
+      "risk_levels": {
+        "list_tasks": "medium",
+        "create_task": "medium",
+        "update_task": "high",
+        "complete_task": "high",
+        "delete_task": "critical",
+        "prioritize_tasks": "medium"
+      },
+      "approval_required_actions": ["create_task", "update_task", "complete_task", "delete_task"],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "What tasks are due today?",
+        "Add a task to review the Vaila roadmap tonight.",
+        "Mark the grocery list task complete."
+      ]
+    },
+    {
+      "tool_id": "google_people",
+      "display_name": "Google Contacts",
+      "service_id": "google",
+      "enabled": false,
+      "module": "Assistant_Tools.google_people",
+      "description": "Look up contact details and relationship context through Google People after authorization.",
+      "actions": ["search_contacts", "read_contact", "create_contact", "update_contact", "merge_contact_context"],
+      "risk_levels": {
+        "search_contacts": "medium",
+        "read_contact": "medium",
+        "create_contact": "high",
+        "update_contact": "high",
+        "merge_contact_context": "high"
+      },
+      "approval_required_actions": ["create_contact", "update_contact", "merge_contact_context"],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "Find Alex's email address.",
+        "Create a contact for the person I just mentioned.",
+        "Remind me how I know Jordan before I reply."
+      ]
+    },
+    {
+      "tool_id": "notes",
+      "display_name": "Notes",
+      "service_id": "local_assistant",
+      "enabled": false,
+      "module": "Assistant_Tools.notes",
+      "description": "Capture, search, summarize, tag, and organize local notes with explicit user control.",
+      "actions": ["create_note", "search_notes", "summarize_notes", "update_note", "delete_note", "tag_note"],
+      "risk_levels": {
+        "create_note": "low",
+        "search_notes": "medium",
+        "summarize_notes": "medium",
+        "update_note": "high",
+        "delete_note": "critical",
+        "tag_note": "medium"
+      },
+      "approval_required_actions": ["update_note", "delete_note"],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "Take a note: Vaila should prioritize calendar next.",
+        "Find my notes about memory architecture.",
+        "Summarize my notes from this week."
+      ]
+    },
+    {
+      "tool_id": "reminders",
+      "display_name": "Reminders",
+      "service_id": "local_assistant",
+      "enabled": false,
+      "module": "Assistant_Tools.reminders",
+      "description": "Create and manage local reminders, follow-ups, and lightweight alerts.",
+      "actions": ["list_reminders", "create_reminder", "update_reminder", "complete_reminder", "delete_reminder"],
+      "risk_levels": {
+        "list_reminders": "low",
+        "create_reminder": "medium",
+        "update_reminder": "high",
+        "complete_reminder": "high",
+        "delete_reminder": "critical"
+      },
+      "approval_required_actions": ["create_reminder", "update_reminder", "complete_reminder", "delete_reminder"],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "Remind me to check the build tomorrow morning.",
+        "What reminders do I have this week?",
+        "Cancel the reminder about the old meeting."
+      ]
+    },
+    {
+      "tool_id": "web_research",
+      "display_name": "Web Research",
+      "service_id": "web",
+      "enabled": false,
+      "module": "Assistant_Tools.web_research",
+      "description": "Search the web, compare sources, summarize findings, and cite links when network access is available.",
+      "actions": ["search_web", "open_page", "summarize_page", "compare_sources", "extract_citations"],
+      "risk_levels": {
+        "search_web": "low",
+        "open_page": "low",
+        "summarize_page": "medium",
+        "compare_sources": "medium",
+        "extract_citations": "low"
+      },
+      "approval_required_actions": [],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "Research the best current options for local vector databases.",
+        "Find official docs for Google Calendar API scopes.",
+        "Compare three sources and give me citations."
+      ]
+    },
+    {
+      "tool_id": "local_file_assistant",
+      "display_name": "Local File Assistant",
+      "service_id": "local_files",
+      "enabled": false,
+      "module": "Assistant_Tools.local_file_assistant",
+      "description": "Search, read, summarize, rename, organize, and prepare local files within approved workspace boundaries.",
+      "actions": ["search_files", "read_file", "summarize_file", "create_file", "rename_file", "move_file", "delete_file"],
+      "risk_levels": {
+        "search_files": "low",
+        "read_file": "medium",
+        "summarize_file": "medium",
+        "create_file": "medium",
+        "rename_file": "high",
+        "move_file": "high",
+        "delete_file": "critical"
+      },
+      "approval_required_actions": ["create_file", "rename_file", "move_file", "delete_file"],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "Find the latest presentation file.",
+        "Summarize this imported document.",
+        "Organize the project notes into a folder."
+      ]
+    },
+    {
+      "tool_id": "calculator",
+      "display_name": "Calculator",
+      "service_id": "local_compute",
+      "enabled": false,
+      "module": "Assistant_Tools.calculator",
+      "description": "Perform arithmetic, conversions, budgeting math, date math, and lightweight structured calculations locally.",
+      "actions": ["calculate", "convert_units", "estimate_budget", "date_math", "compare_numbers"],
+      "risk_levels": {
+        "calculate": "low",
+        "convert_units": "low",
+        "estimate_budget": "low",
+        "date_math": "low",
+        "compare_numbers": "low"
+      },
+      "approval_required_actions": [],
+      "voice_enabled": true,
+      "text_enabled": true,
+      "example_prompts": [
+        "What is 18 percent of 245?",
+        "Convert 12 miles to kilometers.",
+        "How many days until July 1?"
+      ]
+    }
+  ]
+}

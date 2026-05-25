@@ -1,0 +1,56 @@
+{
+  "registry_type": "assistant_tool_intents",
+  "version": "0.1",
+  "intents": {
+    "calendar_management": {
+      "tool_id": "google_calendar",
+      "description": "Schedule awareness, event lookup, availability checks, and event changes.",
+      "example_utterances": ["what is on my calendar", "schedule a meeting", "move my appointment"]
+    },
+    "drive_file_management": {
+      "tool_id": "google_drive",
+      "description": "Cloud document lookup, reading, summarization, organization, and sharing preparation.",
+      "example_utterances": ["find my drive file", "summarize this doc", "share the folder"]
+    },
+    "email_management": {
+      "tool_id": "gmail",
+      "description": "Email search, inbox summaries, thread summaries, and draft replies.",
+      "example_utterances": ["check my unread email", "draft a reply", "find the email from"]
+    },
+    "task_management": {
+      "tool_id": "google_tasks",
+      "description": "Task lookup, creation, update, completion, and prioritization.",
+      "example_utterances": ["add a task", "what tasks are due", "mark this complete"]
+    },
+    "contact_lookup": {
+      "tool_id": "google_people",
+      "description": "Contact search and relationship context lookup.",
+      "example_utterances": ["find their phone number", "look up Alex", "save this contact"]
+    },
+    "note_capture": {
+      "tool_id": "notes",
+      "description": "Local note capture, search, editing, tagging, and summarization.",
+      "example_utterances": ["take a note", "find my notes", "summarize my notes"]
+    },
+    "reminder_management": {
+      "tool_id": "reminders",
+      "description": "Local reminders, follow-ups, and lightweight alerts.",
+      "example_utterances": ["remind me", "what reminders do I have", "cancel that reminder"]
+    },
+    "web_research": {
+      "tool_id": "web_research",
+      "description": "Current information lookup, source comparison, and citation gathering.",
+      "example_utterances": ["research this", "look this up", "find sources"]
+    },
+    "local_file_help": {
+      "tool_id": "local_file_assistant",
+      "description": "Workspace file search, reading, summarization, and approved organization.",
+      "example_utterances": ["find this file", "read this document", "organize these files"]
+    },
+    "calculation": {
+      "tool_id": "calculator",
+      "description": "Math, unit conversion, date math, estimates, and numeric comparison.",
+      "example_utterances": ["calculate", "convert", "how many days until"]
+    }
+  }
+}

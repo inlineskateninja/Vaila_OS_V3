@@ -1,0 +1,78 @@
+{
+  "registry_type": "assistant_tool_examples",
+  "version": "0.1",
+  "examples": [
+    {
+      "tool_id": "google_calendar",
+      "prompt": "What does my afternoon look like?",
+      "expected_action": "list_events",
+      "requires_approval": false
+    },
+    {
+      "tool_id": "google_calendar",
+      "prompt": "Book a 45 minute planning session tomorrow at 2 PM.",
+      "expected_action": "create_event",
+      "requires_approval": true
+    },
+    {
+      "tool_id": "google_drive",
+      "prompt": "Find my latest Vaila roadmap document.",
+      "expected_action": "search_files",
+      "requires_approval": false
+    },
+    {
+      "tool_id": "gmail",
+      "prompt": "Draft a reply saying I received the file and will review it tonight.",
+      "expected_action": "draft_reply",
+      "requires_approval": false
+    },
+    {
+      "tool_id": "gmail",
+      "prompt": "Send the reply after I approve it.",
+      "expected_action": "send_email",
+      "requires_approval": true
+    },
+    {
+      "tool_id": "google_tasks",
+      "prompt": "Add a task to test the assistant registry tomorrow.",
+      "expected_action": "create_task",
+      "requires_approval": true
+    },
+    {
+      "tool_id": "google_people",
+      "prompt": "Find Maya's contact details.",
+      "expected_action": "search_contacts",
+      "requires_approval": false
+    },
+    {
+      "tool_id": "notes",
+      "prompt": "Take a note that the assistant registry is foundation-only.",
+      "expected_action": "create_note",
+      "requires_approval": false
+    },
+    {
+      "tool_id": "reminders",
+      "prompt": "Remind me to review Google OAuth scopes Friday morning.",
+      "expected_action": "create_reminder",
+      "requires_approval": true
+    },
+    {
+      "tool_id": "web_research",
+      "prompt": "Find official Google Calendar API authorization docs.",
+      "expected_action": "search_web",
+      "requires_approval": false
+    },
+    {
+      "tool_id": "local_file_assistant",
+      "prompt": "Summarize the latest imported document.",
+      "expected_action": "summarize_file",
+      "requires_approval": false
+    },
+    {
+      "tool_id": "calculator",
+      "prompt": "What is 22 percent of 180?",
+      "expected_action": "calculate",
+      "requires_approval": false
+    }
+  ]
+}

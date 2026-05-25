@@ -1,0 +1,16 @@
+{
+  "registry_type": "assistant_tool_routes",
+  "version": "0.1",
+  "routes": {
+    "calendar_management": "google_calendar",
+    "drive_file_management": "google_drive",
+    "email_management": "gmail",
+    "task_management": "google_tasks",
+    "contact_lookup": "google_people",
+    "note_capture": "notes",
+    "reminder_management": "reminders",
+    "web_research": "web_research",
+    "local_file_help": "local_file_assistant",
+    "calculation": "calculator"
+  }
+}

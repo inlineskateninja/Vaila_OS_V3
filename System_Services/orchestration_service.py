@@ -15,6 +15,7 @@ from System_Services.prompt_interpreter import PromptInterpreter
 from System_Services.tool_execution_service import ToolExecutionService, ToolResult
 from System_Services.tool_intent_service import ToolIntent
 from System_Services.tool_permission_service import ToolPermissionService
+from System_Services.web_search_service import WebSearchService
 from System_Tools.file_analyzer import FileAnalyzer
 from System_Tools.log_summarizer import LogSummarizer
 from System_Tools.self_assessment import SelfAssessmentTool
@@ -58,6 +59,7 @@ class OrchestrationService:
         self.prompt_interpreter = PromptInterpreter(project_root=project_root)
         self.tool_permissions = ToolPermissionService(project_root=project_root)
         self.tool_execution = ToolExecutionService(project_root=project_root)
+        self.web_search = WebSearchService(project_root=project_root)
         self.file_analyzer = FileAnalyzer(project_root=project_root)
         self.log_summarizer = LogSummarizer(project_root=project_root)
         self.self_assessment = SelfAssessmentTool(project_root=project_root)
@@ -190,6 +192,10 @@ class OrchestrationService:
                 },
             )
 
+        web_context = self._maybe_build_web_context(envelope=envelope, route=route)
+        if web_context:
+            tool_context = f"{tool_context}\n\n{web_context}".strip()
+
         # Dynamically match active user profile modules
         profile_res = self.user_profile.route_context(envelope.user_text)
         user_profile_context = profile_res.get("context_block", "")
@@ -299,6 +305,19 @@ class OrchestrationService:
                 "prompt_interpreter": "not_needed",
             },
         )
+
+    def _maybe_build_web_context(self, envelope: PromptEnvelope, route: dict[str, Any]) -> str:
+        if not self.web_search.should_search(envelope.user_text, route):
+            return ""
+
+        result = self.web_search.search(envelope.user_text)
+        if result.get("ok"):
+            return f"[Web Research Evidence]\n{result.get('summary', '')}"
+
+        if route.get("task_type") == "assistant_tool":
+            return f"[Web Research Evidence]\nWeb search was requested but unavailable: {result.get('error', 'unknown error')}"
+
+        return ""
 
     def _handle_assistant_tool_candidate(self, envelope: PromptEnvelope, route: dict[str, Any]) -> OrchestrationResponse:
         tool_intent = self._route_tool_intent(route, envelope)
@@ -434,6 +453,7 @@ Response rules:
 - Do not pretend to have modified files unless a tool actually did so.
 - Proposed self-modifications must be exported to Sandbox, not applied directly.
 - Keep Phase 1 focused on stable routing, services, tools, logging, and memory candidates.
+- When web research evidence is provided, use it to improve factual accuracy and include source URLs when relevant.
 """.strip()
 
     def _build_user_content(self, envelope: PromptEnvelope, tool_context: str) -> str:
