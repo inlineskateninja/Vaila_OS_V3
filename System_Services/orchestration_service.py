@@ -66,6 +66,22 @@ class OrchestrationService:
 
         elif task_type == "self_assessment":
             tool_context = self.self_assessment.run_self_assessment()
+            self.logger.run_background(self.memory.capture_memory_candidate, envelope, deepcopy(route))
+            return OrchestrationResponse(
+                visible_text=tool_context,
+                meta={
+                    "request_id": envelope.request_id,
+                    "route": route,
+                    "used_tool_context": True,
+                    "prompt_interpreter": "not_needed",
+                    "memory_candidate_capture": "background_queued",
+                    "llm": {
+                        "base_url": self.llm.base_url,
+                        "model": self.llm._resolved_model or self.llm.model or "(auto)",
+                        "error": "",
+                    },
+                },
+            )
 
         persona_context = self._load_persona_context(route.get("persona", "proto_jane"))
 

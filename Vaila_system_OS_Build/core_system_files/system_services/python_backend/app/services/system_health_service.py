@@ -26,9 +26,9 @@ class SystemHealthService:
         self.self_model_dir = self.project_root / "core_system_files" / "system_state" / "self_model"
         self.scan_reports_dir = self.project_root / "core_system_files" / "system_state" / "scan_reports"
 
-    def run_scan(self) -> SystemPerceptionSummary:
+    def run_scan(self, config: Any | None = None) -> SystemPerceptionSummary:
         previous_snapshot = self._load_comparison_snapshot()
-        scan = self.introspection.scan(save_report=True)
+        scan = self.introspection.scan(config=config, save_report=True)
         snapshot = self.manifest.build_snapshot(scan)
         capability_map = self.build_capability_map(scan, snapshot)
         current_snapshot = self._comparison_snapshot(scan, snapshot, capability_map)

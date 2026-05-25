@@ -71,4 +71,4 @@ Safe defaults are listed in `.env.example`. Keep blank secret fields blank until
 Future expansion notes:
 
 - n8n REST workflow listing, activation, import/export, and admin functions can be added after webhook behavior is stable.
-- OpenBrain HTTP or MCP memory retrieval can replace the local placeholder adapter when the final backend contract is chosen.
+- OpenBrain local mode writes approved memory candidates to a JSONL candidate index and supports deterministic search/recent reads. HTTP or MCP endpoints can be used when an external backend is configured.

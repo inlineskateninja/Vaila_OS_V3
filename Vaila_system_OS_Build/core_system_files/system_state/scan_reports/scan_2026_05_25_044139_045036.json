@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "scanned_at": "2026-05-25T04:58:40Z",
+  "scanned_at": "2026-05-25T04:41:39Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "config": {
     "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
@@ -43,7 +43,7 @@
     "max_scan_depth": 8,
     "read_small_python_files": true,
     "use_llm_classification": true,
-    "llm_classification_max_files": 20
+    "llm_classification_max_files": 80
   },
   "files": [
     {
@@ -57,11 +57,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 0,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -73,11 +69,7 @@
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
-        "classification_source": "llm",
-        "deterministic_category": "unknown",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "unknown"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -91,11 +83,8 @@
         "category_reason": "core_entrypoint",
         "has_deprecated_import": false,
         "line_count": 21,
-        "classification_source": "llm",
-        "deterministic_category": "core_entrypoint",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "core_entrypoint"
+        "classification_source": "deterministic",
+        "llm_classification_error": "Model qwen/qwen3-1.7b: Expecting ',' delimiter: line 1 column 4579 (char 4578)"
       }
     },
     {
@@ -107,11 +96,7 @@
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
-        "classification_source": "llm",
-        "deterministic_category": "unknown",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "unknown"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -123,11 +108,7 @@
       "category": "memory_file",
       "metadata": {
         "category_reason": "memory_file",
-        "classification_source": "llm",
-        "deterministic_category": "memory_file",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "memory_file"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -139,11 +120,7 @@
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation",
-        "classification_source": "llm",
-        "deterministic_category": "documentation",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "documentation"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -157,11 +134,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 0,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -175,11 +148,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 0,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -207,11 +176,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 103,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -225,11 +190,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 185,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "classification_source": "deterministic"
       }
     },
     {
@@ -243,11 +204,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 107,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the metadata."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -261,11 +218,7 @@
         "category_reason": "memory_file",
         "has_deprecated_import": false,
         "line_count": 173,
-        "classification_source": "llm",
-        "deterministic_category": "memory_file",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "Deterministic category 'memory_file' based on file extension .py and presence of memory-related functionality."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -279,11 +232,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 129,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a script."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -297,11 +246,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 267,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script'."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -315,11 +260,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 222,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the metadata."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -333,11 +274,7 @@
         "category_reason": "service",
         "has_deprecated_import": false,
         "line_count": 907,
-        "classification_source": "llm",
-        "deterministic_category": "service",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file is a Python backend service file with clear indications of its role in the system."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -351,11 +288,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 904,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script'."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -369,11 +302,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 333,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a Python backend application."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -387,11 +316,7 @@
         "category_reason": "script",
         "has_deprecated_import": false,
         "line_count": 209,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a Python backend application."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -405,11 +330,7 @@
         "category_reason": "service",
         "has_deprecated_import": false,
         "line_count": 97,
-        "classification_source": "llm",
-        "deterministic_category": "service",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file is a Python backend service responsible for interacting with the LLM."
+        "classification_source": "deterministic"
       }
     },
     {
@@ -976,13 +897,13 @@
       "path": "core_system_files/system_services/python_backend/app/services/system_llm_classification_service.py",
       "name": "system_llm_classification_service.py",
       "extension": ".py",
-      "size_bytes": 8938,
-      "modified_time": "2026-05-25T04:41:57Z",
+      "size_bytes": 8069,
+      "modified_time": "2026-05-25T04:39:01Z",
       "category": "service",
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 208,
+        "line_count": 189,
         "classification_source": "deterministic"
       }
     },
@@ -2086,42 +2007,6 @@
       "extension": ".json",
       "size_bytes": 2370,
       "modified_time": "2026-05-25T02:41:14Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_044139_061496.json",
-      "name": "change_2026_05_25_044139_061496.json",
-      "extension": ".json",
-      "size_bytes": 3149,
-      "modified_time": "2026-05-25T04:41:39Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_044516_457654.json",
-      "name": "change_2026_05_25_044516_457654.json",
-      "extension": ".json",
-      "size_bytes": 2590,
-      "modified_time": "2026-05-25T04:45:16Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_045541_176432.json",
-      "name": "change_2026_05_25_045541_176432.json",
-      "extension": ".json",
-      "size_bytes": 2907,
-      "modified_time": "2026-05-25T04:55:41Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3401,47 +3286,11 @@
       }
     },
     {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_044139_045036.json",
-      "name": "scan_2026_05_25_044139_045036.json",
-      "extension": ".json",
-      "size_bytes": 163386,
-      "modified_time": "2026-05-25T04:41:39Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_044516_442073.json",
-      "name": "scan_2026_05_25_044516_442073.json",
-      "extension": ".json",
-      "size_bytes": 168100,
-      "modified_time": "2026-05-25T04:45:16Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_045541_161712.json",
-      "name": "scan_2026_05_25_045541_161712.json",
-      "extension": ".json",
-      "size_bytes": 170308,
-      "modified_time": "2026-05-25T04:55:41Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
       "path": "core_system_files/system_state/self_model/architecture_snapshot.json",
       "name": "architecture_snapshot.json",
       "extension": ".json",
-      "size_bytes": 1974,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "size_bytes": 1884,
+      "modified_time": "2026-05-25T02:41:14Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3453,7 +3302,7 @@
       "name": "capability_map.json",
       "extension": ".json",
       "size_bytes": 346,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T02:41:14Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3464,8 +3313,8 @@
       "path": "core_system_files/system_state/self_model/change_report.json",
       "name": "change_report.json",
       "extension": ".json",
-      "size_bytes": 2907,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "size_bytes": 2370,
+      "modified_time": "2026-05-25T02:41:14Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3476,8 +3325,8 @@
       "path": "core_system_files/system_state/self_model/file_inventory.json",
       "name": "file_inventory.json",
       "extension": ".json",
-      "size_bytes": 170427,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "size_bytes": 144855,
+      "modified_time": "2026-05-25T02:41:14Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -3489,7 +3338,7 @@
       "name": "last_change_summary.md",
       "extension": ".md",
       "size_bytes": 139,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T02:41:14Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation",
@@ -3513,7 +3362,7 @@
       "name": "last_scan_summary.md",
       "extension": ".md",
       "size_bytes": 787,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T02:41:14Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation",
@@ -3537,7 +3386,7 @@
       "name": "unresolved_issues.json",
       "extension": ".json",
       "size_bytes": 20,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T02:41:14Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown",
@@ -4858,7 +4707,7 @@
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 190,
+    "unknown": 184,
     "memory_file": 29,
     "documentation": 6,
     "service": 14,
@@ -4869,5 +4718,5 @@
     "config_file": 4,
     "persona_manifest": 1
   },
-  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_25_045840_021431.json"
+  "report_path": null
 }

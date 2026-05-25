@@ -24,12 +24,19 @@ def test_openbrain_status_does_not_expose_secret(monkeypatch):
     assert "openbrain-secret" not in str(status)
 
 
-def test_openbrain_local_placeholder_does_not_store_durable_memory(monkeypatch):
+def test_openbrain_local_mode_writes_and_reads_memory_candidates(monkeypatch, tmp_path):
     monkeypatch.setenv("OPENBRAIN_ENABLED", "true")
     monkeypatch.setenv("OPENBRAIN_MODE", "local")
+    monkeypatch.setenv("OPENBRAIN_LOCAL_STORE_PATH", str(tmp_path / "openbrain_candidates.jsonl"))
 
-    result = OpenBrainService(Path(".")).write_memory_candidate({"text": "remember this"})
+    service = OpenBrainService(Path("."))
+    result = service.write_memory_candidate({"text": "remember this local fact"})
+    search = service.search_memory("local fact")
+    recent = service.get_recent_memories()
 
     assert result["ok"] is True
-    assert result["stored"] is False
+    assert result["stored"] is True
     assert result["mode"] == "local"
+    assert search["count"] == 1
+    assert search["memories"][0]["payload"]["text"] == "remember this local fact"
+    assert recent["count"] == 1

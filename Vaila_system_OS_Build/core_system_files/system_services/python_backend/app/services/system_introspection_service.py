@@ -12,6 +12,7 @@ from app.models.system_perception_models import (
     as_posix_relative,
     utc_timestamp,
 )
+from app.services.system_llm_classification_service import SystemLLMClassificationService
 
 
 DEFAULT_ALLOWED_ROOTS = [
@@ -134,6 +135,7 @@ class SystemIntrospectionService:
                     )
                 )
 
+        self._apply_llm_classification(files, config)
         counts = dict(Counter(item.category for item in files))
         result = DirectoryScanResult(
             ok=True,
@@ -149,6 +151,50 @@ class SystemIntrospectionService:
             result.report_path = str(self.save_scan_report(result))
 
         return result
+
+    def _apply_llm_classification(self, files: list[FileInventoryItem], config: DirectoryScanConfig) -> None:
+        if not config.use_llm_classification:
+            for item in files:
+                item.metadata["classification_source"] = "deterministic"
+            return
+
+        candidates = files[: max(1, config.llm_classification_max_files)]
+        payload = [
+            {
+                "path": item.path,
+                "name": item.name,
+                "extension": item.extension,
+                "size_bytes": item.size_bytes,
+                "deterministic_category": item.category,
+                "metadata": {
+                    key: value
+                    for key, value in item.metadata.items()
+                    if key in {"line_count", "has_deprecated_import", "category_reason"}
+                },
+            }
+            for item in candidates
+        ]
+        result = SystemLLMClassificationService(self.project_root).classify_files(payload)
+        if not result.get("ok"):
+            for item in files:
+                item.metadata["classification_source"] = "deterministic"
+            if files:
+                files[0].metadata["llm_classification_error"] = result.get("error", "LLM classification failed.")
+            return
+
+        classifications = result.get("classifications", {})
+        for item in files:
+            llm_item = classifications.get(item.path)
+            if llm_item:
+                previous = item.category
+                item.category = llm_item["category"]
+                item.metadata["classification_source"] = "llm"
+                item.metadata["deterministic_category"] = previous
+                item.metadata["llm_model"] = result.get("model", "")
+                item.metadata["llm_confidence"] = llm_item.get("confidence", "")
+                item.metadata["llm_reason"] = llm_item.get("reason", "")
+            else:
+                item.metadata["classification_source"] = "deterministic"
 
     def save_scan_report(self, result: DirectoryScanResult) -> Path:
         self.scan_reports_dir.mkdir(parents=True, exist_ok=True)

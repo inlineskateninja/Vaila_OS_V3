@@ -41,6 +41,8 @@ class DirectoryScanConfig(BaseModel):
     max_file_size_bytes: int = 512_000
     max_scan_depth: int = 8
     read_small_python_files: bool = True
+    use_llm_classification: bool = True
+    llm_classification_max_files: int = 40
 
 
 class DirectoryScanResult(BaseModel):

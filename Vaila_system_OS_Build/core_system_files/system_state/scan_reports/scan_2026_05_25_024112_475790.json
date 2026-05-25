@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "scanned_at": "2026-05-25T04:58:40Z",
+  "scanned_at": "2026-05-25T02:41:12Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "config": {
     "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
@@ -39,11 +39,9 @@
       ".wav",
       ".zip"
     ],
-    "max_file_size_bytes": 256000,
+    "max_file_size_bytes": 512000,
     "max_scan_depth": 8,
-    "read_small_python_files": true,
-    "use_llm_classification": true,
-    "llm_classification_max_files": 20
+    "read_small_python_files": true
   },
   "files": [
     {
@@ -56,12 +54,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 0,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "line_count": 0
       }
     },
     {
@@ -72,12 +65,7 @@
       "modified_time": "2026-05-22T23:57:13Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "llm",
-        "deterministic_category": "unknown",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "unknown"
+        "category_reason": "unknown"
       }
     },
     {
@@ -90,12 +78,7 @@
       "metadata": {
         "category_reason": "core_entrypoint",
         "has_deprecated_import": false,
-        "line_count": 21,
-        "classification_source": "llm",
-        "deterministic_category": "core_entrypoint",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "core_entrypoint"
+        "line_count": 21
       }
     },
     {
@@ -106,12 +89,7 @@
       "modified_time": "2026-05-22T23:56:54Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "llm",
-        "deterministic_category": "unknown",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "unknown"
+        "category_reason": "unknown"
       }
     },
     {
@@ -122,12 +100,7 @@
       "modified_time": "2026-05-25T02:34:37Z",
       "category": "memory_file",
       "metadata": {
-        "category_reason": "memory_file",
-        "classification_source": "llm",
-        "deterministic_category": "memory_file",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "memory_file"
+        "category_reason": "memory_file"
       }
     },
     {
@@ -138,12 +111,7 @@
       "modified_time": "2026-05-24T23:02:40Z",
       "category": "documentation",
       "metadata": {
-        "category_reason": "documentation",
-        "classification_source": "llm",
-        "deterministic_category": "documentation",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "documentation"
+        "category_reason": "documentation"
       }
     },
     {
@@ -156,12 +124,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 0,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "line_count": 0
       }
     },
     {
@@ -174,12 +137,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 0,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "line_count": 0
       }
     },
     {
@@ -192,8 +150,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 0,
-        "classification_source": "deterministic"
+        "line_count": 0
       }
     },
     {
@@ -206,12 +163,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 103,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "line_count": 103
       }
     },
     {
@@ -224,12 +176,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 185,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "script"
+        "line_count": 185
       }
     },
     {
@@ -242,12 +189,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 107,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the metadata."
+        "line_count": 107
       }
     },
     {
@@ -260,12 +202,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 173,
-        "classification_source": "llm",
-        "deterministic_category": "memory_file",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "Deterministic category 'memory_file' based on file extension .py and presence of memory-related functionality."
+        "line_count": 173
       }
     },
     {
@@ -278,12 +215,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 129,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a script."
+        "line_count": 129
       }
     },
     {
@@ -296,12 +228,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 267,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script'."
+        "line_count": 267
       }
     },
     {
@@ -314,12 +241,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 222,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the metadata."
+        "line_count": 222
       }
     },
     {
@@ -332,12 +254,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 907,
-        "classification_source": "llm",
-        "deterministic_category": "service",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file is a Python backend service file with clear indications of its role in the system."
+        "line_count": 907
       }
     },
     {
@@ -350,12 +267,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 904,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script'."
+        "line_count": 904
       }
     },
     {
@@ -368,12 +280,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 333,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a Python backend application."
+        "line_count": 333
       }
     },
     {
@@ -386,12 +293,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 209,
-        "classification_source": "llm",
-        "deterministic_category": "script",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file has a .py extension and is classified as a script based on the deterministic_category 'script' and metadata indicating it is a Python backend application."
+        "line_count": 209
       }
     },
     {
@@ -404,12 +306,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 97,
-        "classification_source": "llm",
-        "deterministic_category": "service",
-        "llm_model": "qwen/qwen3-1.7b",
-        "llm_confidence": "high",
-        "llm_reason": "The file is a Python backend service responsible for interacting with the LLM."
+        "line_count": 97
       }
     },
     {
@@ -422,8 +319,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 182,
-        "classification_source": "deterministic"
+        "line_count": 182
       }
     },
     {
@@ -436,8 +332,7 @@
       "metadata": {
         "category_reason": "core_entrypoint",
         "has_deprecated_import": false,
-        "line_count": 492,
-        "classification_source": "deterministic"
+        "line_count": 492
       }
     },
     {
@@ -450,8 +345,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 20,
-        "classification_source": "deterministic"
+        "line_count": 20
       }
     },
     {
@@ -464,8 +358,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 74,
-        "classification_source": "deterministic"
+        "line_count": 74
       }
     },
     {
@@ -478,8 +371,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 93,
-        "classification_source": "deterministic"
+        "line_count": 93
       }
     },
     {
@@ -492,8 +384,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 32,
-        "classification_source": "deterministic"
+        "line_count": 32
       }
     },
     {
@@ -506,8 +397,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 85,
-        "classification_source": "deterministic"
+        "line_count": 85
       }
     },
     {
@@ -520,8 +410,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 176,
-        "classification_source": "deterministic"
+        "line_count": 176
       }
     },
     {
@@ -534,8 +423,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 1,
-        "classification_source": "deterministic"
+        "line_count": 1
       }
     },
     {
@@ -548,8 +436,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 81,
-        "classification_source": "deterministic"
+        "line_count": 81
       }
     },
     {
@@ -562,8 +449,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 371,
-        "classification_source": "deterministic"
+        "line_count": 371
       }
     },
     {
@@ -576,8 +462,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 129,
-        "classification_source": "deterministic"
+        "line_count": 129
       }
     },
     {
@@ -590,8 +475,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 37,
-        "classification_source": "deterministic"
+        "line_count": 37
       }
     },
     {
@@ -604,8 +488,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 176,
-        "classification_source": "deterministic"
+        "line_count": 176
       }
     },
     {
@@ -618,8 +501,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 179,
-        "classification_source": "deterministic"
+        "line_count": 179
       }
     },
     {
@@ -632,8 +514,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 60,
-        "classification_source": "deterministic"
+        "line_count": 60
       }
     },
     {
@@ -646,8 +527,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 90,
-        "classification_source": "deterministic"
+        "line_count": 90
       }
     },
     {
@@ -660,8 +540,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 202,
-        "classification_source": "deterministic"
+        "line_count": 202
       }
     },
     {
@@ -674,8 +553,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 107,
-        "classification_source": "deterministic"
+        "line_count": 107
       }
     },
     {
@@ -688,8 +566,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 71,
-        "classification_source": "deterministic"
+        "line_count": 71
       }
     },
     {
@@ -702,8 +579,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 58,
-        "classification_source": "deterministic"
+        "line_count": 58
       }
     },
     {
@@ -716,8 +592,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 166,
-        "classification_source": "deterministic"
+        "line_count": 166
       }
     },
     {
@@ -730,8 +605,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 45,
-        "classification_source": "deterministic"
+        "line_count": 45
       }
     },
     {
@@ -744,8 +618,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 116,
-        "classification_source": "deterministic"
+        "line_count": 116
       }
     },
     {
@@ -758,8 +631,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 74,
-        "classification_source": "deterministic"
+        "line_count": 74
       }
     },
     {
@@ -772,8 +644,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 448,
-        "classification_source": "deterministic"
+        "line_count": 448
       }
     },
     {
@@ -786,8 +657,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 41,
-        "classification_source": "deterministic"
+        "line_count": 41
       }
     },
     {
@@ -800,8 +670,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 216,
-        "classification_source": "deterministic"
+        "line_count": 216
       }
     },
     {
@@ -814,8 +683,7 @@
       "metadata": {
         "category_reason": "router",
         "has_deprecated_import": false,
-        "line_count": 642,
-        "classification_source": "deterministic"
+        "line_count": 642
       }
     },
     {
@@ -828,8 +696,7 @@
       "metadata": {
         "category_reason": "router",
         "has_deprecated_import": false,
-        "line_count": 0,
-        "classification_source": "deterministic"
+        "line_count": 0
       }
     },
     {
@@ -842,8 +709,7 @@
       "metadata": {
         "category_reason": "router",
         "has_deprecated_import": false,
-        "line_count": 142,
-        "classification_source": "deterministic"
+        "line_count": 142
       }
     },
     {
@@ -856,8 +722,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 5,
-        "classification_source": "deterministic"
+        "line_count": 5
       }
     },
     {
@@ -870,8 +735,7 @@
       "metadata": {
         "category_reason": "core_entrypoint",
         "has_deprecated_import": false,
-        "line_count": 5,
-        "classification_source": "deterministic"
+        "line_count": 5
       }
     },
     {
@@ -884,8 +748,7 @@
       "metadata": {
         "category_reason": "model_schema",
         "has_deprecated_import": false,
-        "line_count": 336,
-        "classification_source": "deterministic"
+        "line_count": 336
       }
     },
     {
@@ -898,8 +761,7 @@
       "metadata": {
         "category_reason": "core_entrypoint",
         "has_deprecated_import": false,
-        "line_count": 260,
-        "classification_source": "deterministic"
+        "line_count": 260
       }
     },
     {
@@ -912,8 +774,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 161,
-        "classification_source": "deterministic"
+        "line_count": 161
       }
     },
     {
@@ -926,8 +787,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 0,
-        "classification_source": "deterministic"
+        "line_count": 0
       }
     },
     {
@@ -940,50 +800,33 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 208,
-        "classification_source": "deterministic"
+        "line_count": 208
       }
     },
     {
       "path": "core_system_files/system_services/python_backend/app/services/system_health_service.py",
       "name": "system_health_service.py",
       "extension": ".py",
-      "size_bytes": 8624,
-      "modified_time": "2026-05-25T04:39:49Z",
+      "size_bytes": 8582,
+      "modified_time": "2026-05-24T23:04:36Z",
       "category": "service",
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 200,
-        "classification_source": "deterministic"
+        "line_count": 200
       }
     },
     {
       "path": "core_system_files/system_services/python_backend/app/services/system_introspection_service.py",
       "name": "system_introspection_service.py",
       "extension": ".py",
-      "size_bytes": 11709,
-      "modified_time": "2026-05-25T04:32:57Z",
+      "size_bytes": 9581,
+      "modified_time": "2026-05-24T22:29:36Z",
       "category": "service",
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 311,
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/system_llm_classification_service.py",
-      "name": "system_llm_classification_service.py",
-      "extension": ".py",
-      "size_bytes": 8938,
-      "modified_time": "2026-05-25T04:41:57Z",
-      "category": "service",
-      "metadata": {
-        "category_reason": "service",
-        "has_deprecated_import": false,
-        "line_count": 208,
-        "classification_source": "deterministic"
+        "line_count": 265
       }
     },
     {
@@ -996,8 +839,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 171,
-        "classification_source": "deterministic"
+        "line_count": 171
       }
     },
     {
@@ -1010,8 +852,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 430,
-        "classification_source": "deterministic"
+        "line_count": 430
       }
     },
     {
@@ -1024,8 +865,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 338,
-        "classification_source": "deterministic"
+        "line_count": 338
       }
     },
     {
@@ -1038,8 +878,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 227,
-        "classification_source": "deterministic"
+        "line_count": 227
       }
     },
     {
@@ -1052,8 +891,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 292,
-        "classification_source": "deterministic"
+        "line_count": 292
       }
     },
     {
@@ -1066,8 +904,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 160,
-        "classification_source": "deterministic"
+        "line_count": 160
       }
     },
     {
@@ -1080,8 +917,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 334,
-        "classification_source": "deterministic"
+        "line_count": 334
       }
     },
     {
@@ -1094,8 +930,7 @@
       "metadata": {
         "category_reason": "script",
         "has_deprecated_import": false,
-        "line_count": 225,
-        "classification_source": "deterministic"
+        "line_count": 225
       }
     },
     {
@@ -1106,8 +941,7 @@
       "modified_time": "2026-05-25T00:33:02Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1118,8 +952,7 @@
       "modified_time": "2026-05-25T00:34:37Z",
       "category": "memory_file",
       "metadata": {
-        "category_reason": "memory_file",
-        "classification_source": "deterministic"
+        "category_reason": "memory_file"
       }
     },
     {
@@ -1132,8 +965,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 254,
-        "classification_source": "deterministic"
+        "line_count": 254
       }
     },
     {
@@ -1146,8 +978,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 171,
-        "classification_source": "deterministic"
+        "line_count": 171
       }
     },
     {
@@ -1160,8 +991,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 239,
-        "classification_source": "deterministic"
+        "line_count": 239
       }
     },
     {
@@ -1174,8 +1004,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 118,
-        "classification_source": "deterministic"
+        "line_count": 118
       }
     },
     {
@@ -1188,8 +1017,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 44,
-        "classification_source": "deterministic"
+        "line_count": 44
       }
     },
     {
@@ -1202,8 +1030,7 @@
       "metadata": {
         "category_reason": "memory_file",
         "has_deprecated_import": false,
-        "line_count": 228,
-        "classification_source": "deterministic"
+        "line_count": 228
       }
     },
     {
@@ -1216,8 +1043,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 117,
-        "classification_source": "deterministic"
+        "line_count": 117
       }
     },
     {
@@ -1230,8 +1056,7 @@
       "metadata": {
         "category_reason": "test_file",
         "has_deprecated_import": false,
-        "line_count": 161,
-        "classification_source": "deterministic"
+        "line_count": 161
       }
     },
     {
@@ -1244,8 +1069,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 129,
-        "classification_source": "deterministic"
+        "line_count": 129
       }
     },
     {
@@ -1258,8 +1082,7 @@
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 124,
-        "classification_source": "deterministic"
+        "line_count": 124
       }
     },
     {
@@ -1272,8 +1095,7 @@
       "metadata": {
         "category_reason": "test_file",
         "has_deprecated_import": false,
-        "line_count": 185,
-        "classification_source": "deterministic"
+        "line_count": 185
       }
     },
     {
@@ -1284,8 +1106,7 @@
       "modified_time": "2026-05-22T01:26:25Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1296,8 +1117,7 @@
       "modified_time": "2026-05-24T23:06:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1308,8 +1128,7 @@
       "modified_time": "2026-05-24T23:06:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1320,8 +1139,7 @@
       "modified_time": "2026-05-24T23:06:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1332,8 +1150,7 @@
       "modified_time": "2026-05-24T23:06:32Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1344,8 +1161,7 @@
       "modified_time": "2026-05-24T23:06:32Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1356,8 +1172,7 @@
       "modified_time": "2026-05-24T23:06:33Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1368,8 +1183,7 @@
       "modified_time": "2026-05-24T23:06:33Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1380,8 +1194,7 @@
       "modified_time": "2026-05-24T23:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1392,8 +1205,7 @@
       "modified_time": "2026-05-24T23:07:00Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1404,8 +1216,7 @@
       "modified_time": "2026-05-24T23:07:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1416,8 +1227,7 @@
       "modified_time": "2026-05-24T23:07:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1428,8 +1238,7 @@
       "modified_time": "2026-05-24T23:29:08Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1440,8 +1249,7 @@
       "modified_time": "2026-05-24T23:29:09Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1452,8 +1260,7 @@
       "modified_time": "2026-05-25T00:02:01Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1464,8 +1271,7 @@
       "modified_time": "2026-05-25T00:02:01Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1476,8 +1282,7 @@
       "modified_time": "2026-05-25T00:10:27Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1488,8 +1293,7 @@
       "modified_time": "2026-05-25T00:10:27Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1500,8 +1304,7 @@
       "modified_time": "2026-05-25T00:10:45Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1512,8 +1315,7 @@
       "modified_time": "2026-05-25T00:10:45Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1524,8 +1326,7 @@
       "modified_time": "2026-05-25T00:20:13Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1536,8 +1337,7 @@
       "modified_time": "2026-05-25T00:20:13Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1548,8 +1348,7 @@
       "modified_time": "2026-05-25T00:23:53Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1560,8 +1359,7 @@
       "modified_time": "2026-05-25T00:23:54Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1572,8 +1370,7 @@
       "modified_time": "2026-05-25T00:30:55Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1584,8 +1381,7 @@
       "modified_time": "2026-05-25T00:30:56Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1596,8 +1392,7 @@
       "modified_time": "2026-05-25T00:33:02Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1608,8 +1403,7 @@
       "modified_time": "2026-05-25T00:33:02Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1620,8 +1414,7 @@
       "modified_time": "2026-05-25T00:33:16Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1632,8 +1425,7 @@
       "modified_time": "2026-05-25T00:33:16Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1644,8 +1436,7 @@
       "modified_time": "2026-05-25T00:34:53Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1656,8 +1447,7 @@
       "modified_time": "2026-05-25T00:34:53Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1668,8 +1458,7 @@
       "modified_time": "2026-05-25T00:39:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1680,8 +1469,7 @@
       "modified_time": "2026-05-25T00:39:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1692,8 +1480,7 @@
       "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1704,8 +1491,7 @@
       "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1716,8 +1502,7 @@
       "modified_time": "2026-05-25T01:36:16Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1728,8 +1513,7 @@
       "modified_time": "2026-05-25T01:36:17Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1740,8 +1524,7 @@
       "modified_time": "2026-05-25T01:36:17Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1752,8 +1535,7 @@
       "modified_time": "2026-05-25T01:36:28Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1764,8 +1546,7 @@
       "modified_time": "2026-05-25T01:36:30Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1776,8 +1557,7 @@
       "modified_time": "2026-05-25T01:36:31Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1788,8 +1568,7 @@
       "modified_time": "2026-05-25T01:36:31Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1800,8 +1579,7 @@
       "modified_time": "2026-05-25T01:36:52Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1812,8 +1590,7 @@
       "modified_time": "2026-05-25T01:36:52Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1824,8 +1601,7 @@
       "modified_time": "2026-05-25T01:37:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1836,8 +1612,7 @@
       "modified_time": "2026-05-25T01:37:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1848,8 +1623,7 @@
       "modified_time": "2026-05-25T01:37:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1860,8 +1634,7 @@
       "modified_time": "2026-05-25T02:04:43Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1872,8 +1645,7 @@
       "modified_time": "2026-05-25T02:04:43Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1884,8 +1656,7 @@
       "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1896,8 +1667,7 @@
       "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1908,8 +1678,7 @@
       "modified_time": "2026-05-25T02:05:04Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1920,8 +1689,7 @@
       "modified_time": "2026-05-25T02:05:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1932,8 +1700,7 @@
       "modified_time": "2026-05-25T02:05:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1944,8 +1711,7 @@
       "modified_time": "2026-05-25T02:05:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1956,8 +1722,7 @@
       "modified_time": "2026-05-25T02:06:25Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1968,8 +1733,7 @@
       "modified_time": "2026-05-25T02:06:25Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1980,8 +1744,7 @@
       "modified_time": "2026-05-25T02:06:25Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -1992,8 +1755,7 @@
       "modified_time": "2026-05-25T02:06:26Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2004,8 +1766,7 @@
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2016,8 +1777,7 @@
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2028,8 +1788,7 @@
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2040,92 +1799,7 @@
       "modified_time": "2026-05-25T02:06:35Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_024112_507658.json",
-      "name": "change_2026_05_25_024112_507658.json",
-      "extension": ".json",
-      "size_bytes": 2784,
-      "modified_time": "2026-05-25T02:41:12Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_024113_411363.json",
-      "name": "change_2026_05_25_024113_411363.json",
-      "extension": ".json",
-      "size_bytes": 2734,
-      "modified_time": "2026-05-25T02:41:13Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_024113_873201.json",
-      "name": "change_2026_05_25_024113_873201.json",
-      "extension": ".json",
-      "size_bytes": 2483,
-      "modified_time": "2026-05-25T02:41:13Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_024114_237015.json",
-      "name": "change_2026_05_25_024114_237015.json",
-      "extension": ".json",
-      "size_bytes": 2370,
-      "modified_time": "2026-05-25T02:41:14Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_044139_061496.json",
-      "name": "change_2026_05_25_044139_061496.json",
-      "extension": ".json",
-      "size_bytes": 3149,
-      "modified_time": "2026-05-25T04:41:39Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_044516_457654.json",
-      "name": "change_2026_05_25_044516_457654.json",
-      "extension": ".json",
-      "size_bytes": 2590,
-      "modified_time": "2026-05-25T04:45:16Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_045541_176432.json",
-      "name": "change_2026_05_25_045541_176432.json",
-      "extension": ".json",
-      "size_bytes": 2907,
-      "modified_time": "2026-05-25T04:55:41Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2136,8 +1810,7 @@
       "modified_time": "2026-05-25T01:36:16Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2148,8 +1821,7 @@
       "modified_time": "2026-05-25T01:36:16Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2160,8 +1832,7 @@
       "modified_time": "2026-05-25T01:36:17Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2172,8 +1843,7 @@
       "modified_time": "2026-05-25T01:36:28Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2184,8 +1854,7 @@
       "modified_time": "2026-05-25T01:36:30Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2196,8 +1865,7 @@
       "modified_time": "2026-05-25T01:36:31Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2208,8 +1876,7 @@
       "modified_time": "2026-05-25T01:36:51Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2220,8 +1887,7 @@
       "modified_time": "2026-05-25T01:36:52Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2232,8 +1898,7 @@
       "modified_time": "2026-05-25T01:37:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2244,8 +1909,7 @@
       "modified_time": "2026-05-25T01:37:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2256,8 +1920,7 @@
       "modified_time": "2026-05-25T02:04:43Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2268,8 +1931,7 @@
       "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2280,8 +1942,7 @@
       "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2292,8 +1953,7 @@
       "modified_time": "2026-05-25T02:05:04Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2304,8 +1964,7 @@
       "modified_time": "2026-05-25T02:05:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2316,8 +1975,7 @@
       "modified_time": "2026-05-25T02:05:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2328,8 +1986,7 @@
       "modified_time": "2026-05-25T02:06:25Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2340,8 +1997,7 @@
       "modified_time": "2026-05-25T02:06:25Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2352,8 +2008,7 @@
       "modified_time": "2026-05-25T02:06:26Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2364,8 +2019,7 @@
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2376,8 +2030,7 @@
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2388,44 +2041,7 @@
       "modified_time": "2026-05-25T02:06:35Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_024112_560472.json",
-      "name": "recommendations_2026_05_25_024112_560472.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:41:12Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_024113_883459.json",
-      "name": "recommendations_2026_05_25_024113_883459.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:41:13Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_024114_245639.json",
-      "name": "recommendations_2026_05_25_024114_245639.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:41:14Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2436,8 +2052,7 @@
       "modified_time": "2026-05-24T22:28:08Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2448,8 +2063,7 @@
       "modified_time": "2026-05-24T22:28:32Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2460,8 +2074,7 @@
       "modified_time": "2026-05-24T22:28:47Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2472,8 +2085,7 @@
       "modified_time": "2026-05-24T22:29:30Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2484,8 +2096,7 @@
       "modified_time": "2026-05-24T22:30:30Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2496,8 +2107,7 @@
       "modified_time": "2026-05-24T22:30:42Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2508,8 +2118,7 @@
       "modified_time": "2026-05-24T22:44:48Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2520,8 +2129,7 @@
       "modified_time": "2026-05-24T22:44:49Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2532,8 +2140,7 @@
       "modified_time": "2026-05-24T22:45:01Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2544,8 +2151,7 @@
       "modified_time": "2026-05-24T22:55:28Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2556,8 +2162,7 @@
       "modified_time": "2026-05-24T22:55:36Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2568,8 +2173,7 @@
       "modified_time": "2026-05-24T22:55:47Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2580,8 +2184,7 @@
       "modified_time": "2026-05-24T22:56:08Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2592,8 +2195,7 @@
       "modified_time": "2026-05-24T22:56:22Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2604,8 +2206,7 @@
       "modified_time": "2026-05-24T23:06:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2616,8 +2217,7 @@
       "modified_time": "2026-05-24T23:06:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2628,8 +2228,7 @@
       "modified_time": "2026-05-24T23:06:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2640,8 +2239,7 @@
       "modified_time": "2026-05-24T23:06:32Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2652,8 +2250,7 @@
       "modified_time": "2026-05-24T23:06:32Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2664,8 +2261,7 @@
       "modified_time": "2026-05-24T23:06:33Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2676,8 +2272,7 @@
       "modified_time": "2026-05-24T23:06:33Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2688,8 +2283,7 @@
       "modified_time": "2026-05-24T23:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2700,8 +2294,7 @@
       "modified_time": "2026-05-24T23:07:00Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2712,8 +2305,7 @@
       "modified_time": "2026-05-24T23:07:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2724,8 +2316,7 @@
       "modified_time": "2026-05-24T23:07:18Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2736,8 +2327,7 @@
       "modified_time": "2026-05-24T23:29:08Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2748,8 +2338,7 @@
       "modified_time": "2026-05-24T23:29:09Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2760,8 +2349,7 @@
       "modified_time": "2026-05-25T00:02:01Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2772,8 +2360,7 @@
       "modified_time": "2026-05-25T00:02:01Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2784,8 +2371,7 @@
       "modified_time": "2026-05-25T00:10:27Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2796,8 +2382,7 @@
       "modified_time": "2026-05-25T00:10:27Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2808,8 +2393,7 @@
       "modified_time": "2026-05-25T00:10:45Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2820,8 +2404,7 @@
       "modified_time": "2026-05-25T00:10:45Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2832,8 +2415,7 @@
       "modified_time": "2026-05-25T00:20:13Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2844,8 +2426,7 @@
       "modified_time": "2026-05-25T00:20:13Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2856,8 +2437,7 @@
       "modified_time": "2026-05-25T00:23:53Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2868,8 +2448,7 @@
       "modified_time": "2026-05-25T00:23:54Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2880,8 +2459,7 @@
       "modified_time": "2026-05-25T00:30:55Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2892,8 +2470,7 @@
       "modified_time": "2026-05-25T00:30:56Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2904,8 +2481,7 @@
       "modified_time": "2026-05-25T00:33:02Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2916,8 +2492,7 @@
       "modified_time": "2026-05-25T00:33:02Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2928,8 +2503,7 @@
       "modified_time": "2026-05-25T00:33:16Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2940,8 +2514,7 @@
       "modified_time": "2026-05-25T00:33:16Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2952,8 +2525,7 @@
       "modified_time": "2026-05-25T00:34:53Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2964,8 +2536,7 @@
       "modified_time": "2026-05-25T00:34:53Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2976,8 +2547,7 @@
       "modified_time": "2026-05-25T00:39:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -2988,8 +2558,7 @@
       "modified_time": "2026-05-25T00:39:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3000,8 +2569,7 @@
       "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3012,8 +2580,7 @@
       "modified_time": "2026-05-25T01:17:20Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3024,8 +2591,7 @@
       "modified_time": "2026-05-25T01:36:16Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3036,8 +2602,7 @@
       "modified_time": "2026-05-25T01:36:17Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3048,8 +2613,7 @@
       "modified_time": "2026-05-25T01:36:17Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3060,8 +2624,7 @@
       "modified_time": "2026-05-25T01:36:28Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3072,8 +2635,7 @@
       "modified_time": "2026-05-25T01:36:30Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3084,8 +2646,7 @@
       "modified_time": "2026-05-25T01:36:31Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3096,8 +2657,7 @@
       "modified_time": "2026-05-25T01:36:31Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3108,8 +2668,7 @@
       "modified_time": "2026-05-25T01:36:52Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3120,8 +2679,7 @@
       "modified_time": "2026-05-25T01:36:52Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3132,8 +2690,7 @@
       "modified_time": "2026-05-25T01:37:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3144,8 +2701,7 @@
       "modified_time": "2026-05-25T01:37:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3156,8 +2712,7 @@
       "modified_time": "2026-05-25T01:37:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3168,8 +2723,7 @@
       "modified_time": "2026-05-25T02:04:43Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3180,8 +2734,7 @@
       "modified_time": "2026-05-25T02:04:43Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3192,8 +2745,7 @@
       "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3204,8 +2756,7 @@
       "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3216,8 +2767,7 @@
       "modified_time": "2026-05-25T02:05:04Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3228,8 +2778,7 @@
       "modified_time": "2026-05-25T02:05:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3240,8 +2789,7 @@
       "modified_time": "2026-05-25T02:05:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3252,8 +2800,7 @@
       "modified_time": "2026-05-25T02:05:05Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3264,8 +2811,7 @@
       "modified_time": "2026-05-25T02:06:25Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3276,8 +2822,7 @@
       "modified_time": "2026-05-25T02:06:25Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3288,8 +2833,7 @@
       "modified_time": "2026-05-25T02:06:25Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3300,8 +2844,7 @@
       "modified_time": "2026-05-25T02:06:26Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3312,8 +2855,7 @@
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3324,8 +2866,7 @@
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3336,8 +2877,7 @@
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3348,104 +2888,18 @@
       "modified_time": "2026-05-25T02:06:35Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_024112_475790.json",
-      "name": "scan_2026_05_25_024112_475790.json",
-      "extension": ".json",
-      "size_bytes": 141740,
-      "modified_time": "2026-05-25T02:41:12Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_024113_391778.json",
-      "name": "scan_2026_05_25_024113_391778.json",
-      "extension": ".json",
-      "size_bytes": 142868,
-      "modified_time": "2026-05-25T02:41:13Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_024113_858571.json",
-      "name": "scan_2026_05_25_024113_858571.json",
-      "extension": ".json",
-      "size_bytes": 143608,
-      "modified_time": "2026-05-25T02:41:13Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_024114_223826.json",
-      "name": "scan_2026_05_25_024114_223826.json",
-      "extension": ".json",
-      "size_bytes": 144736,
-      "modified_time": "2026-05-25T02:41:14Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_044139_045036.json",
-      "name": "scan_2026_05_25_044139_045036.json",
-      "extension": ".json",
-      "size_bytes": 163386,
-      "modified_time": "2026-05-25T04:41:39Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_044516_442073.json",
-      "name": "scan_2026_05_25_044516_442073.json",
-      "extension": ".json",
-      "size_bytes": 168100,
-      "modified_time": "2026-05-25T04:45:16Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_045541_161712.json",
-      "name": "scan_2026_05_25_045541_161712.json",
-      "extension": ".json",
-      "size_bytes": 170308,
-      "modified_time": "2026-05-25T04:55:41Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
       "path": "core_system_files/system_state/self_model/architecture_snapshot.json",
       "name": "architecture_snapshot.json",
       "extension": ".json",
-      "size_bytes": 1974,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "size_bytes": 1884,
+      "modified_time": "2026-05-25T02:06:35Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3453,35 +2907,32 @@
       "name": "capability_map.json",
       "extension": ".json",
       "size_bytes": 346,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T02:06:35Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
       "path": "core_system_files/system_state/self_model/change_report.json",
       "name": "change_report.json",
       "extension": ".json",
-      "size_bytes": 2907,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "size_bytes": 2217,
+      "modified_time": "2026-05-25T02:06:35Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
       "path": "core_system_files/system_state/self_model/file_inventory.json",
       "name": "file_inventory.json",
       "extension": ".json",
-      "size_bytes": 170427,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "size_bytes": 136441,
+      "modified_time": "2026-05-25T02:06:35Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3489,11 +2940,10 @@
       "name": "last_change_summary.md",
       "extension": ".md",
       "size_bytes": 139,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T02:06:35Z",
       "category": "documentation",
       "metadata": {
-        "category_reason": "documentation",
-        "classification_source": "deterministic"
+        "category_reason": "documentation"
       }
     },
     {
@@ -3501,11 +2951,10 @@
       "name": "last_recommendation_plan.md",
       "extension": ".md",
       "size_bytes": 146,
-      "modified_time": "2026-05-25T02:41:14Z",
+      "modified_time": "2026-05-25T02:06:35Z",
       "category": "documentation",
       "metadata": {
-        "category_reason": "documentation",
-        "classification_source": "deterministic"
+        "category_reason": "documentation"
       }
     },
     {
@@ -3513,11 +2962,10 @@
       "name": "last_scan_summary.md",
       "extension": ".md",
       "size_bytes": 787,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T02:06:35Z",
       "category": "documentation",
       "metadata": {
-        "category_reason": "documentation",
-        "classification_source": "deterministic"
+        "category_reason": "documentation"
       }
     },
     {
@@ -3525,11 +2973,10 @@
       "name": "recommendation_plan.json",
       "extension": ".json",
       "size_bytes": 904,
-      "modified_time": "2026-05-25T02:41:14Z",
+      "modified_time": "2026-05-25T02:06:35Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3537,11 +2984,10 @@
       "name": "unresolved_issues.json",
       "extension": ".json",
       "size_bytes": 20,
-      "modified_time": "2026-05-25T04:55:41Z",
+      "modified_time": "2026-05-25T02:06:35Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3552,8 +2998,7 @@
       "modified_time": "2026-05-22T23:57:19Z",
       "category": "documentation",
       "metadata": {
-        "category_reason": "documentation",
-        "classification_source": "deterministic"
+        "category_reason": "documentation"
       }
     },
     {
@@ -3564,8 +3009,7 @@
       "modified_time": "2026-05-22T23:57:24Z",
       "category": "documentation",
       "metadata": {
-        "category_reason": "documentation",
-        "classification_source": "deterministic"
+        "category_reason": "documentation"
       }
     },
     {
@@ -3576,8 +3020,7 @@
       "modified_time": "2026-05-22T23:57:06Z",
       "category": "unknown",
       "metadata": {
-        "category_reason": "unknown",
-        "classification_source": "deterministic"
+        "category_reason": "unknown"
       }
     },
     {
@@ -3588,8 +3031,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3600,8 +3042,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "config_file",
       "metadata": {
-        "category_reason": "config_file",
-        "classification_source": "deterministic"
+        "category_reason": "config_file"
       }
     },
     {
@@ -3612,8 +3053,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "memory_file",
       "metadata": {
-        "category_reason": "memory_file",
-        "classification_source": "deterministic"
+        "category_reason": "memory_file"
       }
     },
     {
@@ -3624,8 +3064,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "config_file",
       "metadata": {
-        "category_reason": "config_file",
-        "classification_source": "deterministic"
+        "category_reason": "config_file"
       }
     },
     {
@@ -3636,8 +3075,7 @@
       "modified_time": "2026-05-23T20:18:34Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3648,8 +3086,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3660,8 +3097,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3672,8 +3108,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3684,8 +3119,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3696,8 +3130,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3708,8 +3141,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3720,8 +3152,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3732,8 +3163,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3744,8 +3174,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_manifest",
       "metadata": {
-        "category_reason": "persona_manifest",
-        "classification_source": "deterministic"
+        "category_reason": "persona_manifest"
       }
     },
     {
@@ -3756,8 +3185,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3768,8 +3196,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3780,8 +3207,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3792,8 +3218,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3804,8 +3229,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3816,8 +3240,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3828,8 +3251,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3840,8 +3262,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3852,8 +3273,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3864,8 +3284,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3876,8 +3295,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3888,8 +3306,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3900,8 +3317,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3912,8 +3328,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3924,8 +3339,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3936,8 +3350,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3948,8 +3361,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3960,8 +3372,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3972,8 +3383,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3984,8 +3394,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -3996,8 +3405,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4008,8 +3416,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4020,8 +3427,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "config_file",
       "metadata": {
-        "category_reason": "config_file",
-        "classification_source": "deterministic"
+        "category_reason": "config_file"
       }
     },
     {
@@ -4032,8 +3438,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "memory_file",
       "metadata": {
-        "category_reason": "memory_file",
-        "classification_source": "deterministic"
+        "category_reason": "memory_file"
       }
     },
     {
@@ -4044,8 +3449,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "config_file",
       "metadata": {
-        "category_reason": "config_file",
-        "classification_source": "deterministic"
+        "category_reason": "config_file"
       }
     },
     {
@@ -4056,8 +3460,7 @@
       "modified_time": "2026-05-23T20:18:31Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4068,8 +3471,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4080,8 +3482,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4092,8 +3493,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4104,8 +3504,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4116,8 +3515,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4128,8 +3526,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4140,8 +3537,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4152,8 +3548,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4164,8 +3559,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4176,8 +3570,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4188,8 +3581,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4200,8 +3592,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4212,8 +3603,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4224,8 +3614,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "persona_policy",
       "metadata": {
-        "category_reason": "persona_policy",
-        "classification_source": "deterministic"
+        "category_reason": "persona_policy"
       }
     },
     {
@@ -4236,8 +3625,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "memory_file",
       "metadata": {
-        "category_reason": "memory_file",
-        "classification_source": "deterministic"
+        "category_reason": "memory_file"
       }
     },
     {
@@ -4248,8 +3636,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "memory_file",
       "metadata": {
-        "category_reason": "memory_file",
-        "classification_source": "deterministic"
+        "category_reason": "memory_file"
       }
     },
     {
@@ -4260,8 +3647,7 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "memory_file",
       "metadata": {
-        "category_reason": "memory_file",
-        "classification_source": "deterministic"
+        "category_reason": "memory_file"
       }
     },
     {
@@ -4272,98 +3658,81 @@
       "modified_time": "2026-05-21T23:26:46Z",
       "category": "memory_file",
       "metadata": {
-        "category_reason": "memory_file",
-        "classification_source": "deterministic"
+        "category_reason": "memory_file"
       }
     }
   ],
   "skipped": [
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/backend.cpython-311.pyc",
+      "path": "core_system_files/__pycache__/app.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/backend.cpython-313.pyc",
+      "path": "core_system_files/__pycache__/__init__.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/config.cpython-311.pyc",
+      "path": "core_system_files/__pycache__/__init__.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/config.cpython-313.pyc",
+      "path": "core_system_files/system_services/__pycache__/__init__.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/embedding_provider.cpython-311.pyc",
+      "path": "core_system_files/system_services/__pycache__/__init__.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/embedding_provider.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/__pycache__/__init__.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/jsonl_backend.cpython-311.pyc",
+      "path": "core_system_files/system_services/python_backend/__pycache__/__init__.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/jsonl_backend.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_backend_interface.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/migrate.cpython-311.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_config.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/migrate.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_migration.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/models.cpython-311.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_recall_log.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/models.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_vector_interfaces.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/recall_log.cpython-311.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_sqlite_memory_backend.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/recall_log.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_change_service.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_backend.cpython-311.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_perception.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_backend.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_recommendation_service.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_schema.cpython-311.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_repair_packet_service.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_schema.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/vector_backend.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/vector_backend.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/__init__.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/__init__.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_self_query_integration.cpython-313-pytest-9.0.3.pyc",
       "reason": "ignored_folder"
     },
     {
@@ -4372,106 +3741,6 @@
     },
     {
       "path": "core_system_files/system_services/python_backend/app/models/__init__.py",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/system_perception_models.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/system_perception_models.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/__init__.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/__init__.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/system_perception_router.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/system_perception_router.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/__init__.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/__init__.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_change_service.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_change_service.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_health_service.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_health_service.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_introspection_service.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_introspection_service.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_llm_classification_service.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_manifest_service.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_manifest_service.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_recommendation_service.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_recommendation_service.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_repair_packet_service.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_repair_packet_service.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_self_query_service.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_self_query_service.cpython-313.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/__init__.cpython-311.pyc",
-      "reason": "ignored_folder"
-    },
-    {
-      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/__init__.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
@@ -4783,85 +4052,197 @@
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_backend_interface.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_change_service.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_config.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_change_service.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_migration.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_health_service.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_recall_log.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_health_service.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_memory_vector_interfaces.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_introspection_service.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_sqlite_memory_backend.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_introspection_service.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_change_service.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_manifest_service.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_perception.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_manifest_service.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_recommendation_service.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_recommendation_service.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_repair_packet_service.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_recommendation_service.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/tests/__pycache__/test_system_self_query_integration.cpython-313-pytest-9.0.3.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_repair_packet_service.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/__pycache__/__init__.cpython-311.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_repair_packet_service.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/python_backend/__pycache__/__init__.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_self_query_service.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/__pycache__/__init__.cpython-311.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/system_self_query_service.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/system_services/__pycache__/__init__.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/__init__.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/__pycache__/app.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/app/services/__pycache__/__init__.cpython-313.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/__pycache__/__init__.cpython-311.pyc",
+      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/system_perception_router.cpython-311.pyc",
       "reason": "ignored_folder"
     },
     {
-      "path": "core_system_files/__pycache__/__init__.cpython-313.pyc",
+      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/system_perception_router.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/__init__.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/routers/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/system_perception_models.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/system_perception_models.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/__init__.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/models/__pycache__/__init__.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/backend.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/backend.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/config.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/config.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/embedding_provider.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/embedding_provider.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/jsonl_backend.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/jsonl_backend.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/migrate.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/migrate.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/models.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/models.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/recall_log.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/recall_log.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_backend.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_backend.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_schema.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/sqlite_schema.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/vector_backend.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/vector_backend.cpython-313.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/__init__.cpython-311.pyc",
+      "reason": "ignored_folder"
+    },
+    {
+      "path": "core_system_files/system_services/python_backend/app/memory/__pycache__/__init__.cpython-313.pyc",
       "reason": "ignored_folder"
     }
   ],
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 190,
+    "unknown": 173,
     "memory_file": 29,
     "documentation": 6,
-    "service": 14,
+    "service": 13,
     "router": 3,
     "model_schema": 1,
     "test_file": 2,
@@ -4869,5 +4250,5 @@
     "config_file": 4,
     "persona_manifest": 1
   },
-  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_25_045840_021431.json"
+  "report_path": null
 }
