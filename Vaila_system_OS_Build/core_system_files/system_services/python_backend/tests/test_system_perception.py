@@ -137,6 +137,13 @@ def test_fastapi_routes_respond_successfully():
     summary_response = client.get("/system-core/perception/summary")
     changes_response = client.get("/system-core/perception/changes")
     changes_summary_response = client.get("/system-core/perception/changes/summary")
+    recommendations_response = client.get("/system-core/perception/recommendations")
+    recommendations_generate_response = client.get("/system-core/perception/recommendations/generate")
+    recommendations_summary_response = client.get("/system-core/perception/recommendations/summary")
+    repair_packets_response = client.get("/system-core/perception/repair-packets")
+    repair_packets_generate_response = client.get("/system-core/perception/repair-packets/generate")
+    repair_packets_latest_response = client.get("/system-core/perception/repair-packets/latest")
+    repair_packets_summary_response = client.get("/system-core/perception/repair-packets/summary")
 
     assert scan_response.status_code == 200
     assert latest_response.status_code == 200
@@ -145,3 +152,10 @@ def test_fastapi_routes_respond_successfully():
     assert summary_response.status_code == 200
     assert changes_response.status_code == 200
     assert changes_summary_response.status_code == 200
+    assert recommendations_response.status_code == 200
+    assert recommendations_generate_response.status_code == 200
+    assert recommendations_summary_response.status_code == 200
+    assert repair_packets_response.status_code == 200
+    assert repair_packets_generate_response.status_code == 200
+    assert repair_packets_latest_response.status_code == 200
+    assert repair_packets_summary_response.status_code == 200

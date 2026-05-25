@@ -1,26 +1,30 @@
 {
   "status": "changes_detected",
-  "previous_scan_time": "2026-05-25T02:06:34Z",
-  "current_scan_time": "2026-05-25T02:06:35Z",
+  "previous_scan_time": "2026-05-25T01:36:17Z",
+  "current_scan_time": "2026-05-25T01:36:28Z",
   "summary_counts": {
     "added_files": 3,
     "removed_files": 0,
-    "modified_files": 2,
+    "modified_files": 6,
     "new_issues": 0,
     "resolved_issues": 0,
     "capability_changes": 11
   },
   "added_files": [
-    "core_system_files/system_state/scan_reports/change_2026_05_25_020634_963995.json",
-    "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020634_973088.json",
-    "core_system_files/system_state/scan_reports/scan_2026_05_25_020634_950326.json"
+    "core_system_files/system_state/scan_reports/change_2026_05_25_013617_324182.json",
+    "core_system_files/system_state/scan_reports/recommendations_2026_05_25_013617_332308.json",
+    "core_system_files/system_state/scan_reports/scan_2026_05_25_013617_313052.json"
   ],
   "removed_files": [],
   "modified_files": [
+    "core_system_files/system_state/self_model/architecture_snapshot.json",
     "core_system_files/system_state/self_model/change_report.json",
-    "core_system_files/system_state/self_model/file_inventory.json"
+    "core_system_files/system_state/self_model/file_inventory.json",
+    "core_system_files/system_state/self_model/last_recommendation_plan.md",
+    "core_system_files/system_state/self_model/last_scan_summary.md",
+    "core_system_files/system_state/self_model/recommendation_plan.json"
   ],
-  "unchanged_files_count": 306,
+  "unchanged_files_count": 234,
   "added_services": [],
   "removed_services": [],
   "added_routers": [],

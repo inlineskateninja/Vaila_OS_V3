@@ -1,0 +1,68 @@
+{
+  "status": "created",
+  "created_at": "2026-05-25T01:36:31Z",
+  "source_files": {
+    "architecture_snapshot": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\self_model\\architecture_snapshot.json",
+    "capability_map": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\self_model\\capability_map.json",
+    "issues": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\self_model\\unresolved_issues.json",
+    "change_report": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\self_model\\change_report.json"
+  },
+  "summary_counts": {
+    "critical": 0,
+    "high": 2,
+    "medium": 0,
+    "low": 0,
+    "total": 2
+  },
+  "top_recommendation": {
+    "id": "rec_5576710d6b84",
+    "title": "Review capability regression: detected_import_issues",
+    "category": "capability_gap",
+    "priority": "high",
+    "severity": "risky",
+    "reason": "The latest change report shows a capability changed to false.",
+    "evidence": [
+      "detected_import_issues: None -> False"
+    ],
+    "suggested_action": "Inspect the related scan data and restore the capability if the regression is unintended.",
+    "affected_files": [],
+    "blocked_by": [],
+    "safe_to_delegate_to_codex": true,
+    "requires_user_approval": true
+  },
+  "recommendations": [
+    {
+      "id": "rec_5576710d6b84",
+      "title": "Review capability regression: detected_import_issues",
+      "category": "capability_gap",
+      "priority": "high",
+      "severity": "risky",
+      "reason": "The latest change report shows a capability changed to false.",
+      "evidence": [
+        "detected_import_issues: None -> False"
+      ],
+      "suggested_action": "Inspect the related scan data and restore the capability if the regression is unintended.",
+      "affected_files": [],
+      "blocked_by": [],
+      "safe_to_delegate_to_codex": true,
+      "requires_user_approval": true
+    },
+    {
+      "id": "rec_e67f5611a767",
+      "title": "Review capability regression: detected_missing_architecture",
+      "category": "capability_gap",
+      "priority": "high",
+      "severity": "risky",
+      "reason": "The latest change report shows a capability changed to false.",
+      "evidence": [
+        "detected_missing_architecture: None -> False"
+      ],
+      "suggested_action": "Inspect the related scan data and restore the capability if the regression is unintended.",
+      "affected_files": [],
+      "blocked_by": [],
+      "safe_to_delegate_to_codex": true,
+      "requires_user_approval": true
+    }
+  ],
+  "notes": []
+}

@@ -1,8 +1,8 @@
 # Vaila System Perception Summary
 
-- Generated: 2026-05-25T01:17:20Z
+- Generated: 2026-05-25T02:06:35Z
 - Project root: E:\Vaila_OS_V3\Vaila_system_OS_Build
-- Files scanned: 233
+- Files scanned: 311
 - Issues detected: 0
 
 ## Capability Map
@@ -28,9 +28,9 @@
 - persona_policy: 47
 - router: 3
 - script: 32
-- service: 9
+- service: 13
 - test_file: 2
-- unknown: 96
+- unknown: 170
 
 ## Issues
 - No unresolved issues detected.

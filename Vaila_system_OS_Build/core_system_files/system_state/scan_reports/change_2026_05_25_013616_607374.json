@@ -1,0 +1,106 @@
+{
+  "status": "changes_detected",
+  "previous_scan_time": "2026-05-25T01:17:20Z",
+  "current_scan_time": "2026-05-25T01:36:16Z",
+  "summary_counts": {
+    "added_files": 4,
+    "removed_files": 5,
+    "modified_files": 7,
+    "new_issues": 0,
+    "resolved_issues": 0,
+    "capability_changes": 11
+  },
+  "added_files": [
+    "core_system_files/system_services/python_backend/app/services/system_recommendation_service.py",
+    "core_system_files/system_services/python_backend/tests/test_system_recommendation_service.py",
+    "core_system_files/system_state/scan_reports/change_2026_05_25_011720_440668.json",
+    "core_system_files/system_state/scan_reports/scan_2026_05_25_011720_429068.json"
+  ],
+  "removed_files": [
+    "core_system_files/system_services/python_backend/.pytest_cache/.gitignore",
+    "core_system_files/system_services/python_backend/.pytest_cache/CACHEDIR.TAG",
+    "core_system_files/system_services/python_backend/.pytest_cache/README.md",
+    "core_system_files/system_services/python_backend/.pytest_cache/v/cache/lastfailed",
+    "core_system_files/system_services/python_backend/.pytest_cache/v/cache/nodeids"
+  ],
+  "modified_files": [
+    "core_system_files/system_services/python_backend/app/router.py",
+    "core_system_files/system_services/python_backend/app/routers/system_perception_router.py",
+    "core_system_files/system_services/python_backend/app/services/system_self_query_service.py",
+    "core_system_files/system_services/python_backend/tests/test_system_perception.py",
+    "core_system_files/system_services/python_backend/tests/test_system_self_query_integration.py",
+    "core_system_files/system_state/self_model/change_report.json",
+    "core_system_files/system_state/self_model/file_inventory.json"
+  ],
+  "unchanged_files_count": 221,
+  "added_services": [
+    "core_system_files/system_services/python_backend/app/services/system_recommendation_service.py",
+    "core_system_files/system_services/python_backend/tests/test_system_recommendation_service.py"
+  ],
+  "removed_services": [],
+  "added_routers": [],
+  "removed_routers": [],
+  "added_personas": [],
+  "removed_personas": [],
+  "capability_changes": [
+    {
+      "name": "can_load_latest_snapshot",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "can_save_snapshots",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "can_scan_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "detected_import_issues",
+      "previous": null,
+      "current": false
+    },
+    {
+      "name": "detected_missing_architecture",
+      "previous": null,
+      "current": false
+    },
+    {
+      "name": "has_config_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_memory_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_persona_files",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_router_layer",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_service_layer",
+      "previous": null,
+      "current": true
+    },
+    {
+      "name": "has_tests",
+      "previous": null,
+      "current": true
+    }
+  ],
+  "new_issues": [],
+  "resolved_issues": [],
+  "persistent_issues": [],
+  "notes": []
+}

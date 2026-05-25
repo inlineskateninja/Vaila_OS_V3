@@ -126,6 +126,81 @@ class SystemChangeReport(BaseModel):
     notes: list[str] = Field(default_factory=list)
 
 
+class SystemRecommendation(BaseModel):
+    id: str
+    title: str
+    category: Literal[
+        "broken_import",
+        "missing_expected_file",
+        "missing_service",
+        "missing_router",
+        "missing_model_schema",
+        "stale_bridge_path",
+        "empty_required_directory",
+        "duplicate_architecture",
+        "missing_tests",
+        "capability_gap",
+        "new_issue",
+        "persistent_issue",
+        "cleanup",
+        "documentation",
+        "unknown",
+    ]
+    priority: Literal["critical", "high", "medium", "low"]
+    severity: Literal["blocking", "risky", "inconvenient", "informational"]
+    reason: str
+    evidence: list[str] = Field(default_factory=list)
+    suggested_action: str
+    affected_files: list[str] = Field(default_factory=list)
+    blocked_by: list[str] = Field(default_factory=list)
+    safe_to_delegate_to_codex: bool = False
+    requires_user_approval: bool = True
+
+
+class SystemRecommendationPlan(BaseModel):
+    status: Literal["created", "no_data", "failed"]
+    created_at: str
+    source_files: dict[str, str] = Field(default_factory=dict)
+    summary_counts: dict[str, int] = Field(default_factory=dict)
+    top_recommendation: dict[str, Any] = Field(default_factory=dict)
+    recommendations: list[SystemRecommendation] = Field(default_factory=list)
+    notes: list[str] = Field(default_factory=list)
+
+
+class SystemRepairPacket(BaseModel):
+    packet_id: str
+    created_at: str
+    source_recommendation_id: str
+    title: str
+    priority: Literal["critical", "high", "medium", "low"]
+    severity: Literal["blocking", "risky", "inconvenient", "informational"]
+    category: str
+    status: Literal["drafted"] = "drafted"
+    requires_user_approval: bool = True
+    safe_to_delegate_to_codex: bool = False
+    goal: str
+    context: str
+    evidence: list[str] = Field(default_factory=list)
+    affected_files: list[str] = Field(default_factory=list)
+    allowed_actions: list[str] = Field(default_factory=list)
+    forbidden_actions: list[str] = Field(default_factory=list)
+    implementation_steps: list[str] = Field(default_factory=list)
+    tests_to_run: list[str] = Field(default_factory=list)
+    acceptance_criteria: list[str] = Field(default_factory=list)
+    rollback_notes: list[str] = Field(default_factory=list)
+    codex_prompt: str
+
+
+class SystemRepairPacketBatch(BaseModel):
+    status: Literal["created", "no_data", "failed"]
+    created_at: str
+    mode: str = "top"
+    limit: int = 1
+    packets: list[SystemRepairPacket] = Field(default_factory=list)
+    packet_metadata: list[dict[str, Any]] = Field(default_factory=list)
+    notes: list[str] = Field(default_factory=list)
+
+
 def utc_timestamp() -> str:
     return datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 

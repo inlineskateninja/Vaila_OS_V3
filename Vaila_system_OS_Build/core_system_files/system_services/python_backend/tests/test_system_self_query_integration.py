@@ -46,6 +46,10 @@ def test_prompt_classification_routes_system_self_query():
     assert route_user_input("scan your system").task_type == "system_self_query"
     assert route_user_input("inspect your files").task_type == "system_self_query"
     assert route_user_input("what changed since the last scan").task_type == "system_self_query"
+    assert route_user_input("what should I fix next").task_type == "system_self_query"
+    assert route_user_input("what should Codex work on next").task_type == "system_self_query"
+    assert route_user_input("create a Codex task for the top recommendation").task_type == "system_self_query"
+    assert route_user_input("generate repair packets").task_type == "system_self_query"
     assert route_user_input("what services do you have").task_type == "system_self_query"
     assert route_user_input("what personas are present").task_type == "system_self_query"
     assert route_user_input("how should I plan tomorrow?").task_type != "system_self_query"
@@ -95,6 +99,8 @@ def test_self_query_extracts_focus_values(tmp_path: Path):
     assert service.extract_focus("show unresolved issues") == "issues"
     assert service.extract_focus("show capability map") == "capabilities"
     assert service.extract_focus("what changed since the last scan") == "changes"
+    assert service.extract_focus("what should I fix next") == "recommendations"
+    assert service.extract_focus("create a Codex task for the top recommendation") == "repair_packets"
 
 
 def test_self_query_returns_safe_fallback_when_scan_fails(tmp_path: Path):
@@ -132,6 +138,38 @@ def test_chat_route_change_query_uses_change_report():
     assert body["route_plan"]["task_type"] == "system_self_query"
     assert body["system_self_query"]["focus"] == "changes"
     assert "comparison" in text or "baseline" in text or "no changes" in text
+    assert all(phrase not in text for phrase in FORBIDDEN_LANGUAGE)
+
+
+def test_chat_route_recommendation_query_uses_plan():
+    client = TestClient(app)
+    client.get("/system-core/perception/scan")
+    client.get("/system-core/perception/recommendations/generate")
+
+    response = client.post("/chat", json={"message": "What should I fix next?"})
+
+    assert response.status_code == 200
+    body = response.json()
+    text = body["response"].lower()
+    assert body["route_plan"]["task_type"] == "system_self_query"
+    assert body["system_self_query"]["focus"] == "recommendations"
+    assert "recommendation plan found" in text
+    assert all(phrase not in text for phrase in FORBIDDEN_LANGUAGE)
+
+
+def test_chat_route_repair_packet_query_uses_packet_data():
+    client = TestClient(app)
+    client.get("/system-core/perception/scan")
+    client.get("/system-core/perception/recommendations/generate")
+
+    response = client.post("/chat", json={"message": "Generate repair packets but do not apply them."})
+
+    assert response.status_code == 200
+    body = response.json()
+    text = body["response"].lower()
+    assert body["route_plan"]["task_type"] == "system_self_query"
+    assert body["system_self_query"]["focus"] == "repair_packets"
+    assert "repair packet" in text or "recommendation plan" in text
     assert all(phrase not in text for phrase in FORBIDDEN_LANGUAGE)
 
 

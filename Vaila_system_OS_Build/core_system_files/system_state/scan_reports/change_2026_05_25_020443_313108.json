@@ -1,27 +1,39 @@
 {
   "status": "changes_detected",
-  "previous_scan_time": "2026-05-25T02:06:34Z",
-  "current_scan_time": "2026-05-25T02:06:35Z",
+  "previous_scan_time": "2026-05-25T01:37:06Z",
+  "current_scan_time": "2026-05-25T02:04:43Z",
   "summary_counts": {
-    "added_files": 3,
+    "added_files": 5,
     "removed_files": 0,
-    "modified_files": 2,
+    "modified_files": 9,
     "new_issues": 0,
     "resolved_issues": 0,
     "capability_changes": 11
   },
   "added_files": [
-    "core_system_files/system_state/scan_reports/change_2026_05_25_020634_963995.json",
-    "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020634_973088.json",
-    "core_system_files/system_state/scan_reports/scan_2026_05_25_020634_950326.json"
+    "core_system_files/system_services/python_backend/app/services/system_repair_packet_service.py",
+    "core_system_files/system_services/python_backend/tests/test_system_repair_packet_service.py",
+    "core_system_files/system_state/scan_reports/change_2026_05_25_013706_569995.json",
+    "core_system_files/system_state/scan_reports/recommendations_2026_05_25_013706_578596.json",
+    "core_system_files/system_state/scan_reports/scan_2026_05_25_013706_558659.json"
   ],
   "removed_files": [],
   "modified_files": [
+    "core_system_files/system_services/python_backend/app/router.py",
+    "core_system_files/system_services/python_backend/app/routers/system_perception_router.py",
+    "core_system_files/system_services/python_backend/app/services/system_self_query_service.py",
+    "core_system_files/system_services/python_backend/tests/test_system_perception.py",
+    "core_system_files/system_services/python_backend/tests/test_system_self_query_integration.py",
     "core_system_files/system_state/self_model/change_report.json",
-    "core_system_files/system_state/self_model/file_inventory.json"
+    "core_system_files/system_state/self_model/file_inventory.json",
+    "core_system_files/system_state/self_model/last_recommendation_plan.md",
+    "core_system_files/system_state/self_model/recommendation_plan.json"
   ],
-  "unchanged_files_count": 306,
-  "added_services": [],
+  "unchanged_files_count": 256,
+  "added_services": [
+    "core_system_files/system_services/python_backend/app/services/system_repair_packet_service.py",
+    "core_system_files/system_services/python_backend/tests/test_system_repair_packet_service.py"
+  ],
   "removed_services": [],
   "added_routers": [],
   "removed_routers": [],

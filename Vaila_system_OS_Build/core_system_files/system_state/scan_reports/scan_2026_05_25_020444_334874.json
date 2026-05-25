@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "scanned_at": "2026-05-25T02:06:35Z",
+  "scanned_at": "2026-05-25T02:04:44Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "config": {
     "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
@@ -848,21 +848,21 @@
       "path": "core_system_files/system_services/python_backend/app/services/system_repair_packet_service.py",
       "name": "system_repair_packet_service.py",
       "extension": ".py",
-      "size_bytes": 15376,
-      "modified_time": "2026-05-25T02:06:11Z",
+      "size_bytes": 15308,
+      "modified_time": "2026-05-25T02:02:15Z",
       "category": "service",
       "metadata": {
         "category_reason": "service",
         "has_deprecated_import": false,
-        "line_count": 338
+        "line_count": 337
       }
     },
     {
       "path": "core_system_files/system_services/python_backend/app/services/system_self_query_service.py",
       "name": "system_self_query_service.py",
       "extension": ".py",
-      "size_bytes": 10578,
-      "modified_time": "2026-05-25T02:06:16Z",
+      "size_bytes": 10543,
+      "modified_time": "2026-05-25T02:02:59Z",
       "category": "service",
       "metadata": {
         "category_reason": "service",
@@ -1649,138 +1649,6 @@
       }
     },
     {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020444_347236.json",
-      "name": "change_2026_05_25_020444_347236.json",
-      "extension": ".json",
-      "size_bytes": 2734,
-      "modified_time": "2026-05-25T02:04:44Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020504_716783.json",
-      "name": "change_2026_05_25_020504_716783.json",
-      "extension": ".json",
-      "size_bytes": 2217,
-      "modified_time": "2026-05-25T02:05:04Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020505_292381.json",
-      "name": "change_2026_05_25_020505_292381.json",
-      "extension": ".json",
-      "size_bytes": 2734,
-      "modified_time": "2026-05-25T02:05:05Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020505_592504.json",
-      "name": "change_2026_05_25_020505_592504.json",
-      "extension": ".json",
-      "size_bytes": 2483,
-      "modified_time": "2026-05-25T02:05:05Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020505_902542.json",
-      "name": "change_2026_05_25_020505_902542.json",
-      "extension": ".json",
-      "size_bytes": 2370,
-      "modified_time": "2026-05-25T02:05:05Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020625_067528.json",
-      "name": "change_2026_05_25_020625_067528.json",
-      "extension": ".json",
-      "size_bytes": 2418,
-      "modified_time": "2026-05-25T02:06:25Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020625_530057.json",
-      "name": "change_2026_05_25_020625_530057.json",
-      "extension": ".json",
-      "size_bytes": 2734,
-      "modified_time": "2026-05-25T02:06:25Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020625_823977.json",
-      "name": "change_2026_05_25_020625_823977.json",
-      "extension": ".json",
-      "size_bytes": 2119,
-      "modified_time": "2026-05-25T02:06:25Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020626_150003.json",
-      "name": "change_2026_05_25_020626_150003.json",
-      "extension": ".json",
-      "size_bytes": 2217,
-      "modified_time": "2026-05-25T02:06:26Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020634_052195.json",
-      "name": "change_2026_05_25_020634_052195.json",
-      "extension": ".json",
-      "size_bytes": 2734,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020634_638706.json",
-      "name": "change_2026_05_25_020634_638706.json",
-      "extension": ".json",
-      "size_bytes": 2734,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020634_963995.json",
-      "name": "change_2026_05_25_020634_963995.json",
-      "extension": ".json",
-      "size_bytes": 2050,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
       "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_013616_635845.json",
       "name": "recommendations_2026_05_25_013616_635845.json",
       "extension": ".json",
@@ -1907,105 +1775,6 @@
       "extension": ".json",
       "size_bytes": 904,
       "modified_time": "2026-05-25T02:04:44Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020444_359665.json",
-      "name": "recommendations_2026_05_25_020444_359665.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:04:44Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020504_748135.json",
-      "name": "recommendations_2026_05_25_020504_748135.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:05:04Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020505_601240.json",
-      "name": "recommendations_2026_05_25_020505_601240.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:05:05Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020505_911267.json",
-      "name": "recommendations_2026_05_25_020505_911267.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:05:05Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020625_098944.json",
-      "name": "recommendations_2026_05_25_020625_098944.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:06:25Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020625_832958.json",
-      "name": "recommendations_2026_05_25_020625_832958.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:06:25Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020626_161638.json",
-      "name": "recommendations_2026_05_25_020626_161638.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:06:26Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020634_083000.json",
-      "name": "recommendations_2026_05_25_020634_083000.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020634_973088.json",
-      "name": "recommendations_2026_05_25_020634_973088.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -2716,143 +2485,11 @@
       }
     },
     {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020444_334874.json",
-      "name": "scan_2026_05_25_020444_334874.json",
-      "extension": ".json",
-      "size_bytes": 123950,
-      "modified_time": "2026-05-25T02:04:44Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020504_703992.json",
-      "name": "scan_2026_05_25_020504_703992.json",
-      "extension": ".json",
-      "size_bytes": 125078,
-      "modified_time": "2026-05-25T02:05:04Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020505_278624.json",
-      "name": "scan_2026_05_25_020505_278624.json",
-      "extension": ".json",
-      "size_bytes": 126206,
-      "modified_time": "2026-05-25T02:05:05Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020505_579608.json",
-      "name": "scan_2026_05_25_020505_579608.json",
-      "extension": ".json",
-      "size_bytes": 126946,
-      "modified_time": "2026-05-25T02:05:05Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020505_890426.json",
-      "name": "scan_2026_05_25_020505_890426.json",
-      "extension": ".json",
-      "size_bytes": 128074,
-      "modified_time": "2026-05-25T02:05:05Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020625_055544.json",
-      "name": "scan_2026_05_25_020625_055544.json",
-      "extension": ".json",
-      "size_bytes": 129202,
-      "modified_time": "2026-05-25T02:06:25Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020625_517910.json",
-      "name": "scan_2026_05_25_020625_517910.json",
-      "extension": ".json",
-      "size_bytes": 130330,
-      "modified_time": "2026-05-25T02:06:25Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020625_811954.json",
-      "name": "scan_2026_05_25_020625_811954.json",
-      "extension": ".json",
-      "size_bytes": 131070,
-      "modified_time": "2026-05-25T02:06:25Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020626_134767.json",
-      "name": "scan_2026_05_25_020626_134767.json",
-      "extension": ".json",
-      "size_bytes": 132198,
-      "modified_time": "2026-05-25T02:06:26Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020634_038355.json",
-      "name": "scan_2026_05_25_020634_038355.json",
-      "extension": ".json",
-      "size_bytes": 133326,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020634_626102.json",
-      "name": "scan_2026_05_25_020634_626102.json",
-      "extension": ".json",
-      "size_bytes": 134454,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020634_950326.json",
-      "name": "scan_2026_05_25_020634_950326.json",
-      "extension": ".json",
-      "size_bytes": 135194,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
       "path": "core_system_files/system_state/self_model/architecture_snapshot.json",
       "name": "architecture_snapshot.json",
       "extension": ".json",
       "size_bytes": 1884,
-      "modified_time": "2026-05-25T02:06:34Z",
+      "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -2863,7 +2500,7 @@
       "name": "capability_map.json",
       "extension": ".json",
       "size_bytes": 346,
-      "modified_time": "2026-05-25T02:06:34Z",
+      "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -2873,8 +2510,8 @@
       "path": "core_system_files/system_state/self_model/change_report.json",
       "name": "change_report.json",
       "extension": ".json",
-      "size_bytes": 2050,
-      "modified_time": "2026-05-25T02:06:34Z",
+      "size_bytes": 2119,
+      "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -2884,8 +2521,8 @@
       "path": "core_system_files/system_state/self_model/file_inventory.json",
       "name": "file_inventory.json",
       "extension": ".json",
-      "size_bytes": 135313,
-      "modified_time": "2026-05-25T02:06:34Z",
+      "size_bytes": 122941,
+      "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -2896,7 +2533,7 @@
       "name": "last_change_summary.md",
       "extension": ".md",
       "size_bytes": 139,
-      "modified_time": "2026-05-25T02:06:34Z",
+      "modified_time": "2026-05-25T02:04:44Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation"
@@ -2907,7 +2544,7 @@
       "name": "last_recommendation_plan.md",
       "extension": ".md",
       "size_bytes": 146,
-      "modified_time": "2026-05-25T02:06:34Z",
+      "modified_time": "2026-05-25T02:04:44Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation"
@@ -2918,7 +2555,7 @@
       "name": "last_scan_summary.md",
       "extension": ".md",
       "size_bytes": 787,
-      "modified_time": "2026-05-25T02:06:34Z",
+      "modified_time": "2026-05-25T02:04:44Z",
       "category": "documentation",
       "metadata": {
         "category_reason": "documentation"
@@ -2929,7 +2566,7 @@
       "name": "recommendation_plan.json",
       "extension": ".json",
       "size_bytes": 904,
-      "modified_time": "2026-05-25T02:06:34Z",
+      "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -2940,7 +2577,7 @@
       "name": "unresolved_issues.json",
       "extension": ".json",
       "size_bytes": 20,
-      "modified_time": "2026-05-25T02:06:34Z",
+      "modified_time": "2026-05-25T02:04:44Z",
       "category": "unknown",
       "metadata": {
         "category_reason": "unknown"
@@ -4103,7 +3740,7 @@
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 170,
+    "unknown": 137,
     "documentation": 6,
     "memory_file": 28,
     "service": 13,
@@ -4114,5 +3751,5 @@
     "config_file": 4,
     "persona_manifest": 1
   },
-  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_25_020635_269341.json"
+  "report_path": null
 }

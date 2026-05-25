@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generated_at": "2026-05-25T01:17:20Z",
+  "generated_at": "2026-05-25T02:06:35Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "present_expected": [
     "core_system_files/app.py",
@@ -20,6 +20,8 @@
     "core_system_files/system_services/python_backend/app/schemas.py",
     "core_system_files/system_services/python_backend/tests/test_system_change_service.py",
     "core_system_files/system_services/python_backend/tests/test_system_perception.py",
+    "core_system_files/system_services/python_backend/tests/test_system_recommendation_service.py",
+    "core_system_files/system_services/python_backend/tests/test_system_repair_packet_service.py",
     "core_system_files/system_services/python_backend/tests/test_system_self_query_integration.py",
     "persona_files/maelith/manifest.yaml",
     "persona_files/maelith/routing_policy.yaml",
@@ -30,10 +32,10 @@
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 96,
+    "unknown": 170,
     "documentation": 6,
     "memory_file": 28,
-    "service": 9,
+    "service": 13,
     "router": 3,
     "model_schema": 1,
     "test_file": 2,

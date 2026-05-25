@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "scanned_at": "2026-05-25T02:06:35Z",
+  "scanned_at": "2026-05-25T02:06:34Z",
   "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
   "config": {
     "project_root": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build",
@@ -1759,28 +1759,6 @@
       }
     },
     {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020634_638706.json",
-      "name": "change_2026_05_25_020634_638706.json",
-      "extension": ".json",
-      "size_bytes": 2734,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/change_2026_05_25_020634_963995.json",
-      "name": "change_2026_05_25_020634_963995.json",
-      "extension": ".json",
-      "size_bytes": 2050,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
       "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_013616_635845.json",
       "name": "recommendations_2026_05_25_013616_635845.json",
       "extension": ".json",
@@ -1992,17 +1970,6 @@
     {
       "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020634_083000.json",
       "name": "recommendations_2026_05_25_020634_083000.json",
-      "extension": ".json",
-      "size_bytes": 904,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/recommendations_2026_05_25_020634_973088.json",
-      "name": "recommendations_2026_05_25_020634_973088.json",
       "extension": ".json",
       "size_bytes": 904,
       "modified_time": "2026-05-25T02:06:34Z",
@@ -2826,28 +2793,6 @@
       }
     },
     {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020634_626102.json",
-      "name": "scan_2026_05_25_020634_626102.json",
-      "extension": ".json",
-      "size_bytes": 134454,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
-      "path": "core_system_files/system_state/scan_reports/scan_2026_05_25_020634_950326.json",
-      "name": "scan_2026_05_25_020634_950326.json",
-      "extension": ".json",
-      "size_bytes": 135194,
-      "modified_time": "2026-05-25T02:06:34Z",
-      "category": "unknown",
-      "metadata": {
-        "category_reason": "unknown"
-      }
-    },
-    {
       "path": "core_system_files/system_state/self_model/architecture_snapshot.json",
       "name": "architecture_snapshot.json",
       "extension": ".json",
@@ -2873,7 +2818,7 @@
       "path": "core_system_files/system_state/self_model/change_report.json",
       "name": "change_report.json",
       "extension": ".json",
-      "size_bytes": 2050,
+      "size_bytes": 2734,
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
@@ -2884,7 +2829,7 @@
       "path": "core_system_files/system_state/self_model/file_inventory.json",
       "name": "file_inventory.json",
       "extension": ".json",
-      "size_bytes": 135313,
+      "size_bytes": 133445,
       "modified_time": "2026-05-25T02:06:34Z",
       "category": "unknown",
       "metadata": {
@@ -4103,7 +4048,7 @@
   "counts_by_category": {
     "core_entrypoint": 4,
     "script": 32,
-    "unknown": 170,
+    "unknown": 165,
     "documentation": 6,
     "memory_file": 28,
     "service": 13,
@@ -4114,5 +4059,5 @@
     "config_file": 4,
     "persona_manifest": 1
   },
-  "report_path": "E:\\Vaila_OS_V3\\Vaila_system_OS_Build\\core_system_files\\system_state\\scan_reports\\scan_2026_05_25_020635_269341.json"
+  "report_path": null
 }
